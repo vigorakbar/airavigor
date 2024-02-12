@@ -1,0 +1,47 @@
+.cardContainer {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  transition: all 1s;
+}
+
+.mainCard {
+  background-color: white;
+  color: chocolate;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: rotateZ(2deg);
+  transform-style: preserve-3d;
+  perspective: 2000px;
+}
+
+.cardSurface {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.titleCard {
+  transform-origin: top;
+  position: absolute;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  background: greenyellow;
+  transition: transform 0.3s;
+
+  .frontTitle {
+    background-color: cadetblue;
+  }
+
+  .backTitle {
+    background-color: aqua;
+    transform: rotateY(180deg);
+  }
+}
+
+.backCard {
+  background-color: grey;
+}
