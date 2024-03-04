@@ -1,0 +1,78 @@
+.envelopeModal {
+  height: 100vh;
+  width: 100vw;
+  background-color: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outerContainer {
+  position: relative;
+  width: 350px;
+  height: 250px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  &:hover,
+  &.openScale {
+    transform: scale(1.1);
+  }
+  background-color: brown;
+}
+
+.envelopeContainer {
+  width: 350px;
+  height: 250px;
+  position: relative;
+  z-index: 1;
+}
+
+.envelopeCard {
+  border-top: 125px solid transparent;
+  border-right: 175px solid blueviolet;
+  border-left: 175px solid green;
+  border-bottom: 125px solid blueviolet;
+  position: absolute;
+  z-index: 1;
+}
+
+.lid {
+  border-right: 175px solid transparent;
+  border-left: 175px solid transparent;
+  border-bottom: 125px solid transparent;
+  transform-origin: top;
+  position: absolute;
+  top: 1px;
+  transition: transform 0.25s linear;
+
+  &.front {
+    border-top: 125px solid burlywood;
+    z-index: 3;
+    transition-delay: 0.75s;
+    transform: rotateX(0deg);
+
+    &.open {
+      transition-delay: 0s;
+      transform: rotateX(90deg);
+    }
+  }
+
+  &.back {
+    border-top: 125px solid brown;
+    z-index: 1;
+    transition-delay: 0.5s;
+    transform: rotateX(90deg);
+
+    &.open {
+      transform: rotateX(180deg);
+      transition-delay: 0.25s;
+    }
+  }
+}
+
+.cardContainer {
+  position: absolute;
+  z-index: 0;
+  top: 30px;
+  left: 25px;
+}

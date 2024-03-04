@@ -1,9 +1,19 @@
-import cx from 'classnames';
 import s from './MainCard.module.scss';
+import cx from 'classnames';
 import React from 'react';
 
-type Props = { progress: number; rotateZDeg?: number; scale?: number };
-export const MainCard: React.FC<Props> = ({ progress, scale, rotateZDeg }) => {
+type Props = {
+  progress: number;
+  rotateZDeg?: number;
+  scale?: number;
+  initRotateX?: number;
+};
+export const MainCard: React.FC<Props> = ({
+  progress,
+  scale,
+  rotateZDeg,
+  initRotateX = 18,
+}) => {
   console.log(progress);
   const cardScale = scale ?? progress + 1;
   const cardRotateZ = rotateZDeg ?? (1 - progress) * 3;
@@ -21,7 +31,7 @@ export const MainCard: React.FC<Props> = ({ progress, scale, rotateZDeg }) => {
         <div
           className={s.titleCard}
           style={{
-            transform: `rotateX(${Math.min(18 + progress * 180, 180)}deg)`,
+            transform: `rotateX(${Math.min(initRotateX + progress * 180, 180)}deg)`,
           }}
         >
           <div className={cx(s.cardSurface, s.frontTitle)}>FRONT</div>

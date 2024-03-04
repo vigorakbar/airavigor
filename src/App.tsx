@@ -1,14 +1,23 @@
-import './App.css';
+import s from './App.module.scss';
 import { BrideAndGroom } from './components/BrideAndGroom/BrideAndGroom';
+import { Envelope } from './components/Envelope/Envelope';
 import { MainHeader } from './components/MainHeader/MainHeader';
+import React, { useState } from 'react';
 
-function App() {
+const App: React.FC = () => {
+  const [envelopeOpened, setEnvelopeOpened] = useState(false);
   return (
-    <div className="container">
-      <MainHeader />
-      <BrideAndGroom />
-    </div>
+    <>
+      {envelopeOpened ? (
+        <div className={s.container}>
+          <MainHeader />
+          <BrideAndGroom />
+        </div>
+      ) : (
+        <Envelope setEnvelopeOpened={setEnvelopeOpened} />
+      )}
+    </>
   );
-}
+};
 
 export default App;
