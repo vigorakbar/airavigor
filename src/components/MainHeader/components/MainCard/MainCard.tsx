@@ -2,7 +2,7 @@ import s from './MainCard.module.scss';
 import cx from 'classnames';
 import React from 'react';
 
-type Props = {
+export type Props = {
   progress: number;
   rotateZDeg?: number;
   scale?: number;

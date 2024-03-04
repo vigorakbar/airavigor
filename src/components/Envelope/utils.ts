@@ -16,3 +16,12 @@ export const placeCardForNextPage = (card: HTMLDivElement) => {
   card.style.transition = 'transform 0.4s ease-in';
   card.style.transform = 'translateY(130px)';
 };
+
+export const timeOutPromise = (callback: () => void, time: number) => {
+  return new Promise<boolean>(resolve => {
+    setTimeout(() => {
+      callback();
+      resolve(true);
+    }, time);
+  });
+};
