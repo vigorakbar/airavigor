@@ -16,7 +16,7 @@ export const MainHeader = ({
         setMainHeaderFinished(true);
       }, 350);
     };
-    if (progress >= 1) {
+    if (progress >= 0.9) {
       triggerFinished();
     } else {
       setMainHeaderFinished(false);
