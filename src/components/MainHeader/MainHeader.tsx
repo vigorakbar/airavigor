@@ -14,7 +14,7 @@ export const MainHeader = ({
     const triggerFinished = () => {
       setTimeout(() => {
         setMainHeaderFinished(true);
-      }, 350);
+      }, 200);
     };
     if (progress >= 0.9) {
       triggerFinished();

@@ -17,7 +17,7 @@ export const MainCard: React.FC<Props> = ({
   const cardScale = scale ?? progress + 1;
   const cardRotateZ = rotateZDeg ?? (1 - progress) * 3;
   const scaleFill = {
-    transform: 'scale(6)',
+    transform: 'scale(9)',
     transformOrigin: 'center',
     transitionDelay: '0',
   } as CSSProperties;

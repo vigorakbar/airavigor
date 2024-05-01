@@ -7,8 +7,6 @@ import { useTableItemsStyle } from './hooks';
 export const TableTransition = () => {
   const { scrollAreaRef, progress } = useScrollAreaProgress();
 
-  console.log('var progress', progress);
-
   const { tableStyle, timeVenueStyle, rsvpStyle } =
     useTableItemsStyle(progress);
 
