@@ -14,7 +14,7 @@ export const MainHeader = ({
     const triggerFinished = () => {
       setTimeout(() => {
         setMainHeaderFinished(true);
-      }, 400);
+      }, 350);
     };
     if (progress >= 1) {
       triggerFinished();
@@ -23,7 +23,6 @@ export const MainHeader = ({
     }
   }, [progress, setMainHeaderFinished]);
 
-  console.log('var progress', progress);
   return (
     <div className={s.scrollArea} ref={scrollAreaRef}>
       <div className={s.mainHeaderContainer}>
