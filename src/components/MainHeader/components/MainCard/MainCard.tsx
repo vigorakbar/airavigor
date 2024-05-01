@@ -1,6 +1,6 @@
 import s from './MainCard.module.scss';
 import cx from 'classnames';
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 export type Props = {
   progress: number;
@@ -14,13 +14,17 @@ export const MainCard: React.FC<Props> = ({
   rotateZDeg,
   initRotateX = 18,
 }) => {
-  console.log(progress);
   const cardScale = scale ?? progress + 1;
   const cardRotateZ = rotateZDeg ?? (1 - progress) * 3;
+  const scaleFill = {
+    transform: 'scale(6)',
+    transformOrigin: 'center',
+    transitionDelay: '0',
+  } as CSSProperties;
   return (
     <div
       className={s.cardContainer}
-      style={{ transform: `scale(${cardScale})` }}
+      style={progress > 0.85 ? scaleFill : { transform: `scale(${cardScale})` }}
     >
       <div
         className={s.mainCard}

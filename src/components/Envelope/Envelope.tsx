@@ -44,8 +44,8 @@ export const Envelope: React.FC<Props> = ({ setEnvelopeOpened }) => {
     }, 600);
     backlid.style.transition = 'transform 0.7s ease-in, opacity 0.3s linear';
     envelope.style.transition = 'transform 0.7s ease-in, opacity 0.3s linear';
-    backlid.style.transform = 'rotateX(180deg) translateX(-1000px)';
-    envelope.style.transform = ' translateX(-1000px)';
+    backlid.style.transform = 'rotateX(180deg) translateX(-1500px)';
+    envelope.style.transform = ' translateX(-1500px)';
     timeOutPromise(() => {
       backlid.style.opacity = '0';
       envelope.style.opacity = '0';
