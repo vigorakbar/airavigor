@@ -1,7 +1,7 @@
 import { useScrollAreaProgress } from '../../../hooks/useScrollProgress';
 import s from './TableTransition.module.scss';
-import { TimeAndVenue } from './components/3TimeAndVenue/TimeAndVenue';
-import { RSVP } from './components/4RSVP/RSVP';
+import { RSVP } from './components/RSVP/RSVP';
+import { TimeAndVenue } from './components/TimeAndVenue/TimeAndVenue';
 import { useTableItemsStyle } from './hooks';
 
 export const TableTransition = () => {

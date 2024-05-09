@@ -1,0 +1,21 @@
+@use '../../../styles/variables' as v;
+
+.EnvelopeTitleContainer {
+  height: v.$envelope-content-height;
+  z-index: 1;
+  text-align: center;
+
+  .title {
+    font-size: 26px;
+  }
+
+  .name {
+    font-family: v.$name-font;
+    font-size: 30px;
+    margin: 8px 0;
+  }
+
+  .hashTag {
+    font-size: 21px;
+  }
+}

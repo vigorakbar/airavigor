@@ -2,13 +2,13 @@ import s from './MainCard.module.scss';
 import cx from 'classnames';
 import React, { CSSProperties } from 'react';
 
-export type Props = {
+export type MainCardProps = {
   progress: number;
   rotateZDeg?: number;
   scale?: number;
   initRotateX?: number;
 };
-export const MainCard: React.FC<Props> = ({
+export const MainCard: React.FC<MainCardProps> = ({
   progress,
   scale,
   rotateZDeg,

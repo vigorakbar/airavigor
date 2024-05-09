@@ -1,8 +1,12 @@
-import {
-  MainCard,
-  Props as MainCardProps,
-} from '../MainHeader/components/MainCard/MainCard';
-import s from './Envelope.module.scss';
+/// <reference types="vite-plugin-svgr/client" />
+import Cloud1 from '../../assets/cloud1.svg?react';
+import Cloud2 from '../../assets/cloud2.svg?react';
+import Cloud3 from '../../assets/cloud3.svg?react';
+import Cloud4 from '../../assets/cloud4.svg?react';
+import { MainCardProps } from '../MainHeader/components/MainCard/MainCard';
+import s from './EnvelopeSection.module.scss';
+import { Envelope } from './components/Envelope';
+import { EnvelopeMainTitle } from './components/EnvelopeMainTitle';
 import { timeOutPromise } from './utils';
 import cx from 'classnames';
 import React, { useRef, useState } from 'react';
@@ -11,7 +15,7 @@ type Props = {
   setEnvelopeOpened: (open: boolean) => void;
 };
 
-export const Envelope: React.FC<Props> = ({ setEnvelopeOpened }) => {
+export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
   const [lidOpen, setLidOpen] = useState(false);
 
   const [mainCardInit, setMainCardInit] = useState<
@@ -40,7 +44,7 @@ export const Envelope: React.FC<Props> = ({ setEnvelopeOpened }) => {
     }, 400);
     await timeOutPromise(() => {
       outerContainer.style.backgroundColor = 'transparent';
-      envelope.style.backgroundColor = 'brown';
+      envelope.style.backgroundColor = '#fcc7bf';
     }, 600);
     backlid.style.transition = 'transform 0.7s ease-in, opacity 0.3s linear';
     envelope.style.transition = 'transform 0.7s ease-in, opacity 0.3s linear';
@@ -63,29 +67,29 @@ export const Envelope: React.FC<Props> = ({ setEnvelopeOpened }) => {
       setEnvelopeOpened(true);
     }, 1000);
   };
+
   return (
-    <div className={s.envelopeModal}>
-      <div
-        className={cx(s.outerContainer, lidOpen && s.openScale)}
-        ref={containerRef}
-      >
-        <div
-          className={cx(s.envelopeContainer)}
-          onClick={onClickEnvelope}
-          ref={envelopeRef}
-        >
-          <div className={cx(s.envelopeCard)}></div>
-          <div className={cx(s.lid, s.front, lidOpen && s.open)}></div>
-          <div></div>
-        </div>
-        <div
-          className={cx(s.lid, s.back, lidOpen && s.open)}
-          ref={backlidRef}
-        ></div>
-        <div className={s.cardContainer} ref={cardRef}>
-          <MainCard progress={0} scale={1} {...mainCardInit} />
+    <div className={s.envelopeSectionContainer}>
+      <EnvelopeMainTitle />
+      <Envelope
+        lidOpen={lidOpen}
+        onClickEnvelope={onClickEnvelope}
+        mainCardInit={mainCardInit}
+        backlidRef={backlidRef}
+        cardRef={cardRef}
+        containerRef={containerRef}
+        envelopeRef={envelopeRef}
+      />
+      <div className={s.guestNameContainer}>
+        <div>Dear, XXXX</div>
+        <div onClick={onClickEnvelope} className={s.openInvitation}>
+          Open Invitation
         </div>
       </div>
+      <Cloud1 className={cx(s.cloud, s.cloud1)} />
+      <Cloud2 className={cx(s.cloud, s.cloud2)} />
+      <Cloud3 className={cx(s.cloud, s.cloud3)} />
+      <Cloud4 className={cx(s.cloud, s.cloud4)} />
     </div>
   );
 };

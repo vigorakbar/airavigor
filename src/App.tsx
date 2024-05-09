@@ -1,24 +1,37 @@
 import s from './App.module.scss';
-import { Envelope } from './components/Envelope/Envelope';
+import { CardMainContent } from './components/CardMainContent/CardMainContent';
+import { EnvelopeSection } from './components/Envelope/EnvelopeSection';
 import { MainHeader } from './components/MainHeader/MainHeader';
-import { BrideAndGroom } from './components/contents/1BrideAndGroom/BrideAndGroom';
-import { OurStory } from './components/contents/2OurStory/OurStory';
-import { TableTransition } from './components/contents/3TableTransition/TableTransition';
-import { Gifts } from './components/contents/5Gifts/Gifts';
-import { Wishes } from './components/contents/6Wishes/Wishes';
-import { Thanks } from './components/contents/10Thanks/Thanks';
+import { BrideAndGroom } from './components/contents/BrideAndGroom/BrideAndGroom';
+import { Gifts } from './components/contents/Gifts/Gifts';
+import { OurStory } from './components/contents/OurStory/OurStory';
+import { TableTransition } from './components/contents/TableTransition/TableTransition';
+import { Thanks } from './components/contents/Thanks/Thanks';
+import { Wishes } from './components/contents/Wishes/Wishes';
 import cx from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const App: React.FC = () => {
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
   const [mainHeaderFinished, setMainHeaderFinished] = useState(false);
+
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (mainHeaderFinished && contentRef?.current) {
+      setTimeout(() => contentRef?.current?.scrollIntoView(), 100);
+    }
+  }, [mainHeaderFinished]);
+
   return (
     <>
       {envelopeOpened ? (
         <div className={s.container}>
           <MainHeader setMainHeaderFinished={setMainHeaderFinished} />
-          <div className={cx(!mainHeaderFinished && s.hideContent)}>
+          <div
+            ref={contentRef}
+            className={cx(!mainHeaderFinished && s.hideContent)}
+          >
             <BrideAndGroom />
             <OurStory />
             <TableTransition />
@@ -28,7 +41,7 @@ const App: React.FC = () => {
           </div>
         </div>
       ) : (
-        <Envelope setEnvelopeOpened={setEnvelopeOpened} />
+        <EnvelopeSection setEnvelopeOpened={setEnvelopeOpened} />
       )}
     </>
   );
