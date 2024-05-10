@@ -45,6 +45,29 @@
   }
 }
 
+.titleContainer {
+  margin-top: 21px;
+
+  .date {
+    margin-top: 6px;
+    font-size: 18px;
+  }
+}
+
+.recipient {
+  margin-top: 27px;
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+
+  .guestName {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 56px;
+    padding: 0 14px;
+  }
+}
+
 .backCard {
   background-color: grey;
 }

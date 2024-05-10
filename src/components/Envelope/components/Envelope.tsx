@@ -2,6 +2,7 @@ import {
   MainCard,
   MainCardProps,
 } from '../../MainHeader/components/MainCard/MainCard';
+import { NameText } from '../../NameText/NameText';
 import s from './Envelope.module.scss';
 import cx from 'classnames';
 import React from 'react';
@@ -36,7 +37,12 @@ export const Envelope: React.FC<Props> = ({
         ref={envelopeRef}
       >
         <div className={cx(s.envelopeCard)}></div>
-        <div className={cx(s.lid, s.front, lidOpen && s.open)}></div>
+        <div className={cx(s.lid, s.front, lidOpen && s.open)}>
+          <NameText className={s.initial}>
+            <span>A</span>
+            <span>V</span>
+          </NameText>
+        </div>
         <div></div>
       </div>
       <div

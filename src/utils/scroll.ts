@@ -43,6 +43,8 @@ const wheelOpt = supportsPassive ? { passive: false } : false;
 const wheelEvent =
   'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
+// TODO: Delete this file if not used
+
 // call this to Disable
 export function disableScroll() {
   window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF

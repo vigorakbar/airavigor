@@ -1,0 +1,24 @@
+import s from './Verse.module.scss';
+import React from 'react';
+
+export const Verse: React.FC = () => {
+  return (
+    <div className={s.container}>
+      <p>Assalamualaikum warahmatullahi wabarakatuh</p>
+      <p>
+        Dengan nama Allah Yang Maha Pengasih, Yang Maha Penyayang, Dengan rahmat
+        dan ridha-Nya, Kami mengundang Bapak / Ibu dalam pernikahan Aira dan
+        Vigor
+      </p>
+      <p>
+        'Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
+        pasangan hidup dari jenismu sendiri, supaya kamu mendapat ketenangan
+        hati dan Dia menjadikan kasih sayang dan rahmat di antara kamu.
+        Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda
+        bagi kaum yang berfikir.'
+        <br />
+        (Q.S. Ar-Rum: 21)
+      </p>
+    </div>
+  );
+};

@@ -2,6 +2,7 @@ import { useScrollAreaProgress } from '../../hooks/useScrollProgress';
 import { debounce } from '../../utils/debounce';
 import s from './MainHeader.module.scss';
 import { MainCard } from './components/MainCard/MainCard';
+import { OpeningInvitation } from './components/OpeningInvitation/OpeningInvitation';
 import { useEffect } from 'react';
 
 export const MainHeader = ({
@@ -15,16 +16,8 @@ export const MainHeader = ({
   const debouncedFinished = debounce(setMainHeaderFinished, 200);
 
   useEffect(() => {
-    const triggerFinished = () => {
-      setTimeout(() => {
-        debouncedFinished(true);
-      }, 200);
-    };
-    if (
-      (!mainHeaderFinished && progress >= 0.85) ||
-      (mainHeaderFinished && progress >= 0.9)
-    ) {
-      triggerFinished();
+    if (progress >= 0.85) {
+      debouncedFinished(true);
     } else {
       debouncedFinished(false);
     }
@@ -35,6 +28,7 @@ export const MainHeader = ({
       <div className={s.mainHeaderContainer}>
         <MainCard progress={progress} />
       </div>
+      {mainHeaderFinished && <OpeningInvitation />}
     </div>
   );
 };

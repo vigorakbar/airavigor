@@ -1,3 +1,4 @@
+import { NameText } from '../../../NameText/NameText';
 import s from './MainCard.module.scss';
 import cx from 'classnames';
 import React, { CSSProperties } from 'react';
@@ -38,7 +39,16 @@ export const MainCard: React.FC<MainCardProps> = ({
             transform: `rotateX(${Math.min(initRotateX + progress * 180, 180)}deg)`,
           }}
         >
-          <div className={cx(s.cardSurface, s.frontTitle)}>FRONT</div>
+          <div className={cx(s.cardSurface, s.frontTitle)}>
+            <div className={s.titleContainer}>
+              <NameText>Aira & Vigor</NameText>
+              <div className={s.date}>14 . 09 . 2024</div>
+            </div>
+            <div className={s.recipient}>
+              <div>To:</div>
+              <div className={s.guestName}>XXXX</div>
+            </div>
+          </div>
           <div className={cx(s.cardSurface, s.backTitle)}>BACK</div>
         </div>
         <div className={cx(s.cardSurface, s.backCard)}></div>
