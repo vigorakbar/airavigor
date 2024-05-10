@@ -1,5 +1,5 @@
 import s from './App.module.scss';
-import { CardMainContent } from './components/CardMainContent/CardMainContent';
+// import { CardMainContent } from './components/CardMainContent/CardMainContent';
 import { EnvelopeSection } from './components/Envelope/EnvelopeSection';
 import { MainHeader } from './components/MainHeader/MainHeader';
 import { BrideAndGroom } from './components/contents/BrideAndGroom/BrideAndGroom';
@@ -8,8 +8,10 @@ import { OurStory } from './components/contents/OurStory/OurStory';
 import { TableTransition } from './components/contents/TableTransition/TableTransition';
 import { Thanks } from './components/contents/Thanks/Thanks';
 import { Wishes } from './components/contents/Wishes/Wishes';
+import { debounce } from './utils/debounce';
+import { disableScrollTemporary } from './utils/scroll';
 import cx from 'classnames';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 const App: React.FC = () => {
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
@@ -17,17 +19,41 @@ const App: React.FC = () => {
 
   const contentRef = useRef<HTMLDivElement>(null);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debouncedScroll = useCallback(
+    debounce(
+      (type: 'content' | 'top', scrollRef: React.RefObject<HTMLDivElement>) => {
+        if (type === 'content') {
+          setTimeout(() => {
+            scrollRef?.current?.scrollIntoView();
+            disableScrollTemporary(200);
+          }, 100);
+        } else {
+          scrollTo(0, 0);
+          disableScrollTemporary(200);
+        }
+      },
+      100,
+    ),
+    [],
+  );
+
   useEffect(() => {
     if (mainHeaderFinished && contentRef?.current) {
-      setTimeout(() => contentRef?.current?.scrollIntoView(), 100);
+      debouncedScroll('content', contentRef);
+    } else {
+      debouncedScroll('top');
     }
-  }, [mainHeaderFinished]);
+  }, [debouncedScroll, mainHeaderFinished]);
 
   return (
     <>
       {envelopeOpened ? (
         <div className={s.container}>
-          <MainHeader setMainHeaderFinished={setMainHeaderFinished} />
+          <MainHeader
+            setMainHeaderFinished={setMainHeaderFinished}
+            mainHeaderFinished={mainHeaderFinished}
+          />
           <div
             ref={contentRef}
             className={cx(!mainHeaderFinished && s.hideContent)}
