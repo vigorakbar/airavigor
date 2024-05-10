@@ -3,4 +3,5 @@ export const generateThresholdStep = (step: number) => {
   for (let i = step; i >= 0; i--) {
     threshold.push(i / step);
   }
+  return threshold;
 };

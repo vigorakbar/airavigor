@@ -1,12 +1,19 @@
-import { CSSProperties, useEffect, useState } from 'react';
+import { useScrollAreaProgress } from '../../../hooks/useScrollProgress';
+import { CSSProperties, useEffect, useMemo, useState } from 'react';
 
-export const useTableItemsStyle = (progress: number) => {
-  const initTableStyle = {
-    height: '250vh',
-    width: '350vw',
-    left: '-50vw',
-    scale: 1,
-  } as CSSProperties;
+export const useTableItemsStyle = () => {
+  const { scrollAreaRef, progress } = useScrollAreaProgress();
+
+  const initTableStyle = useMemo(
+    () =>
+      ({
+        height: '250vh',
+        width: '350vw',
+        left: '-50vw',
+        scale: 1,
+      }) as CSSProperties,
+    [],
+  );
 
   const initTimeVenueStyle = {
     left: '50vw',
@@ -54,11 +61,12 @@ export const useTableItemsStyle = (progress: number) => {
         scale: 1,
       }));
     }
-  }, [progressValue]);
+  }, [initTableStyle, progressValue]);
 
   return {
     tableStyle,
     timeVenueStyle: initTimeVenueStyle,
     rsvpStyle: initRsvpStyle,
+    scrollAreaRef,
   };
 };
