@@ -15,17 +15,8 @@ export const useTableItemsStyle = () => {
     [],
   );
 
-  const initTimeVenueStyle = {
-    left: '50vw',
-  } as CSSProperties;
-
-  const initRsvpStyle = {
-    left: '200vw',
-    top: '50vh',
-  } as CSSProperties;
-
   const [tableStyle, setTableStyle] = useState(initTableStyle);
-  const progressValue = Math.round(progress * 100);
+  const progressValue = progress * 100;
   useEffect(() => {
     if (progressValue >= 0 && progressValue <= 20) {
       setTableStyle({ ...initTableStyle });
@@ -65,8 +56,6 @@ export const useTableItemsStyle = () => {
 
   return {
     tableStyle,
-    timeVenueStyle: initTimeVenueStyle,
-    rsvpStyle: initRsvpStyle,
     scrollAreaRef,
   };
 };
