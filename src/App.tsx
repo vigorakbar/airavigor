@@ -2,7 +2,9 @@ import s from './App.module.scss';
 // import { CardMainContent } from './components/CardMainContent/CardMainContent';
 import { EnvelopeSection } from './components/Envelope/EnvelopeSection';
 import { MainHeader } from './components/MainHeader/MainHeader';
+import { Separator } from './components/Separator/Separator';
 import { BrideAndGroom } from './components/contents/BrideAndGroom/BrideAndGroom';
+import { CountDown } from './components/contents/Countdown/Countdown';
 import { Gifts } from './components/contents/Gifts/Gifts';
 import { OurStory } from './components/contents/OurStory/OurStory';
 import { TableTransition } from './components/contents/TableTransition/TableTransition';
@@ -31,8 +33,11 @@ const App: React.FC = () => {
             className={cx(!mainHeaderFinished && s.hideContent)}
           >
             <Verse />
-            <BrideAndGroom />
+            <BrideAndGroom name="aira" />
+            <Separator>&</Separator>
+            <BrideAndGroom name="vigor" />
             <OurStory />
+            <CountDown />
             <TableTransition />
             <Gifts />
             <Wishes />

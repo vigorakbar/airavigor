@@ -13,9 +13,16 @@ export const OpeningInvitation: React.FC = () => {
       <div className={s.frameContainer}>
         <FrameBase>
           <div
-            style={{ width: '100%', height: '100%', background: 'pink' }} // TODO:
+            style={{
+              width: '100%',
+              height: '100%',
+              background: 'pink',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }} // TODO:
           >
-            FOTO
+            <span>FOTO</span>
           </div>
         </FrameBase>
       </div>
