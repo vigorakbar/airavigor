@@ -20,18 +20,6 @@
   padding-top: 37px;
 }
 
-.openInvitation {
-  background-color: #fcddd8;
-  border-radius: 20px;
-  padding: 6px 16px;
-  margin-top: 6px;
-  cursor: pointer;
-  transition: transform 0.1s ease;
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-
 .cloud {
   position: absolute;
   height: 163px;

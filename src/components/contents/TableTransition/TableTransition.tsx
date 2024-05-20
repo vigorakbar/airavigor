@@ -1,10 +1,12 @@
 import s from './TableTransition.module.scss';
 import { RSVP } from './components/RSVP/RSVP';
+import { SubProgressBar } from './components/SubProgressBar/SubProgressBar';
 import { TimeAndVenue } from './components/TimeAndVenue/TimeAndVenue';
 import { useTableItemsStyle } from './hooks';
 
 export const TableTransition = () => {
-  const { tableStyle, scrollAreaRef } = useTableItemsStyle();
+  const { tableStyle, scrollAreaRef, progressBar1Ref, progressBar2Ref } =
+    useTableItemsStyle();
 
   return (
     <div className={s.scrollArea} ref={scrollAreaRef}>
@@ -16,6 +18,7 @@ export const TableTransition = () => {
               left: '50vw',
             }}
           >
+            <SubProgressBar ref={progressBar1Ref} />
             <TimeAndVenue />
           </div>
           <div
@@ -25,6 +28,7 @@ export const TableTransition = () => {
               top: '50vh',
             }}
           >
+            <SubProgressBar ref={progressBar2Ref} />
             <RSVP />
           </div>
         </div>

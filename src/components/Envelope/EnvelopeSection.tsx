@@ -3,6 +3,7 @@ import Cloud1 from '../../assets/cloud1.svg?react';
 import Cloud2 from '../../assets/cloud2.svg?react';
 import Cloud3 from '../../assets/cloud3.svg?react';
 import Cloud4 from '../../assets/cloud4.svg?react';
+import { Button } from '../Button/Button';
 import { MainCardProps } from '../MainHeader/components/MainCard/MainCard';
 import s from './EnvelopeSection.module.scss';
 import { Envelope } from './components/Envelope';
@@ -82,9 +83,7 @@ export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
       />
       <div className={s.guestNameContainer}>
         <div>Dear, XXXX</div>
-        <div onClick={onClickEnvelope} className={s.openInvitation}>
-          Open Invitation
-        </div>
+        <Button onClick={onClickEnvelope}>Open Invitation</Button>
       </div>
       <Cloud1 className={cx(s.cloud, s.cloud1)} />
       <Cloud2 className={cx(s.cloud, s.cloud2)} />
