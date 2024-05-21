@@ -1,5 +1,5 @@
-import { ASTON_GMAPS_LINK } from '../../../../../constants';
-import { Button } from '../../../../Button/Button';
+import { ASTON_GMAPS_LINK } from '../../../constants';
+import { Button } from '../../Button/Button';
 import s from './TimeAndVenue.module.scss';
 
 export const TimeAndVenue = () => {
