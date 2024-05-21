@@ -7,8 +7,9 @@ import { BrideAndGroom } from './components/contents/BrideAndGroom/BrideAndGroom
 import { CountDown } from './components/contents/Countdown/Countdown';
 import { Gifts } from './components/contents/Gifts/Gifts';
 import { OurStory } from './components/contents/OurStory/OurStory';
-import { TableTransition } from './components/contents/TableTransition/TableTransition';
+import { RSVP } from './components/contents/RSVP/RSVP';
 import { Thanks } from './components/contents/Thanks/Thanks';
+import { TimeAndVenue } from './components/contents/TimeAndVenue/TimeAndVenue';
 import { Verse } from './components/contents/Verse/Verse';
 import { Wishes } from './components/contents/Wishes/Wishes';
 import cx from 'classnames';
@@ -38,7 +39,8 @@ const App: React.FC = () => {
             <BrideAndGroom name="vigor" />
             <OurStory />
             <CountDown />
-            <TableTransition />
+            <TimeAndVenue />
+            <RSVP />
             <Gifts />
             <Wishes />
             <Thanks />
