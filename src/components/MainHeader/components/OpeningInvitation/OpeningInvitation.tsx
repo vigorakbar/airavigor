@@ -5,8 +5,14 @@ import React from 'react';
 
 export const OpeningInvitation: React.FC = () => {
   return (
-    <div className={s.openingInvitation}>
-      <NameText className={s.initial}>
+    <div
+      className={s.openingInvitation}
+      data-aos="fade"
+      data-aos-anchor-placement="top-top"
+      data-aos-offset="-100"
+    >
+      <div className={s.bg} data-aos="fade" />
+      <NameText className={s.initial} data-aos="fade" data-aos-delay="300">
         <span>A</span>
         <span>V</span>
       </NameText>

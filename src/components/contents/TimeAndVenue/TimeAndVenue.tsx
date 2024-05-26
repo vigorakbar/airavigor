@@ -1,10 +1,12 @@
 import { ASTON_GMAPS_LINK } from '../../../constants';
 import { Button } from '../../Button/Button';
+import { Title } from '../../Title/Title';
 import s from './TimeAndVenue.module.scss';
 
 export const TimeAndVenue = () => {
   return (
     <div className={s.container}>
+      <Title>Wedding Day</Title>
       <div>
         <div>Sabtu</div>
         <div>14</div>

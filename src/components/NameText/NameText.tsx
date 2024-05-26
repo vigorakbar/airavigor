@@ -13,9 +13,13 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export const NameText: React.FC<Props> = ({ className, children }) => {
+export const NameText: React.FC<Props> = ({
+  className,
+  children,
+  ...props
+}) => {
   return (
-    <div className={cx(s.nameText, className)}>
+    <div className={cx(s.nameText, className)} {...props}>
       {/* {initial ? (
         <>
           <span className={cx(initialClassNames?.a)}>A</span>

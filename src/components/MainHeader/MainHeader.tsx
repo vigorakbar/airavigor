@@ -3,6 +3,7 @@ import { debounce } from '../../utils/debounce';
 import s from './MainHeader.module.scss';
 import { MainCard } from './components/MainCard/MainCard';
 import { OpeningInvitation } from './components/OpeningInvitation/OpeningInvitation';
+import Aos from 'aos';
 import { useEffect } from 'react';
 
 export const MainHeader = ({
@@ -22,6 +23,10 @@ export const MainHeader = ({
       debouncedFinished(false);
     }
   }, [progress, debouncedFinished, mainHeaderFinished]);
+
+  useEffect(() => {
+    Aos.refresh();
+  }, [mainHeaderFinished]);
 
   return (
     <div className={s.scrollArea} ref={scrollAreaRef}>

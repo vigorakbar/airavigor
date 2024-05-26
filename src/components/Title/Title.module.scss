@@ -1,5 +1,6 @@
 @use '../../styles/variables' as v;
 
-.nameText {
+.title {
   font-family: v.$title-font;
+  margin-bottom: 40px;
 }

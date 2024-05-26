@@ -12,12 +12,18 @@ import { Thanks } from './components/contents/Thanks/Thanks';
 import { TimeAndVenue } from './components/contents/TimeAndVenue/TimeAndVenue';
 import { Verse } from './components/contents/Verse/Verse';
 import { Wishes } from './components/contents/Wishes/Wishes';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import cx from 'classnames';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const App: React.FC = () => {
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
   const [mainHeaderFinished, setMainHeaderFinished] = useState(false);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const contentRef = useRef<HTMLDivElement>(null);
 
