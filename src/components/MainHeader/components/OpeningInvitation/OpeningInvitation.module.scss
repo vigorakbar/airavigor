@@ -1,3 +1,13 @@
+%backdrop {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(246, 221, 166, 0.2);
+}
+
 .openingInvitation {
   position: absolute;
   bottom: 0;
@@ -9,13 +19,7 @@
   background-size: 100% auto;
   background-repeat: repeat;
   &::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(246, 221, 166, 0.2);
+    @extend %backdrop;
   }
 
   .initial {
@@ -59,12 +63,6 @@
   top: -100%;
   left: 0;
   &::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(246, 221, 166, 0.2);
+    @extend %backdrop;
   }
 }
