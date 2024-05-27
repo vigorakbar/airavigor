@@ -1,11 +1,12 @@
 import { ASTON_GMAPS_LINK } from '../../../constants';
 import { Button } from '../../Button/Button';
+import { SectionContainer } from '../../SectionContainer/SectionContainer';
 import { Title } from '../../Title/Title';
 import s from './TimeAndVenue.module.scss';
 
 export const TimeAndVenue = () => {
   return (
-    <div className={s.container}>
+    <SectionContainer className={s.container}>
       <Title>Wedding Day</Title>
       <div>
         <div>Sabtu</div>
@@ -38,6 +39,6 @@ export const TimeAndVenue = () => {
           View Maps
         </Button>
       </div>
-    </div>
+    </SectionContainer>
   );
 };

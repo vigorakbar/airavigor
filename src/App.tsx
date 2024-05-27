@@ -10,7 +10,7 @@ import { OurStory } from './components/contents/OurStory/OurStory';
 import { RSVP } from './components/contents/RSVP/RSVP';
 import { Thanks } from './components/contents/Thanks/Thanks';
 import { TimeAndVenue } from './components/contents/TimeAndVenue/TimeAndVenue';
-import { Verse } from './components/contents/Verse/Verse';
+import { Verse1, Verse2 } from './components/contents/Verse/Verse';
 import { Wishes } from './components/contents/Wishes/Wishes';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -39,15 +39,16 @@ const App: React.FC = () => {
             ref={contentRef}
             className={cx(!mainHeaderFinished && s.hideContent)}
           >
-            <Verse />
+            <Verse1 />
             <BrideAndGroom name="aira" />
             <Separator>&</Separator>
             <BrideAndGroom name="vigor" />
+            <Verse2 />
             <OurStory />
             <CountDown />
             <TimeAndVenue />
-            <RSVP />
             <Gifts />
+            <RSVP />
             <Wishes />
             <Thanks />
           </div>

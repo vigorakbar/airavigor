@@ -7,6 +7,7 @@ import {
   WEDDING_DATE_TIMESTAMP,
 } from '../../../constants';
 import { Button } from '../../Button/Button';
+import { SectionContainer } from '../../SectionContainer/SectionContainer';
 import { Title } from '../../Title/Title';
 import s from './Countdown.module.scss';
 import React, { useEffect, useState } from 'react';
@@ -34,7 +35,7 @@ export const CountDown: React.FC = () => {
   const seconds = Math.floor((diff % MINUTE_IN_MS) / SECOND_IN_MS);
 
   return (
-    <div className={s.container}>
+    <SectionContainer>
       <Title>Countdown</Title>
       <div className={s.gridContainer}>
         <div className={s.countDownGrid}>
@@ -65,6 +66,6 @@ export const CountDown: React.FC = () => {
           Save the Date
         </Button>
       </div>
-    </div>
+    </SectionContainer>
   );
 };

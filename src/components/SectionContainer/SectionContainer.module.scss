@@ -1,0 +1,7 @@
+.container {
+  margin: 64px 0;
+
+  &:last-child {
+    margin: 0;
+  }
+}

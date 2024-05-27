@@ -1,39 +1,52 @@
+import { SectionContainer } from '../../SectionContainer/SectionContainer';
 import s from './OurStory.module.scss';
 
-export const OurStory = () => (
-  <div className={s.container}>
-    <p>
-      From our first meeting in middle school to reuniting in Singapore, our
-      love story has been a journey filled with meaning and depth. Despite
-      drifting apart during high school, fate brought us back together. After
-      years of sporadic encounters, our last reunion became a turning point in
-      our lives. We reconnected and forged a deeper bond.
-    </p>
-    <p>
-      2010 - Our Journey Begins: <br />
-      It all started in 2010 when we first crossed paths during our junior high
-      school days as we went to the same school. We then shared a special
-      friendship that laid the foundation for something more.{' '}
-    </p>
-    <p>
-      2013 - The Distance: <br />
-      We drifted apart during high school days as Vigor moved to another city.
-      Although we weren't as close as before, we still managed to keep in touch,
-      meeting occasionally over the years.
-    </p>
-    <p>
-      2023 - Rekindling the Flame: <br />
-      Fast forward to 2023, a decade after our paths diverged. A chance meeting
-      reunited us. Fate intervened as we met again, this time in the midst of
-      the city's grand array, we rediscovered the connection we once had.
-      Something magical sparked between us once again. Though we grew apart, the
-      memories of those early years never faded.
-    </p>
-    <p>
-      2024 - Sealing Our Fate and Sailing: <br />
-      Now, after months of nurturing our rekindled connection, we stand here
-      ready to embark on the next chapter of our journey together, creating a
-      love story that transcends time and distance.
-    </p>
-  </div>
-);
+const stories = [
+  {
+    year: '2010',
+    title: 'Our Journey Begin',
+    story: `It all started when we first crossed paths during our junior high
+  school days at the same school. We shared a special friendship that
+  laid the foundation for something more.`,
+  },
+  {
+    year: '2013',
+    title: 'The Distance',
+    story: `During high school, life took us on different paths, and we drifted
+    apart. Although we weren't as close as before, we still met
+    occasionally over the years.`,
+  },
+  {
+    year: '2023',
+    title: 'Rekindling the Flame',
+    story: `Fast forward a decade later. A chance meeting reunited us. Fate
+    intervened, and we met again. This time, in the bustling and vibrant
+    cityscape, we rediscovered the connection we once had. Something
+    magical sparked between us once again. The memories of our early years
+    never faded.`,
+  },
+  {
+    year: '2024',
+    title: 'Sealing Our Fate and Sailing',
+    story: `Now, after months of nurturing our rekindled connection, we stand here
+    ready to embark on the next chapter of our journey together, creating
+    a love story that transcends time and distance.`,
+  },
+];
+
+export const OurStory = () => {
+  return (
+    <SectionContainer className={s.container}>
+      <h1 className={s.title}>Our Story: A Journey Through Time</h1>
+      {stories.map(({ year, title, story }) => (
+        <div className={s.storyContainer}>
+          <div className={s.storyTitle}>{year}</div>
+          <div className={s.storyWrapper}>
+            <h3 className={s.storyTitle}>{title}</h3>
+            <p className={s.story}>{story}</p>
+          </div>
+        </div>
+      ))}
+    </SectionContainer>
+  );
+};

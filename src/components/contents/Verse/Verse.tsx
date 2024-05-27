@@ -1,15 +1,21 @@
 import s from './Verse.module.scss';
 import React from 'react';
 
-export const Verse: React.FC = () => {
+export const Verse1: React.FC = () => {
   return (
     <div className={s.container}>
       <p>Assalamualaikum warahmatullahi wabarakatuh</p>
       <p>
         Dengan nama Allah Yang Maha Pengasih, Yang Maha Penyayang, Dengan rahmat
-        dan ridha-Nya, Kami mengundang Bapak / Ibu dalam pernikahan Aira dan
-        Vigor
+        dan ridha-Nya, Kami mengundang Bapak / Ibu dalam pernikahan Kami
       </p>
+    </div>
+  );
+};
+
+export const Verse2: React.FC = () => {
+  return (
+    <div className={s.container}>
       <p>
         'Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
         pasangan hidup dari jenismu sendiri, supaya kamu mendapat ketenangan

@@ -1,8 +1,9 @@
+import { SectionContainer } from '../../SectionContainer/SectionContainer';
 import { Title } from '../../Title/Title';
 import s from './RSVP.module.scss';
 
 export const RSVP = () => (
-  <div className={s.container}>
+  <SectionContainer className={s.container}>
     <Title>Reservation</Title>
-  </div>
+  </SectionContainer>
 );
