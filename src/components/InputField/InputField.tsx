@@ -1,3 +1,4 @@
+import { ErrorField } from '../ErrorField/ErrorField';
 import { FormLabel } from '../FormLabel/FormLabel';
 import s from './InputField.module.scss';
 import classNames from 'classnames';
@@ -16,7 +17,7 @@ export const InputField = forwardRef<HTMLInputElement, Props>(
       <div className={classNames(s.container, containerClassName)}>
         {inputLabel && <FormLabel htmlFor={inputId}>{inputLabel}</FormLabel>}
         <input ref={ref} className={s.input} {...props} id={inputId} />
-        {errorMsg && <div className={s.errMsg}>{errorMsg}</div>}
+        {errorMsg && <ErrorField>{errorMsg}</ErrorField>}
       </div>
     );
   },

@@ -1,14 +1,12 @@
 @use '../../../styles/variables' as v;
 
-$gift-highlight-color: #a66087;
-
 .container {
   width: 100%;
   min-height: 100vh;
   padding: 0 16px;
 
   .giftButton {
-    background-color: $gift-highlight-color;
+    background-color: v.$highlight-color;
     color: white;
     font-size: 18px;
     padding: 8px 24px;
@@ -17,8 +15,8 @@ $gift-highlight-color: #a66087;
   .giftInput {
     &:focus,
     &:active {
-      border-color: $gift-highlight-color;
-      outline: $gift-highlight-color;
+      border-color: v.$highlight-color;
+      outline: v.$highlight-color;
     }
   }
 }

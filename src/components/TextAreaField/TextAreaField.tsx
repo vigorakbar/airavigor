@@ -1,3 +1,4 @@
+import { ErrorField } from '../ErrorField/ErrorField';
 import { FormLabel } from '../FormLabel/FormLabel';
 import s from './TextAreaField.module.scss';
 import classNames from 'classnames';
@@ -16,7 +17,7 @@ export const TextAreaField = forwardRef<HTMLTextAreaElement, Props>(
       <div className={classNames(s.container, containerClassName)}>
         {inputLabel && <FormLabel htmlFor={inputId}>{inputLabel}</FormLabel>}
         <textarea {...props} ref={ref} rows={4} id={inputId} />
-        {errorMsg && <div>{errorMsg}</div>}
+        {errorMsg && <ErrorField>{errorMsg}</ErrorField>}
       </div>
     );
   },
