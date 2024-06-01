@@ -1,9 +1,26 @@
 @use '../../../styles/variables' as v;
 
+$gift-highlight-color: #a66087;
+
 .container {
   width: 100%;
   min-height: 100vh;
   padding: 0 16px;
+
+  .giftButton {
+    background-color: $gift-highlight-color;
+    color: white;
+    font-size: 18px;
+    padding: 8px 24px;
+  }
+
+  .giftInput {
+    &:focus,
+    &:active {
+      border-color: $gift-highlight-color;
+      outline: $gift-highlight-color;
+    }
+  }
 }
 
 .wrapper {
@@ -20,7 +37,7 @@
 }
 
 .desc {
-  font-family: v.$text-serif;
+  font-family: v.$text-serif-font;
   margin-bottom: 20px;
 }
 
@@ -36,12 +53,28 @@
   padding: 12px 32px;
   background-color: #fcf8f1;
   margin-bottom: 4px;
-  font-family: v.$text-serif;
+  font-family: v.$text-serif-font;
 }
 
 .accountTitle {
-  font-family: v.$text-serif;
+  font-family: v.$text-serif-font;
   font-size: 28px;
   font-weight: bold;
   color: #991b61;
+}
+
+.giftForm {
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px;
+}
+
+.inputContainer {
+  margin-bottom: 8px;
+}
+
+.buttonContainer {
+  margin-top: 8px;
+  justify-content: center;
+  display: flex;
 }

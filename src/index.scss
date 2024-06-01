@@ -65,3 +65,24 @@ body {
   font-size: 21px;
   font-family: v.$text-font;
 }
+
+input,
+textarea {
+  background: transparent;
+  color: v.$text-color;
+  padding: 10px 6px;
+  border: 2px solid white;
+  border-radius: 12px;
+  font-size: 18px;
+  font-family: v.$text-font;
+  resize: none;
+
+  &:focus,
+  &:active {
+    border-color: v.$field-color;
+    outline: v.$field-color;
+  }
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}

@@ -38,8 +38,8 @@ export const OurStory = () => {
   return (
     <SectionContainer className={s.container}>
       <h1 className={s.title}>Our Story: A Journey Through Time</h1>
-      {stories.map(({ year, title, story }) => (
-        <div className={s.storyContainer}>
+      {stories.map(({ year, title, story }, i) => (
+        <div className={s.storyContainer} key={i}>
           <div className={s.storyTitle}>{year}</div>
           <div className={s.storyWrapper}>
             <h3 className={s.storyTitle}>{title}</h3>

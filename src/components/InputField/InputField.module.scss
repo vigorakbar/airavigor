@@ -1,0 +1,13 @@
+@use '../../styles/variables.scss' as v;
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.errMsg {
+  color: #a85353;
+  font-size: 16px;
+  align-self: flex-start;
+  margin-top: 4px;
+  margin-left: 4px;
+}

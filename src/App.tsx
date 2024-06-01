@@ -16,6 +16,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import cx from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 const App: React.FC = () => {
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
@@ -28,7 +29,7 @@ const App: React.FC = () => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <>
+    <div>
       {envelopeOpened ? (
         <div className={s.container}>
           <MainHeader
@@ -56,7 +57,8 @@ const App: React.FC = () => {
       ) : (
         <EnvelopeSection setEnvelopeOpened={setEnvelopeOpened} />
       )}
-    </>
+      <Toaster />
+    </div>
   );
 };
 

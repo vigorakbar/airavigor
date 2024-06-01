@@ -1,0 +1,6 @@
+@use '../../styles/variables' as v;
+
+.label {
+  align-self: flex-start;
+  font-family: v.$text-serif-font;
+}
