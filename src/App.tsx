@@ -26,6 +26,18 @@ const App: React.FC = () => {
     AOS.init();
   }, []);
 
+  useEffect(() => {
+    if (!envelopeOpened) {
+      document.body.style.height = '100%';
+      document.body.style.position = 'fixed';
+      document.body.style.overflowY = 'scroll';
+    } else {
+      document.body.style.height = 'initial';
+      document.body.style.position = 'initial';
+      document.body.style.overflow = 'initial';
+    }
+  }, [envelopeOpened]);
+
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
