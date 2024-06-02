@@ -1,4 +1,8 @@
 @use '../../../styles/variables' as v;
+
+$body-font-size: clamp(16px, 4.3vw, 25px);
+$frame-min-width: 420px;
+
 .container {
   width: 100vw;
   min-height: 100vh;
@@ -28,9 +32,10 @@
 
   .desc {
     font-size: 3.7vw;
+    font-size: $body-font-size;
     font-family: v.$text-serif-font;
     padding: 0 10vw;
-    margin-bottom: 2.7vw;
+    margin-bottom: 3.5vw;
   }
 
   .form {
@@ -38,15 +43,17 @@
     input,
     select {
       font-size: 3.6vw;
+      font-size: $body-font-size;
       padding-top: 6px;
       padding-bottom: 6px;
-      margin-bottom: 1.6vw;
+      margin-bottom: 2.6vw;
       border-radius: 8px;
       background-color: #fcf8f1;
       border-color: #fcf8f1;
     }
     button {
       font-size: 3.6vw;
+      font-size: $body-font-size;
     }
   }
 }
@@ -56,8 +63,9 @@
   width: 100%;
   top: 0;
   left: 0;
-  min-height: 525px;
-  min-width: 375px;
+  left: min(calc((100vw - $frame-min-width) / 2), 0vw);
+  min-height: 543px;
+  min-width: $frame-min-width;
 }
 
 .buttonContainer {
@@ -82,25 +90,28 @@
 }
 
 @media screen and (max-width: 374px) {
-  .frame {
-    left: calc((100vw - 375px) / 2);
-  }
-
   .frameContent {
     .title {
       font-size: 7vw;
     }
     .desc {
-      font-size: 13px;
       padding: 0 8vw;
     }
 
     .form {
       input,
       select {
-        font-size: 13px;
+        font-size: 16px;
+        font-size: $body-font-size;
       }
     }
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .frame {
+    min-width: clamp(0px, 112vw, 660px);
+    left: clamp(-6vw, calc((100vw - 660px) / 2), 0vw);
   }
 }
 
