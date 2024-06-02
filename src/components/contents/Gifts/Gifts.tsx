@@ -5,9 +5,10 @@ import { SectionContainer } from '../../SectionContainer/SectionContainer';
 import { TextAreaField } from '../../TextAreaField/TextAreaField';
 import { Title } from '../../Title/Title';
 import s from './Gifts.module.scss';
-import React, { useState } from 'react';
+import debounce from 'lodash.debounce';
+import React, { useCallback, useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
+import toast, { useToasterStore } from 'react-hot-toast';
 
 type GiftInput = {
   name: string;
@@ -36,12 +37,28 @@ export const Gifts: React.FC = () => {
     formState: { errors },
   } = useForm<GiftInput>();
 
+  const { toasts } = useToasterStore();
+  useEffect(() => {
+    toasts
+      .filter(t => t.visible)
+      .filter((_, i) => i > 0)
+      .forEach(t => toast.dismiss(t.id));
+  }, [toasts]);
+
   const [submitting, setSubmitting] = useState(false);
 
-  const onCopy = (account: string) => {
-    toast.success('Nomor rekening berhasil disalin');
-    copyTextToClipboard(account);
-  };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const onCopy = useCallback(
+    debounce(
+      (account: string) => {
+        toast.success('Nomor rekening berhasil disalin');
+        copyTextToClipboard(account);
+      },
+      350,
+      { leading: true, maxWait: 350 },
+    ),
+    [],
+  );
 
   const onSubmitGift: SubmitHandler<GiftInput> = async data => {
     setSubmitting(true);

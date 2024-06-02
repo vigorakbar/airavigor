@@ -1,9 +1,9 @@
 import { useScrollAreaProgress } from '../../hooks/useScrollProgress';
-import { debounce } from '../../utils/debounce';
 import s from './MainHeader.module.scss';
 import { MainCard } from './components/MainCard/MainCard';
 import { OpeningInvitation } from './components/OpeningInvitation/OpeningInvitation';
 import Aos from 'aos';
+import debounce from 'lodash.debounce';
 import { useEffect } from 'react';
 
 export const MainHeader = ({
