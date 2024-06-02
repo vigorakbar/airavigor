@@ -79,7 +79,10 @@ export const RSVP = () => {
             persiapan acara dan memastikan tempat dengan mengisi form di bawah
             ini
           </p>
-          <form onSubmit={handleSubmit(onSubmitRsvp, onInvalidRsvp)}>
+          <form
+            className={s.form}
+            onSubmit={handleSubmit(onSubmitRsvp, onInvalidRsvp)}
+          >
             <InputField
               {...register('name', { required: true })}
               placeholder="Nama"

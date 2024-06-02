@@ -12,12 +12,13 @@
   margin: 0 auto;
   flex: 1;
   width: 100%;
+  overflow: hidden;
 }
 
 .frameContent {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  top: 20vw;
+  margin-top: 20vw;
 
   .title {
     position: relative;
@@ -26,16 +27,37 @@
   }
 
   .desc {
-    font-size: 3.6vw;
-    padding: 0 9vw;
+    font-size: 3.7vw;
+    font-family: v.$text-serif-font;
+    padding: 0 10vw;
+    margin-bottom: 2.7vw;
+  }
+
+  .form {
+    padding: 0 11vw;
+    input,
+    select {
+      font-size: 3.6vw;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      margin-bottom: 1.6vw;
+      border-radius: 8px;
+      background-color: #fcf8f1;
+      border-color: #fcf8f1;
+    }
+    button {
+      font-size: 3.6vw;
+    }
   }
 }
 
 .frame {
-  position: absolute;
+  position: relative;
   width: 100%;
   top: 0;
   left: 0;
+  min-height: 525px;
+  min-width: 375px;
 }
 
 .buttonContainer {
@@ -49,4 +71,63 @@
   color: white;
   font-size: 18px;
   padding: 8px 24px;
+}
+
+@media screen and (max-width: 340px) {
+  .frameContent {
+    .form {
+      padding: 0 6.5vw;
+    }
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .frame {
+    left: calc((100vw - 375px) / 2);
+  }
+
+  .frameContent {
+    .title {
+      font-size: 7vw;
+    }
+    .desc {
+      font-size: 13px;
+      padding: 0 8vw;
+    }
+
+    .form {
+      input,
+      select {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 660px) {
+  .frameContent {
+    margin-top: 132px;
+    .title {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+    .desc {
+      font-size: 25px;
+      padding: 0 66px;
+      margin-bottom: 18px;
+    }
+
+    .form {
+      padding: 0 72px;
+      input,
+      select {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+
+      button {
+        font-size: 24px;
+      }
+    }
+  }
 }

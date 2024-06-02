@@ -57,7 +57,7 @@ const App: React.FC = () => {
       ) : (
         <EnvelopeSection setEnvelopeOpened={setEnvelopeOpened} />
       )}
-      <Toaster />
+      <Toaster containerStyle={{ fontSize: 16 }} />
     </div>
   );
 };
