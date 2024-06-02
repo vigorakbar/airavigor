@@ -5,8 +5,14 @@ import { SectionContainer } from '../../SectionContainer/SectionContainer';
 import { SelectField } from '../../SelectField/SelectField';
 import { Title } from '../../Title/Title';
 import s from './RSVP.module.scss';
+import classNames from 'classnames';
 import { useState } from 'react';
-import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
+import {
+  SubmitErrorHandler,
+  SubmitHandler,
+  useForm,
+  useWatch,
+} from 'react-hook-form';
 import toast from 'react-hot-toast';
 
 enum TotalEnum {
@@ -27,7 +33,11 @@ type RsvpForm = {
 };
 
 export const RSVP = () => {
-  const { register, handleSubmit, reset } = useForm<RsvpForm>();
+  const { register, handleSubmit, reset, control } = useForm<RsvpForm>();
+  const [attendance, total] = useWatch({
+    control,
+    name: ['attendance', 'total'],
+  });
   const [submitting, setSubmitting] = useState(false);
 
   const onSubmitRsvp: SubmitHandler<RsvpForm> = async data => {
@@ -103,6 +113,7 @@ export const RSVP = () => {
                 { label: '2', value: 2 },
               ]}
               containerClassName={s.inputContainer}
+              className={classNames(total ? s.filledSelect : s.emptySelect)}
             />
             <SelectField
               {...register('attendance', { required: true })}
@@ -112,6 +123,9 @@ export const RSVP = () => {
                 { label: 'Tidak Hadir', value: 0 },
               ]}
               containerClassName={s.inputContainer}
+              className={classNames(
+                attendance ? s.filledSelect : s.emptySelect,
+              )}
             />
             <div className={s.buttonContainer}>
               <Button

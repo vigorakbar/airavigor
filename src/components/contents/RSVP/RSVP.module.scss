@@ -56,6 +56,19 @@ $frame-min-width: 420px;
       font-size: $body-font-size;
     }
   }
+
+  .emptySelect {
+    color: rgba(0, 0, 0, 0.5);
+    option:not(:disabled) {
+      color: black;
+    }
+  }
+
+  .filledSelect {
+    option:not(:disabled) {
+      color: black;
+    }
+  }
 }
 
 .frame {
