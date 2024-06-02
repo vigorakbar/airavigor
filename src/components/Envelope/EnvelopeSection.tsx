@@ -71,24 +71,26 @@ export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
 
   return (
     <div className={s.envelopeSectionContainer}>
-      <EnvelopeMainTitle />
-      <Envelope
-        lidOpen={lidOpen}
-        onClickEnvelope={onClickEnvelope}
-        mainCardInit={mainCardInit}
-        backlidRef={backlidRef}
-        cardRef={cardRef}
-        containerRef={containerRef}
-        envelopeRef={envelopeRef}
-      />
-      <div className={s.guestNameContainer}>
-        <div>Dear, XXXX</div>
-        <Button onClick={onClickEnvelope}>Open Invitation</Button>
+      <div className={s.innerContainer}>
+        <EnvelopeMainTitle />
+        <Envelope
+          lidOpen={lidOpen}
+          onClickEnvelope={onClickEnvelope}
+          mainCardInit={mainCardInit}
+          backlidRef={backlidRef}
+          cardRef={cardRef}
+          containerRef={containerRef}
+          envelopeRef={envelopeRef}
+        />
+        <div className={s.guestNameContainer}>
+          <div>Dear, XXXX</div>
+          <Button onClick={onClickEnvelope}>Open Invitation</Button>
+        </div>
+        <Cloud1 className={cx(s.cloud, s.cloud1)} />
+        <Cloud2 className={cx(s.cloud, s.cloud2)} />
+        <Cloud3 className={cx(s.cloud, s.cloud3)} />
+        <Cloud4 className={cx(s.cloud, s.cloud4)} />
       </div>
-      <Cloud1 className={cx(s.cloud, s.cloud1)} />
-      <Cloud2 className={cx(s.cloud, s.cloud2)} />
-      <Cloud3 className={cx(s.cloud, s.cloud3)} />
-      <Cloud4 className={cx(s.cloud, s.cloud4)} />
     </div>
   );
 };

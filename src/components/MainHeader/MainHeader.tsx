@@ -31,7 +31,9 @@ export const MainHeader = ({
   return (
     <div className={s.scrollArea} ref={scrollAreaRef}>
       <div className={s.mainHeaderContainer}>
-        <MainCard progress={progress} />
+        <div className={s.innerContainer}>
+          <MainCard progress={progress} />
+        </div>
       </div>
       {mainHeaderFinished && <OpeningInvitation />}
     </div>
