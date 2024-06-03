@@ -2,8 +2,7 @@
 
 .container {
   width: 100%;
-  min-height: 100vh;
-  padding: 0 16px;
+  padding: 0 8px;
 
   .giftButton {
     background-color: v.$highlight-color;
@@ -31,7 +30,7 @@
 .title {
   font-size: 28px;
   margin-top: 16px;
-  color: #991b61;
+  color: v.$highlight-title-color;
 }
 
 .desc {
@@ -58,7 +57,7 @@
   font-family: v.$text-serif-font;
   font-size: 28px;
   font-weight: bold;
-  color: #991b61;
+  color: v.$highlight-title-color;
 }
 
 .giftForm {

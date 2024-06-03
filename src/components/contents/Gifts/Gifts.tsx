@@ -100,30 +100,32 @@ export const Gifts: React.FC = () => {
         </div>
         <form className={s.giftForm} onSubmit={handleSubmit(onSubmitGift)}>
           <InputField
-            {...register('name', { required: true })}
-            placeholder="Your Name"
+            {...register('name', { required: 'Mohon isi nama anda' })}
+            placeholder="Nama Anda"
             className={s.giftInput}
             containerClassName={s.inputContainer}
             inputId="gift-name"
-            inputLabel="Name:"
-            errorMsg={errors.name && 'This field is required'}
+            inputLabel="Nama:"
+            errorMsg={errors.name?.message}
           />
           <InputField
-            {...register('accountName', { required: true })}
-            placeholder="Your Account Name"
+            {...register('accountName', {
+              required: 'Mohon isi nama rekening pengirim',
+            })}
+            placeholder="Nama di Rekening Bank"
             className={s.giftInput}
             containerClassName={s.inputContainer}
             inputId="gift-account-name"
-            inputLabel="Account Owner Name:"
-            errorMsg={errors.accountName && 'This field is required'}
+            inputLabel="Nama Rekening Pengirim:"
+            errorMsg={errors.accountName?.message}
           />
           <TextAreaField
             {...register('notes')}
             className={s.giftInput}
-            placeholder="Leave a message / notes"
+            placeholder="Tinggalkan pesan / catatan"
             containerClassName={s.inputContainer}
             inputId="gift-notes"
-            inputLabel="Message / Add Notes:"
+            inputLabel="Pesan / Beri Catatan:"
           />
           <div className={s.buttonContainer}>
             <Button
@@ -131,7 +133,7 @@ export const Gifts: React.FC = () => {
               type="submit"
               disabled={submitting}
             >
-              Send Confirmation
+              Kirim Konfirmasi
             </Button>
           </div>
         </form>

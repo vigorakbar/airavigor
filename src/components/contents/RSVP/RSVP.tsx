@@ -96,14 +96,10 @@ export const RSVP = () => {
             <InputField
               {...register('name', { required: true })}
               placeholder="Nama"
-              className={s.rsvpInput}
-              containerClassName={s.inputContainer}
             />
             <InputField
               {...register('phone', { required: true })}
               placeholder="Nomor HP"
-              className={s.rsvpInput}
-              containerClassName={s.inputContainer}
             />
             <SelectField
               {...register('total', { required: true })}
@@ -112,7 +108,6 @@ export const RSVP = () => {
                 { label: '1', value: 1 },
                 { label: '2', value: 2 },
               ]}
-              containerClassName={s.inputContainer}
               className={classNames(total ? s.filledSelect : s.emptySelect)}
             />
             <SelectField
@@ -122,7 +117,6 @@ export const RSVP = () => {
                 { label: 'Hadir', value: 1 },
                 { label: 'Tidak Hadir', value: 0 },
               ]}
-              containerClassName={s.inputContainer}
               className={classNames(
                 attendance ? s.filledSelect : s.emptySelect,
               )}
@@ -133,7 +127,7 @@ export const RSVP = () => {
                 type="submit"
                 disabled={submitting}
               >
-                Send Confirmation
+                Kirim Konfirmasi
               </Button>
             </div>
           </form>
