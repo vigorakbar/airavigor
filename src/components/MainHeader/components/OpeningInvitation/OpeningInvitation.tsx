@@ -1,3 +1,4 @@
+import airavigorlejour from '../../../../assets/images/airavigor-lejour.png';
 import { FrameBase } from '../../../Frame/FrameBase';
 import { NameText } from '../../../NameText/NameText';
 import s from './OpeningInvitation.module.scss';
@@ -33,7 +34,10 @@ export const OpeningInvitation: React.FC = () => {
         </FrameBase>
       </div>
       <div className={s.weInvite}>We invite you to the wedding of</div>
-      <NameText className={s.name}>Aira & Vigor</NameText>
+      {/* <NameText className={s.name}>Aira & Vigor</NameText> */}
+      <div style={{ position: 'relative' }}>
+        <img src={airavigorlejour} className={s.nameImg} />
+      </div>
       <div className={s.words}>
         With immense joy in our hearts, we invite you to witness and celebrate
         the next chapter of our love story as we embark on this journey

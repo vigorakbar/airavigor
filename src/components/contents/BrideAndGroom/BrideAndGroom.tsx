@@ -1,5 +1,9 @@
+import airalejour from '../../../assets/images/aira-lejour.png';
+import photoframe from '../../../assets/images/photoframe.png';
+import sample from '../../../assets/images/sample.png';
+import vigorlejour from '../../../assets/images/vigor-lejour.png';
 import { FrameBase } from '../../Frame/FrameBase';
-import { NameText } from '../../NameText/NameText';
+// import { NameText } from '../../NameText/NameText';
 import s from './BrideAndGroom.module.scss';
 import React from 'react';
 
@@ -13,20 +17,18 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => (
       {name === 'aira' ? 'The Bride and Groom' : ' '}
     </div>
     <FrameBase>
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          background: 'pink',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }} // TODO:
-      >
-        {name === 'aira' ? <span>FOTO AIRA</span> : <span>FOTO VIGOR</span>}
+      <img src={photoframe} className={s.photoframe} />
+      {/* TODO: use actual photo (dimension approx. 316 x 471 ) */}
+      <div className={s.photoWrapper}>
+        <img src={sample} className={s.photo} />
       </div>
     </FrameBase>
-    <NameText>{name === 'aira' ? 'Aira' : 'Vigor'}</NameText>
+    {/* <NameText>{name === 'aira' ? 'Aira' : 'Vigor'}</NameText> */}
+    {name === 'aira' ? (
+      <img src={airalejour} className={s.name} />
+    ) : (
+      <img src={vigorlejour} className={s.name} />
+    )}
     <div>{name === 'aira' ? 'Airadiba Hadad' : 'Vigor Akbar'}</div>
     <div>{name === 'aira' ? 'Putri' : 'Putra'} kedua dari</div>
     <div>
