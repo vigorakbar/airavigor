@@ -1,3 +1,10 @@
+@use '../../../styles/variables' as v;
+
+$frame-min-width: 460px;
+$frame-max-width: 660px;
+$common-margin-default: 5vw;
+$common-margin: #{clamp(18px, 5vw, 33px)};
+
 .container {
   width: 100%;
 }
@@ -6,4 +13,84 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: $common-margin-default;
+  margin-top: $common-margin;
+}
+
+.venueContainer {
+  position: relative;
+  max-width: $frame-max-width;
+  margin: 0 auto;
+  height: 140vw;
+  height: clamp(1.4 * $frame-min-width, 140vw, 924px);
+}
+
+.venueframeWrapper {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+
+  .venueframe {
+    position: relative;
+    width: 100%;
+    min-width: $frame-min-width;
+    left: min((100vw - $frame-min-width) / 2, 0vw);
+  }
+}
+
+.venueDetailWrapper {
+  position: relative;
+  z-index: 2;
+  font-size: 4vw;
+  font-size: clamp(0.04 * $frame-min-width, 4vw, 26.4px);
+  top: 20vw;
+  top: clamp(0.2 * $frame-min-width, 20vw, 132px);
+  height: 106vw;
+  height: clamp(1.06 * $frame-min-width, 106vw, 670px);
+  width: 60%;
+  width: clamp(0.6 * $frame-min-width, 60%, 396px);
+  margin: 0 auto;
+
+  .dateContainer {
+    font-size: 5.1vw;
+    font-size: clamp(0.05 * $frame-min-width, 5.1vw, 32px);
+    padding-top: 8px;
+  }
+
+  .separatorWrapper {
+    height: unset;
+    margin-bottom: 10px;
+    .separator {
+      border: none;
+      width: 75%;
+      height: 1px;
+      color: #333;
+      background-color: #333;
+      margin: 10px 0;
+    }
+  }
+
+  .timeSection {
+    margin-bottom: $common-margin-default;
+    margin-bottom: $common-margin;
+  }
+
+  .sectionHeader {
+    font-size: 5.3vw;
+    font-size: clamp(0.053 * $frame-min-width, 5.3vw, 35px);
+  }
+
+  .hotelVenue {
+    font-family: v.$text-serif-font;
+    font-size: 4.6vw;
+    font-size: clamp(0.046 * $frame-min-width, 4.6vw, 31px);
+  }
+
+  .address {
+    font-size: 3.4vw;
+    font-size: clamp(16px, 3.4vw, 24px);
+  }
 }

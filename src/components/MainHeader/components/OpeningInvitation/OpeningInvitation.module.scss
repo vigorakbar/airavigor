@@ -1,3 +1,5 @@
+@use '../../../../styles/variables' as v;
+
 %backdrop {
   content: '';
   width: 100%;
@@ -5,7 +7,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(246, 221, 166, 0.2);
+  background-color: v.$main-background-color;
 }
 
 .openingInvitation {
@@ -28,10 +30,16 @@
 
   .frameContainer {
     margin: 22px 0;
+
+    .frameWrapper {
+      width: 95%;
+      max-height: 545px;
+    }
   }
 
   .weInvite {
     font-size: 24px;
+    padding-top: 24px;
   }
 
   .name {
@@ -68,5 +76,31 @@
   left: 0;
   &::before {
     @extend %backdrop;
+  }
+}
+
+.frontframe {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 2;
+}
+
+.photoWrapper {
+  margin: 0 auto;
+  width: 87%;
+  position: relative;
+  height: 86%;
+  max-height: 442px;
+  top: 11%;
+  top: clamp(24px, 11%, 57px);
+  overflow: hidden;
+  border-radius: 36%;
+
+  .photo {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
   }
 }

@@ -1,3 +1,5 @@
+@use '../../../../styles/variables' as v;
+
 .cardContainer {
   position: relative;
   width: 300px;
@@ -70,5 +72,5 @@
 
 .backCard {
   position: relative;
-  background-color: rgba(246, 221, 166, 0.2);
+  background-color: v.$main-background-color;
 }

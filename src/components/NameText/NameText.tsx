@@ -20,15 +20,6 @@ export const NameText: React.FC<Props> = ({
 }) => {
   return (
     <div className={cx(s.nameText, className)} {...props}>
-      {/* {initial ? (
-        <>
-          <span className={cx(initialClassNames?.a)}>A</span>
-          <span className={cx(initialClassNames?.and)}>&</span>
-          <span className={cx(initialClassNames?.v)}>V</span>
-        </>
-      ) : (
-        'Aira & Vigor'
-      )} */}
       {children}
     </div>
   );

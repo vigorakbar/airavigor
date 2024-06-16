@@ -1,4 +1,6 @@
 import airavigorlejour from '../../../../assets/images/airavigor-lejour.png';
+import frontframe from '../../../../assets/images/frontframe.png';
+import sample from '../../../../assets/images/sample.png';
 import { FrameBase } from '../../../Frame/FrameBase';
 import { NameText } from '../../../NameText/NameText';
 import s from './OpeningInvitation.module.scss';
@@ -18,18 +20,11 @@ export const OpeningInvitation: React.FC = () => {
         <span>V</span>
       </NameText>
       <div className={s.frameContainer}>
-        <FrameBase>
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              background: 'pink',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }} // TODO:
-          >
-            <span>FOTO</span>
+        <FrameBase className={s.frameWrapper}>
+          <img src={frontframe} className={s.frontframe} />
+          {/* TODO: use actual photo (dimension approx. 316 x 471 ) */}
+          <div className={s.photoWrapper}>
+            <img src={sample} className={s.photo} />
           </div>
         </FrameBase>
       </div>
