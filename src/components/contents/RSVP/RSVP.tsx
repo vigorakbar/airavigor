@@ -1,3 +1,4 @@
+/// <reference types="vite-plugin-svgr/client" />
 import RsvpFrame from '../../../assets/images/rsvp-frame.svg?react';
 import { Button } from '../../Button/Button';
 import { InputField } from '../../InputField/InputField';
