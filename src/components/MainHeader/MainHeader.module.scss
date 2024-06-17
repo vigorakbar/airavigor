@@ -20,3 +20,33 @@
   position: relative;
   height: 200vh;
 }
+
+.scrollDownHint {
+  position: fixed;
+  bottom: 5vh;
+  opacity: 0;
+  font-size: 18px;
+  width: 100%;
+  transition: opacity 0.5s;
+
+  img {
+    height: 22px;
+    margin-top: 6px;
+    animation: moveUpDown 1.5s infinite;
+  }
+
+  &.showHint {
+    transition: opacity 0.5s 0.8s;
+    opacity: 1;
+  }
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
