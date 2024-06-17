@@ -8,6 +8,8 @@
   background-size: 100% auto;
   background-repeat: repeat;
   position: relative;
+  font-size: v.$content-font-size-default;
+  font-size: v.$content-font-size;
 
   & > * {
     background-color: v.$main-background-color;

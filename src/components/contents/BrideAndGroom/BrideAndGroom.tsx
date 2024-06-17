@@ -1,8 +1,9 @@
-import airalejour from '../../../assets/images/aira-lejour.png';
+import airalejour from '../../../assets/images/aira-halimun.png';
 import photoframe from '../../../assets/images/photoframe.png';
 import sample from '../../../assets/images/sample.png';
-import vigorlejour from '../../../assets/images/vigor-lejour.png';
+import vigorlejour from '../../../assets/images/vigor-halimun.png';
 import { FrameBase } from '../../Frame/FrameBase';
+import { Title } from '../../Title/Title';
 // import { NameText } from '../../NameText/NameText';
 import s from './BrideAndGroom.module.scss';
 import React from 'react';
@@ -14,7 +15,7 @@ type Props = {
 export const BrideAndGroom: React.FC<Props> = ({ name }) => (
   <div className={s.container}>
     <div className={s.title}>
-      {name === 'aira' ? 'The Bride and Groom' : ' '}
+      {name === 'aira' ? <Title>The Bride and Groom</Title> : ' '}
     </div>
     <FrameBase>
       <img src={photoframe} className={s.photoframe} />

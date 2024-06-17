@@ -93,7 +93,7 @@ export const Wishes = () => {
           {wishes.slice(0, maxViewWish).map(({ name, wishes, date }, i) => (
             <div className={s.wishesItem} key={i}>
               <div className={s.wishName}>{name}</div>
-              <div className={s.wishText}>{wishes}</div>
+              <div>{wishes}</div>
               <div className={s.wishDate}>
                 {new Intl.DateTimeFormat('en-GB', {
                   dateStyle: 'long',

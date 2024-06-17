@@ -50,7 +50,10 @@ const App: React.FC = () => {
           />
           <div
             ref={contentRef}
-            className={cx(!mainHeaderFinished && s.hideContent)}
+            className={cx(
+              !mainHeaderFinished && s.hideContent,
+              s.contentContainer,
+            )}
           >
             <Verse1 />
             <BrideAndGroom name="aira" />

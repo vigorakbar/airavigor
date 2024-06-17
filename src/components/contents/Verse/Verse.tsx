@@ -15,7 +15,7 @@ export const Verse1: React.FC = () => {
 
 export const Verse2: React.FC = () => {
   return (
-    <div className={s.container}>
+    <div className={s.container2}>
       <p>
         'Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
         pasangan hidup dari jenismu sendiri, supaya kamu mendapat ketenangan
