@@ -25,12 +25,12 @@
   position: fixed;
   bottom: 5vh;
   opacity: 0;
-  font-size: 18px;
+  font-size: 16px;
   width: 100%;
   transition: opacity 0.5s;
 
   img {
-    height: 22px;
+    height: 20px;
     margin-top: 6px;
     animation: moveUpDown 1.5s infinite;
   }

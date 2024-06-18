@@ -7,7 +7,6 @@
   .giftButton {
     background-color: v.$highlight-color;
     color: white;
-    font-size: 18px;
     padding: 8px 24px;
   }
 
@@ -28,7 +27,6 @@
   max-width: 660px;
 }
 .title {
-  font-size: 28px;
   margin-top: 16px;
   color: v.$highlight-title-color;
 }
@@ -55,7 +53,8 @@
 
 .accountTitle {
   font-family: v.$text-serif-font;
-  font-size: 28px;
+  font-size: v.$serif-title-font-size-default;
+  font-size: v.$serif-title-font-size;
   font-weight: bold;
   color: v.$highlight-title-color;
 }

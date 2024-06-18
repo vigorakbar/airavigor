@@ -25,7 +25,6 @@ $frame-min-width: 420px;
 
   .title {
     position: relative;
-    font-size: 6vw;
     margin-bottom: 4.5vw;
   }
 
@@ -64,13 +63,13 @@ $frame-min-width: 420px;
   .emptySelect {
     color: rgba(0, 0, 0, 0.5);
     option:not(:disabled) {
-      color: black;
+      color: v.$soft-black;
     }
   }
 
   .filledSelect {
     option:not(:disabled) {
-      color: black;
+      color: v.$soft-black;
     }
   }
 }

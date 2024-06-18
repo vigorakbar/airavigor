@@ -41,7 +41,8 @@
   }
 
   .weInvite {
-    font-size: 24px;
+    font-size: 6.4vw;
+    font-size: clamp(20px, 6.4vw, 28px);
     padding-top: 24px;
   }
 
@@ -62,7 +63,8 @@
 }
 
 .nameImg {
-  height: 72px;
+  height: 18.7vw;
+  height: clamp(59px, 18.7vw, 80px);
 }
 
 .bg {

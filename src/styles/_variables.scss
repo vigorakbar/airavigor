@@ -3,6 +3,7 @@ $field-color: #fcddd8;
 $highlight-color: #a66087;
 $highlight-title-color: #991b61;
 $main-background-color: rgba(246, 221, 166, 0.2);
+$soft-black: #333333;
 
 $title-font: LeJourScript;
 $countdown-font: 'Alex Brush', cursive;
@@ -12,5 +13,9 @@ $text-serif-font: 'Times New Roman', Times, Cambria, Cochin, Georgia, serif;
 
 $content-font-size-default: 4.2vw;
 $content-font-size: #{clamp(13px, 4.2vw, 20px)};
+$title-font-size-default: 9.8vw;
+$title-font-size: #{clamp(31px, 9.8vw, 41px)};
+$serif-title-font-size-default: 7.5vw;
+$serif-title-font-size: #{clamp(24px, 7.5vw, 36px)};
 
 $envelope-content-height: 180px;

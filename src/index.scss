@@ -62,9 +62,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  font-size: 21px;
   font-family: v.$text-font;
   background-color: white;
+  font-size: v.$content-font-size-default;
+  font-size: v.$content-font-size;
 }
 
 input,
@@ -75,7 +76,6 @@ select {
   padding: 10px 6px;
   border: 2px solid #f9f6e4;
   border-radius: 12px;
-  font-size: 18px;
   font-family: v.$text-font;
   resize: none;
 

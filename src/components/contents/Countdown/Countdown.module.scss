@@ -28,14 +28,15 @@
 
   .number {
     font-family: v.$countdown-font;
-    font-size: 54px;
+    font-size: 40px;
     color: #a66087;
     margin-bottom: -10px;
   }
 
   .unit {
     color: #574916;
-    font-size: 22px;
+    font-size: v.$content-font-size-default;
+    font-size: v.$content-font-size;
   }
 }
 

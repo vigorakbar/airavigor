@@ -1,3 +1,5 @@
+@use '../../../styles/variables' as v;
+
 .container {
   width: 100%;
 }
@@ -14,7 +16,7 @@
 
 .storyWrapper {
   padding: 24px 16px;
-  border: 1px solid black;
+  border: 1px solid v.$soft-black;
   border-radius: 26px;
   width: 90%;
   max-width: 480px;

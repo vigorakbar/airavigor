@@ -10,6 +10,8 @@ $common-margin: #{clamp(18px, 5vw, 33px)};
 }
 
 .btnContainer {
+  font-size: v.$content-font-size-default;
+  font-size: v.$content-font-size;
   display: flex;
   justify-content: center;
   align-items: center;

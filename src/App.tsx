@@ -23,7 +23,7 @@ const App: React.FC = () => {
   const [mainHeaderFinished, setMainHeaderFinished] = useState(false);
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({ once: true });
   }, []);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const App: React.FC = () => {
           >
             <Verse1 />
             <BrideAndGroom name="aira" />
-            <Separator>&</Separator>
+            <Separator className={s.bngSeparator}>&</Separator>
             <BrideAndGroom name="vigor" />
             <Verse2 />
             <OurStory />

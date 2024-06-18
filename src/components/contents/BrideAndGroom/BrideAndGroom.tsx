@@ -14,9 +14,7 @@ type Props = {
 
 export const BrideAndGroom: React.FC<Props> = ({ name }) => (
   <div className={s.container}>
-    <div className={s.title}>
-      {name === 'aira' ? <Title>The Bride and Groom</Title> : ' '}
-    </div>
+    {name === 'aira' ? <Title>The Bride and Groom</Title> : ' '}
     <FrameBase>
       <img src={photoframe} className={s.photoframe} />
       {/* TODO: use actual photo (dimension approx. 316 x 471 ) */}

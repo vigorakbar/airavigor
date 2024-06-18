@@ -65,7 +65,7 @@ export const Wishes = () => {
   return (
     <SectionContainer className={s.container}>
       <div className={s.formAndWishesWrapper}>
-        <Title className={s.title}>Wedding Wishes</Title>
+        <Title>Wedding Wishes</Title>
         <form className={s.wishesForm} onSubmit={handleSubmit(onSubmitWishes)}>
           <InputField
             {...register('name', { required: 'Mohon isi nama anda' })}
