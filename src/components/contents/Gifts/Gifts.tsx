@@ -1,3 +1,5 @@
+import { postGift } from '../../../utils/api';
+import { getInvitationName } from '../../../utils/common';
 import { copyTextToClipboard } from '../../../utils/copyClipboard';
 import { Button } from '../../Button/Button';
 import { InputField } from '../../InputField/InputField';
@@ -62,9 +64,12 @@ export const Gifts: React.FC = () => {
 
   const onSubmitGift: SubmitHandler<GiftInput> = async data => {
     setSubmitting(true);
-    // TODO: handle submit form
-    console.log(data);
-    const p = new Promise(res => setTimeout(() => res(1), 1000));
+    const p = postGift({
+      name: data.name,
+      bankAccountName: data.accountName,
+      notes: data.notes,
+      invitationName: getInvitationName(),
+    });
     await toast.promise(p, {
       loading: 'Mengirim...',
       success: 'Konfirmasi berhasil dikirim',

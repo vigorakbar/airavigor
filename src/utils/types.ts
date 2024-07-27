@@ -12,6 +12,10 @@ export interface Wish {
   wishes: string;
   date: number;
 }
+export interface WishData {
+  wishes: Wish[];
+  hasMore: boolean;
+}
 
 export interface WishPageRequest {
   page: number;

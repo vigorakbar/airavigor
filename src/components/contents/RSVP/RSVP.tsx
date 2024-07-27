@@ -1,5 +1,7 @@
 /// <reference types="vite-plugin-svgr/client" />
 import RsvpFrame from '../../../assets/images/rsvp-frame.svg?react';
+import { postRsvp } from '../../../utils/api';
+import { getInvitationName } from '../../../utils/common';
 import { Button } from '../../Button/Button';
 import { InputField } from '../../InputField/InputField';
 import { SectionContainer } from '../../SectionContainer/SectionContainer';
@@ -28,7 +30,6 @@ enum AttendanceEnum {
 
 type RsvpForm = {
   name: string;
-  phone: string;
   total: TotalEnum;
   attendance: AttendanceEnum;
 };
@@ -43,9 +44,12 @@ export const RSVP = () => {
 
   const onSubmitRsvp: SubmitHandler<RsvpForm> = async data => {
     setSubmitting(true);
-    // TODO: handle submit form
-    console.log(data);
-    const p = new Promise(res => setTimeout(() => res(1), 1000));
+    const p = postRsvp({
+      name: data.name,
+      totalPeople: data.total,
+      willAttend: !!Number(data.attendance),
+      invitationName: getInvitationName(),
+    });
     await toast.promise(p, {
       loading: 'Mengirim...',
       success: 'Konfirmasi berhasil dikirim',
@@ -57,7 +61,6 @@ export const RSVP = () => {
 
   const onInvalidRsvp: SubmitErrorHandler<RsvpForm> = ({
     name,
-    phone,
     total,
     attendance,
   }) => {
@@ -65,9 +68,6 @@ export const RSVP = () => {
     switch (true) {
       case !!name:
         errMsg = 'Nama';
-        break;
-      case !!phone:
-        errMsg = 'Nomor HP';
         break;
       case !!total:
         errMsg = 'Jumlah tamu';
@@ -97,10 +97,6 @@ export const RSVP = () => {
             <InputField
               {...register('name', { required: true })}
               placeholder="Nama"
-            />
-            <InputField
-              {...register('phone', { required: true })}
-              placeholder="Nomor HP"
             />
             <SelectField
               {...register('total', { required: true })}

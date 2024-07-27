@@ -1,3 +1,4 @@
+import { getInvitationName } from '../../../../utils/common';
 import { NameText } from '../../../NameText/NameText';
 import s from './MainCard.module.scss';
 import cx from 'classnames';
@@ -46,7 +47,9 @@ export const MainCard: React.FC<MainCardProps> = ({
             </div>
             <div className={s.recipient}>
               <div>To:</div>
-              <div className={s.guestName}>XXXX</div>
+              <div className={s.guestName}>
+                {getInvitationName() || 'Dear Guest'}
+              </div>
             </div>
           </div>
           <div className={cx(s.cardSurface, s.backTitle)}>BACK</div>

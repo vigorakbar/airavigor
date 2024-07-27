@@ -1,3 +1,4 @@
+import { getInvitationName } from '../../utils/common';
 import { Button } from '../Button/Button';
 import { MainCardProps } from '../MainHeader/components/MainCard/MainCard';
 import s from './EnvelopeSection.module.scss';
@@ -77,7 +78,7 @@ export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
           envelopeRef={envelopeRef}
         />
         <div className={s.guestNameContainer}>
-          <div>Dear, XXXX</div>
+          <div>Dear, {getInvitationName() || 'Guest'}</div>
           <Button onClick={onClickEnvelope}>Open Invitation</Button>
         </div>
       </div>

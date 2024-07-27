@@ -37,8 +37,6 @@ export const MainHeader = ({
     }, 500);
   }, []);
 
-  console.log(progress);
-
   return (
     <div className={s.scrollArea} ref={scrollAreaRef}>
       <div className={s.mainHeaderContainer}>

@@ -1,10 +1,12 @@
+import { getWishesPage, postWish } from '../../../utils/api';
+import { Wish } from '../../../utils/types';
 import { Button } from '../../Button/Button';
 import { InputField } from '../../InputField/InputField';
 import { SectionContainer } from '../../SectionContainer/SectionContainer';
 import { TextAreaField } from '../../TextAreaField/TextAreaField';
 import { Title } from '../../Title/Title';
 import s from './Wishes.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 
@@ -13,39 +15,43 @@ type WishesInput = {
   wishes: string;
 };
 
-const mockWishes = Array(50)
-  .fill([
-    { name: 'Vigor', wishes: 'Happy Wedding!', date: 1717125508050 },
-    {
-      name: 'Aira',
-      wishes: 'Happy Wedding. Best Wishes!',
-      date: 1716925508050,
-    },
-  ])
-  .flat();
-
-const MAX_PER_LOAD = 10;
-
 export const Wishes = () => {
-  // TODO: use actual database
-  const [wishes, setWishes] = useState(mockWishes);
-  const [maxViewWish, setMaxViewWish] = useState(MAX_PER_LOAD);
+  const [wishes, setWishes] = useState<Wish[]>([]);
+  const [wishPage, setWishPage] = useState(1);
+  const [hasMore, setHasMore] = useState(false);
 
   const [submitting, setSubmitting] = useState(false);
 
+  const fetchAppendWishes = async ({
+    page,
+    append = true,
+  }: {
+    page: number;
+    append?: boolean;
+  }) => {
+    try {
+      const data = await getWishesPage({ page });
+      setWishes(prevWishes =>
+        append ? [...prevWishes, ...data.wishes] : data.wishes,
+      );
+      setHasMore(data.hasMore);
+      setWishPage(page + 1);
+    } catch (e) {
+      console.error('Error: failed to load wishes data', e);
+    }
+  };
+
+  useEffect(() => {
+    fetchAppendWishes({ page: 1, append: false });
+  }, []);
+
   const onSubmitWishes: SubmitHandler<WishesInput> = async data => {
     setSubmitting(true);
-    // TODO: handle submit form
-    console.log(data);
-    const p = new Promise(res =>
-      setTimeout(() => {
-        setWishes(wishes => [
-          { name: data.name, wishes: data.wishes, date: new Date().getTime() },
-          ...wishes,
-        ]);
-        res(1);
-      }, 1000),
-    );
+    const reqBody = {
+      ...data,
+      date: new Date().getTime(),
+    };
+    const p = postWish(reqBody);
     await toast.promise(p, {
       loading: 'Mengirim...',
       success: 'Pesan berhasil dikirim',
@@ -53,6 +59,7 @@ export const Wishes = () => {
     });
     reset();
     setSubmitting(false);
+    setWishes(prevWishes => [reqBody, ...prevWishes]);
   };
 
   const {
@@ -90,7 +97,7 @@ export const Wishes = () => {
           </div>
         </form>
         <div className={s.wishesContainer}>
-          {wishes.slice(0, maxViewWish).map(({ name, wishes, date }, i) => (
+          {wishes.map(({ name, wishes, date }, i) => (
             <div className={s.wishesItem} key={i}>
               <div className={s.wishName}>{name}</div>
               <div>{wishes}</div>
@@ -102,12 +109,14 @@ export const Wishes = () => {
               </div>
             </div>
           ))}
-          <Button
-            className={s.wishesButton}
-            onClick={() => setMaxViewWish(n => n + MAX_PER_LOAD)}
-          >
-            Show more
-          </Button>
+          {hasMore && (
+            <Button
+              className={s.wishesButton}
+              onClick={() => fetchAppendWishes({ page: wishPage })}
+            >
+              Show more
+            </Button>
+          )}
         </div>
       </div>
     </SectionContainer>
