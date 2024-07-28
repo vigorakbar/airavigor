@@ -1,10 +1,17 @@
+@use '../../styles/variables' as v;
+
 .mainHeaderContainer {
   width: 100%;
   height: 100vh;
-  background-color: aquamarine;
+  background-color: v.$main-background-color;
   position: sticky;
   top: 0;
   overflow: hidden;
+  transition: background-color 0.5s ease;
+
+  &.changeBackground {
+    background-color: rgba(204, 255, 248, 1);
+  }
 
   .innerContainer {
     width: 100%;

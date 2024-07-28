@@ -10,6 +10,8 @@
     transform: scale(1.1);
   }
   background-color: #fcc7bf;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .envelopeContainer {
@@ -27,6 +29,8 @@
   border-bottom: 125px solid #fcddd8;
   position: absolute;
   z-index: 1;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .lid {

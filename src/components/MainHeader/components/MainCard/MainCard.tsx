@@ -52,7 +52,7 @@ export const MainCard: React.FC<MainCardProps> = ({
               </div>
             </div>
           </div>
-          <div className={cx(s.cardSurface, s.backTitle)}>BACK</div>
+          <div className={cx(s.cardSurface, s.backTitle)}></div>
         </div>
         <div className={cx(s.cardSurface, s.backCard)}></div>
       </div>

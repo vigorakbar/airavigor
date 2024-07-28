@@ -14,6 +14,7 @@ import { Verse1, Verse2 } from './components/contents/Verse/Verse';
 import { Wishes } from './components/contents/Wishes/Wishes';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import classNames from 'classnames';
 import cx from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
@@ -43,7 +44,12 @@ const App: React.FC = () => {
   return (
     <div>
       {envelopeOpened ? (
-        <div className={s.container}>
+        <div
+          className={classNames(
+            s.container,
+            mainHeaderFinished && s.containerImg,
+          )}
+        >
           <MainHeader
             setMainHeaderFinished={setMainHeaderFinished}
             mainHeaderFinished={mainHeaderFinished}

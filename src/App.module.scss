@@ -3,14 +3,16 @@
 .container {
   text-align: center;
   color: v.$soft-black;
-  background-image: url('./assets/images/paper-background.png');
   background-position: top left;
   background-size: 100% auto;
   background-repeat: repeat;
   position: relative;
 
-  & > * {
-    background-color: v.$main-background-color;
+  &.containerImg {
+    background-image: url('./assets/images/paper-background.png');
+    & > * {
+      background-color: v.$main-background-color;
+    }
   }
 }
 
