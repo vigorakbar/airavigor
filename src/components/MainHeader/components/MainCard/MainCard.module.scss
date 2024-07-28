@@ -9,7 +9,6 @@
 
 .mainCard {
   background-color: white;
-  color: chocolate;
   width: 100%;
   height: 100%;
   position: relative;
@@ -49,6 +48,11 @@
 
 .titleContainer {
   margin-top: 21px;
+
+  .name {
+    height: 52px;
+    margin-bottom: -8px;
+  }
 
   .date {
     margin-top: 6px;

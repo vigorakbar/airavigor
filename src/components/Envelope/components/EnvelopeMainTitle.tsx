@@ -1,4 +1,4 @@
-import { NameText } from '../../NameText/NameText';
+import airavigorhalimun from '../../../assets/images/airavigor-halimun.png';
 import s from './EnvelopeMainTitle.module.scss';
 import React from 'react';
 
@@ -6,7 +6,7 @@ export const EnvelopeMainTitle: React.FC = () => {
   return (
     <div className={s.EnvelopeTitleContainer}>
       <div className={s.title}>Wedding Invitation</div>
-      <NameText className={s.name}>Aira & Vigor</NameText>
+      <img src={airavigorhalimun} className={s.name} />
       <div className={s.hashTag}>#AIhaveVIGureditout</div>
     </div>
   );

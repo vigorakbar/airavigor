@@ -1,5 +1,5 @@
+import airavigorhalimun from '../../../../assets/images/airavigor-halimun.png';
 import { getInvitationName } from '../../../../utils/common';
-import { NameText } from '../../../NameText/NameText';
 import s from './MainCard.module.scss';
 import cx from 'classnames';
 import React, { CSSProperties } from 'react';
@@ -42,7 +42,7 @@ export const MainCard: React.FC<MainCardProps> = ({
         >
           <div className={cx(s.cardSurface, s.frontTitle)}>
             <div className={s.titleContainer}>
-              <NameText>Aira & Vigor</NameText>
+              <img src={airavigorhalimun} className={s.name} />
               <div className={s.date}>14 . 09 . 2024</div>
             </div>
             <div className={s.recipient}>
