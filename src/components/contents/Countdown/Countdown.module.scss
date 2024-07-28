@@ -1,9 +1,26 @@
 @use '../../../styles/variables' as v;
 
+.sectionContainer {
+  padding-bottom: 17px;
+  padding-top: 52px;
+
+  .title {
+    font-size: 24px;
+    color: v.$highlight-color;
+    margin-bottom: 30px;
+  }
+}
+
+.contentContainer {
+  position: relative;
+  z-index: 2;
+}
+
 .gridContainer {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 12px;
 }
 
 .countDownGrid {
@@ -15,28 +32,29 @@
   align-items: center;
   justify-items: center;
   width: 100%;
-  max-width: 290px;
+  max-width: 208px;
   margin-bottom: 24px;
 
   .item {
     border-radius: 26px;
-    background-color: #f9f6e4;
+    background-color: rgba(249, 246, 228, 0.6);
     width: 100%;
     height: 100%;
-    padding: 24px 16px;
+    padding: 25px 16px;
   }
 
   .number {
     font-family: v.$countdown-font;
-    font-size: 40px;
-    color: #a66087;
+    font-size: 27px;
+    color: v.$highlight-color;
     margin-bottom: -10px;
   }
 
   .unit {
-    color: #574916;
-    font-size: v.$content-font-size-default;
-    font-size: v.$content-font-size;
+    color: v.$soft-black;
+    // font-size: v.$content-font-size-default;
+    // font-size: v.$content-font-size;
+    font-size: 14px;
   }
 }
 
@@ -44,4 +62,100 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.ornContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+
+  .bottomLeft1 {
+    position: absolute;
+    bottom: 0;
+    // left: 36px;
+    left: 9vw;
+    height: 56px;
+  }
+  .bottomLeft2 {
+    position: absolute;
+    bottom: 10px;
+    // left: -8px;
+    left: -2vw;
+    height: 73px;
+  }
+
+  .bottomRight1 {
+    position: absolute;
+    bottom: 0;
+    // right: 36px;
+    right: 9vw;
+    height: 56px;
+    transform: scaleX(-1);
+  }
+  .bottomRight2 {
+    position: absolute;
+    bottom: 10px;
+    // right: -8px;
+    right: -2vw;
+    height: 73px;
+    transform: scaleX(-1);
+  }
+
+  .left1 {
+    position: absolute;
+    height: 78px;
+    left: -2px;
+    bottom: 68px;
+    transform-origin: top;
+    transform: rotate(84deg);
+  }
+  .left2 {
+    position: absolute;
+    height: 76px;
+    left: -8px;
+    bottom: 220px;
+    transform: rotate(188deg);
+  }
+  .left3 {
+    position: absolute;
+    height: 102px;
+    left: 4px;
+    bottom: 298px;
+    transform-origin: top;
+    transform: rotate(12deg);
+  }
+
+  .right1 {
+    position: absolute;
+    height: 102px;
+    right: -16px;
+    bottom: 87px;
+    transform: rotate(202deg);
+  }
+  .right2 {
+    position: absolute;
+    height: 76px;
+    right: -8px;
+    bottom: 189px;
+    transform: rotate(-6deg);
+  }
+  .right3 {
+    position: absolute;
+    height: 78px;
+    right: -2px;
+    bottom: 250px;
+    transform-origin: top;
+    transform: rotate(84deg) scaleY(-1);
+  }
+
+  .topLeaves {
+    position: absolute;
+    height: 28px;
+    width: 100%;
+    top: 0;
+    background: url('../../../assets/images/topLeaves.png');
+    background-size: contain;
+  }
 }

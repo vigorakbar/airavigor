@@ -1,5 +1,7 @@
 .container {
   margin: 64px 0;
+  position: relative;
+  overflow: hidden;
 
   &:last-child {
     margin: 0;
