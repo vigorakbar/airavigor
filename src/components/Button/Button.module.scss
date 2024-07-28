@@ -1,6 +1,8 @@
 @use '../../styles/variables' as v;
 .button {
   background: v.$field-color;
+  font-size: 14px;
+  font-family: v.$text-font;
   border-radius: 20px;
   padding: 6px 16px;
   margin-top: 6px;
@@ -22,7 +24,6 @@
 
   color: inherit;
   border: none;
-  font: inherit;
   cursor: pointer;
   outline: inherit;
 }
