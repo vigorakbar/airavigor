@@ -18,7 +18,7 @@
   transition: transform 0.6s ease;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  border: 1px solid v.$field-color;
+  border: 1px solid #c9bd81;
   border-top: none;
 }
 
@@ -42,14 +42,14 @@
   border-bottom-right-radius: 4px;
 
   .frontTitle {
-    background-color: cadetblue;
+    background-color: #eabdbf;
     text-align: center;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
   }
 
   .backTitle {
-    background-color: cadetblue;
+    background-color: #eabdbf;
     transform: rotateY(180deg);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -57,22 +57,21 @@
 }
 
 .titleContainer {
-  margin-top: 21px;
+  margin-top: 28px;
 
   .name {
-    height: 52px;
-    margin-bottom: -8px;
+    height: 48px;
+    margin-bottom: -9px;
   }
 
   .date {
-    margin-top: 6px;
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
 .recipient {
-  margin-top: 27px;
-  font-size: 17px;
+  margin-top: 28px;
+  font-size: 14px;
   display: flex;
   flex-direction: column;
 
