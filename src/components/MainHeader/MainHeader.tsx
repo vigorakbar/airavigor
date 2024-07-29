@@ -35,7 +35,7 @@ export const MainHeader = ({
   useEffect(() => {
     setTimeout(() => {
       setShowHint(true);
-    }, 500);
+    }, 200);
     setTimeout(() => {
       setChangeBg(true);
     }, 10);
