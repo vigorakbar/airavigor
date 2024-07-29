@@ -1,19 +1,21 @@
 @use '../../../styles/variables' as v;
 
 .EnvelopeTitleContainer {
-  height: v.$envelope-content-height;
+  $marginTop: 15px;
+  height: (calc(v.$envelope-content-height - #{$marginTop}));
+  margin-top: $marginTop;
   z-index: 1;
   text-align: center;
 
   .title {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .name {
-    height: 72px;
+    height: 62px;
   }
 
   .hashTag {
-    font-size: 21px;
+    font-size: 17px;
   }
 }
