@@ -5,6 +5,7 @@ import s from './EnvelopeSection.module.scss';
 import { Envelope } from './components/Envelope';
 import { EnvelopeMainTitle } from './components/EnvelopeMainTitle';
 import { timeOutPromise } from './utils';
+import classNames from 'classnames';
 import React, { useRef, useState } from 'react';
 
 type Props = {
@@ -25,6 +26,7 @@ export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
   const envelopeRef = useRef<HTMLDivElement>(null);
   const backlidRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const envelBackRef = useRef<HTMLImageElement>(null);
 
   const onClickEnvelope = async () => {
     setLidOpen(true);
@@ -32,7 +34,8 @@ export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
     const envelope = envelopeRef.current;
     const backlid = backlidRef.current;
     const outerContainer = containerRef.current;
-    if (!card || !envelope || !backlid || !outerContainer) return;
+    const envelBack = envelBackRef.current;
+    if (!card || !envelope || !backlid || !outerContainer || !envelBack) return;
 
     card.style.transition = 'transform 0.6s ease-in-out';
     await timeOutPromise(() => {
@@ -40,19 +43,19 @@ export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
     }, 400);
     await timeOutPromise(() => {
       outerContainer.style.backgroundColor = 'transparent';
-      envelope.style.backgroundColor = '#fcc7bf';
     }, 600);
     backlid.style.transition = 'transform 0.7s ease-in, opacity 0.3s linear';
     envelope.style.transition = 'transform 0.7s ease-in, opacity 0.3s linear';
+    envelBack.style.transition = 'transform 0.7s ease-in, opacity 0.3s linear';
     backlid.style.transform = 'rotateX(180deg) translateX(-1500px)';
-    envelope.style.transform = ' translateX(-1500px)';
+    envelope.style.transform = 'translateX(-1500px)';
+    envelBack.style.transform = 'translateX(-1500px)';
     timeOutPromise(() => {
       backlid.style.opacity = '0';
       envelope.style.opacity = '0';
     }, 1000);
     timeOutPromise(() => {
       card.style.transform = 'translateY(-5px)';
-      setLidOpen(false);
     }, 500);
 
     await timeOutPromise(() => {
@@ -67,7 +70,7 @@ export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
   return (
     <div className={s.envelopeSectionContainer}>
       <div className={s.innerContainer}>
-        <EnvelopeMainTitle />
+        <EnvelopeMainTitle className={classNames(lidOpen && s.fadeOutAnim)} />
         <Envelope
           lidOpen={lidOpen}
           onClickEnvelope={onClickEnvelope}
@@ -76,8 +79,11 @@ export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
           cardRef={cardRef}
           containerRef={containerRef}
           envelopeRef={envelopeRef}
+          envelBackRef={envelBackRef}
         />
-        <div className={s.guestNameContainer}>
+        <div
+          className={classNames(s.guestNameContainer, lidOpen && s.fadeOutAnim)}
+        >
           <div>Dear, {getInvitationName() || 'Guest'}</div>
           <Button onClick={onClickEnvelope}>Open Invitation</Button>
         </div>

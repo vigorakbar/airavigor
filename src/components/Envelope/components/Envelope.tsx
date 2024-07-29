@@ -1,3 +1,7 @@
+import envelBack from '../../../assets/images/envel-backenv.png';
+import envelBackLid from '../../../assets/images/envel-backlid.png';
+import envelFront from '../../../assets/images/envel-front.png';
+import envelLid from '../../../assets/images/envel-lid.png';
 import { Initial } from '../../Initial/Initial';
 import {
   MainCard,
@@ -13,6 +17,7 @@ type Props = {
   cardRef: React.RefObject<HTMLDivElement>;
   containerRef: React.RefObject<HTMLDivElement>;
   envelopeRef: React.RefObject<HTMLDivElement>;
+  envelBackRef: React.RefObject<HTMLImageElement>;
   onClickEnvelope: () => Promise<void>;
   mainCardInit: Pick<MainCardProps, 'initRotateX' | 'rotateZDeg'>;
 };
@@ -22,6 +27,7 @@ export const Envelope: React.FC<Props> = ({
   backlidRef,
   cardRef,
   containerRef,
+  envelBackRef,
   onClickEnvelope,
   envelopeRef,
   mainCardInit,
@@ -36,16 +42,19 @@ export const Envelope: React.FC<Props> = ({
         onClick={onClickEnvelope}
         ref={envelopeRef}
       >
-        <div className={cx(s.envelopeCard)}></div>
+        <div className={cx(s.envelopeCard)}>
+          <img src={envelFront} className={s.envelFront} />
+        </div>
         <div className={cx(s.lid, s.front, lidOpen && s.open)}>
+          <img src={envelLid} className={s.envelLid} />
           <Initial className={s.initial} />
         </div>
         <div></div>
       </div>
-      <div
-        className={cx(s.lid, s.back, lidOpen && s.open)}
-        ref={backlidRef}
-      ></div>
+      <div className={cx(s.lid, s.back, lidOpen && s.open)} ref={backlidRef}>
+        <img src={envelBackLid} className={s.envelBackLid} />
+      </div>
+      <img ref={envelBackRef} src={envelBack} className={s.envelBack} />
       <div className={s.cardContainer} ref={cardRef}>
         <MainCard progress={0} scale={1} {...mainCardInit} />
       </div>

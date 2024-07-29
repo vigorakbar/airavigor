@@ -8,8 +8,20 @@
   background-repeat: repeat;
   position: relative;
 
+  &.containerBg {
+    background-color: v.$main-background-color;
+  }
+}
+
+.contentContainer {
+  max-width: v.$container-max-width;
+  margin: 0 auto;
+
   &.containerImg {
     background-image: url('./assets/images/paper-background.png');
+    background-position: top left;
+    background-size: 100% auto;
+    background-repeat: repeat;
     & > * {
       background-color: v.$main-background-color;
     }

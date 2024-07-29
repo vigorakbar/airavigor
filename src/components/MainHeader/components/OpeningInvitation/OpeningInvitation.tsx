@@ -17,7 +17,6 @@ export const OpeningInvitation: React.FC = () => {
       <div className={s.bg} data-aos="fade" />
 
       <div className={s.weInvite}>We invite you to the wedding of</div>
-      {/* <NameText className={s.name}>Aira & Vigor</NameText> */}
       <img src={airavigorlejour} className={s.nameImg} />
       <div className={s.frameContainer}>
         <FrameBase className={s.frameWrapper}>

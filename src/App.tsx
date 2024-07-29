@@ -47,7 +47,7 @@ const App: React.FC = () => {
         <div
           className={classNames(
             s.container,
-            mainHeaderFinished && s.containerImg,
+            mainHeaderFinished && s.containerBg,
           )}
         >
           <MainHeader
@@ -58,21 +58,24 @@ const App: React.FC = () => {
             ref={contentRef}
             className={cx(
               !mainHeaderFinished && s.hideContent,
-              s.contentContainer,
+              mainHeaderFinished && s.contentContainer,
+              mainHeaderFinished && s.containerImg,
             )}
           >
-            <Verse1 />
-            <BrideAndGroom name="aira" />
-            <Separator className={s.bngSeparator}>&</Separator>
-            <BrideAndGroom name="vigor" />
-            <Verse2 />
-            <OurStory />
-            <CountDown />
-            <TimeAndVenue />
-            <Gifts />
-            <RSVP />
-            <Wishes />
-            <Thanks />
+            <div>
+              <Verse1 />
+              <BrideAndGroom name="aira" />
+              <Separator className={s.bngSeparator}>&</Separator>
+              <BrideAndGroom name="vigor" />
+              <Verse2 />
+              <OurStory />
+              <CountDown />
+              <TimeAndVenue />
+              <Gifts />
+              <RSVP />
+              <Wishes />
+              <Thanks />
+            </div>
           </div>
         </div>
       ) : (
