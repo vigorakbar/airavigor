@@ -1,8 +1,9 @@
 @use '../../styles/variables' as v;
+@use '../../styles/responsive' as r;
 
 .title {
   font-family: v.$title-font;
-  margin-bottom: 40px;
-  font-size: v.$title-font-size-default;
-  font-size: v.$title-font-size;
+  margin-bottom: 14px;
+  color: #a66087;
+  @include r.responsive(font-size, 24);
 }

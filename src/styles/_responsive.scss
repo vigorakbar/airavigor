@@ -1,0 +1,13 @@
+@mixin responsive($property, $base-size, $min-width: 400, $max-width: 640) {
+  $min-font-size: $base-size;
+  $max-font-size: ($base-size / $min-width) * $max-width;
+
+  // Fallback for browsers that do not support clamp()
+  #{$property}: #{$base-size}px;
+
+  #{$property}: clamp(
+    #{$min-font-size}px,
+    calc(100vw * (#{$base-size} / #{$min-width})),
+    #{$max-font-size}px
+  );
+}

@@ -1,10 +1,12 @@
 import s from './Verse.module.scss';
 import React from 'react';
 
-export const Verse1: React.FC = () => {
+export const Verse1: React.FC<{
+  contentTopGap: number;
+}> = ({ contentTopGap }) => {
   return (
-    <div className={s.container}>
-      <p>Assalamualaikum warahmatullahi wabarakatuh</p>
+    <div className={s.container} style={{ paddingTop: contentTopGap }}>
+      <p className={s.salam}>Assalamualaikum warahmatullahi wabarakatuh</p>
       <p>
         Dengan nama Allah Yang Maha Pengasih, Yang Maha Penyayang, Dengan rahmat
         dan ridha-Nya, Kami mengundang Bapak / Ibu dalam pernikahan Kami

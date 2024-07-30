@@ -11,9 +11,11 @@ import { useEffect, useState } from 'react';
 export const MainHeader = ({
   setMainHeaderFinished,
   mainHeaderFinished,
+  setContentTopGap,
 }: {
   setMainHeaderFinished: (finished: boolean) => void;
   mainHeaderFinished: boolean;
+  setContentTopGap: (gap: number) => void;
 }) => {
   const { progress, scrollAreaRef } = useScrollAreaProgress();
   const debouncedFinished = debounce(setMainHeaderFinished, 200);
@@ -66,7 +68,9 @@ export const MainHeader = ({
           </div>
         )}
       </div>
-      {mainHeaderFinished && <OpeningInvitation />}
+      {mainHeaderFinished && (
+        <OpeningInvitation setContentTopGap={setContentTopGap} />
+      )}
     </div>
   );
 };

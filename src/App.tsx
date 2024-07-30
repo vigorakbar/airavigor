@@ -43,6 +43,8 @@ const App: React.FC = () => {
 
   const [loadingImg, setLoadingImg] = useState(true);
 
+  const [contentTopGap, setContentTopGap] = useState(0);
+
   useEffect(() => {
     AOS.init({ once: true });
   }, []);
@@ -91,6 +93,7 @@ const App: React.FC = () => {
           <MainHeader
             setMainHeaderFinished={setMainHeaderFinished}
             mainHeaderFinished={mainHeaderFinished}
+            setContentTopGap={setContentTopGap}
           />
           <div
             ref={contentRef}
@@ -101,7 +104,7 @@ const App: React.FC = () => {
             )}
           >
             <div>
-              <Verse1 />
+              <Verse1 contentTopGap={contentTopGap} />
               <BrideAndGroom name="aira" />
               <Separator className={s.bngSeparator}>&</Separator>
               <BrideAndGroom name="vigor" />

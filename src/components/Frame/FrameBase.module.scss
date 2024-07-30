@@ -1,8 +1,8 @@
+@use '../../styles/responsive' as r;
+
 .container {
-  width: 85%;
-  max-width: 375px;
-  height: 130vw;
-  max-height: 578px;
   margin: 0 auto;
   position: relative;
+  @include r.responsive(width, 256);
+  @include r.responsive(height, 378);
 }
