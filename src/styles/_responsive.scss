@@ -1,6 +1,8 @@
+@use 'sass:math';
+
 @mixin responsive($property, $base-size, $min-width: 400, $max-width: 640) {
   $min-font-size: $base-size;
-  $max-font-size: ($base-size / $min-width) * $max-width;
+  $max-font-size: math.div($base-size, $min-width) * $max-width;
 
   // Fallback for browsers that do not support clamp()
   #{$property}: #{$base-size}px;
