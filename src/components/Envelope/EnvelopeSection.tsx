@@ -10,9 +10,15 @@ import React, { useRef, useState } from 'react';
 
 type Props = {
   setEnvelopeOpened: (open: boolean) => void;
+  className?: string;
+  loadingImg?: boolean;
 };
 
-export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
+export const EnvelopeSection: React.FC<Props> = ({
+  setEnvelopeOpened,
+  className,
+  loadingImg,
+}) => {
   const [lidOpen, setLidOpen] = useState(false);
 
   const [mainCardInit, setMainCardInit] = useState<
@@ -68,8 +74,13 @@ export const EnvelopeSection: React.FC<Props> = ({ setEnvelopeOpened }) => {
   };
 
   return (
-    <div className={s.envelopeSectionContainer}>
-      <div className={s.innerContainer}>
+    <div className={classNames(s.envelopeSectionContainer, className)}>
+      <div
+        className={classNames(
+          s.innerContainer,
+          loadingImg ? s.hideContent : s.fadeInAnim,
+        )}
+      >
         <EnvelopeMainTitle className={classNames(lidOpen && s.fadeOutAnim)} />
         <Envelope
           lidOpen={lidOpen}

@@ -1,4 +1,8 @@
 import s from './App.module.scss';
+import envelbackenv from './assets/images/envel-backenv.png';
+import envelbacklid from './assets/images/envel-backlid.png';
+import envelfront from './assets/images/envel-front.png';
+import envellid from './assets/images/envel-lid.png';
 // import { CardMainContent } from './components/CardMainContent/CardMainContent';
 import { EnvelopeSection } from './components/Envelope/EnvelopeSection';
 import { MainHeader } from './components/MainHeader/MainHeader';
@@ -12,6 +16,7 @@ import { Thanks } from './components/contents/Thanks/Thanks';
 import { TimeAndVenue } from './components/contents/TimeAndVenue/TimeAndVenue';
 import { Verse1, Verse2 } from './components/contents/Verse/Verse';
 import { Wishes } from './components/contents/Wishes/Wishes';
+import { loadRemoteImage } from './utils/common';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import classNames from 'classnames';
@@ -19,12 +24,31 @@ import cx from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 
+const imagesNeedLoad = [envelbackenv, envelbacklid, envelfront, envellid];
+
 const App: React.FC = () => {
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
   const [mainHeaderFinished, setMainHeaderFinished] = useState(false);
 
+  const [loadingImg, setLoadingImg] = useState(true);
+
   useEffect(() => {
     AOS.init({ once: true });
+  }, []);
+
+  useEffect(() => {
+    const loadImages = async () => {
+      const promises = imagesNeedLoad.map(imgUrl => loadRemoteImage(imgUrl));
+      try {
+        await Promise.all(promises);
+      } catch (e) {
+        setLoadingImg(false);
+      }
+
+      setLoadingImg(false);
+    };
+
+    loadImages();
   }, []);
 
   useEffect(() => {
@@ -79,7 +103,17 @@ const App: React.FC = () => {
           </div>
         </div>
       ) : (
-        <EnvelopeSection setEnvelopeOpened={setEnvelopeOpened} />
+        <>
+          <EnvelopeSection
+            loadingImg={loadingImg}
+            setEnvelopeOpened={setEnvelopeOpened}
+          />
+          {loadingImg && (
+            <div className={s.loadingContainer}>
+              <div className={s.loadingIndicator} />
+            </div>
+          )}
+        </>
       )}
       <Toaster containerStyle={{ fontSize: 16 }} />
     </div>

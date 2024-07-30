@@ -10,3 +10,16 @@
     }
   }
 }
+
+@mixin fade-in($duration: 0.25s) {
+  animation: fadeIn $duration forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

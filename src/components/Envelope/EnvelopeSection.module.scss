@@ -26,6 +26,15 @@
   padding-top: 37px;
 }
 
+.hideContent {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fadeInAnim {
+  @include a.fade-in(1s);
+}
+
 .fadeOutAnim {
   @include a.fade-out();
 }
