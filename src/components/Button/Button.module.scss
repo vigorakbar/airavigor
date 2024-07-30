@@ -1,7 +1,8 @@
 @use '../../styles/variables' as v;
+@use '../../styles/responsive' as r;
 .button {
   background: v.$field-color;
-  font-size: 14px;
+  @include r.responsive(font-size, 14);
   font-family: v.$text-font;
   border-radius: 20px;
   padding: 6px 16px;

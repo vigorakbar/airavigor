@@ -1,12 +1,11 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
 
 .sectionContainer {
   padding-bottom: 17px;
   padding-top: 52px;
 
   .title {
-    font-size: 24px;
-    color: v.$highlight-color;
     margin-bottom: 30px;
   }
 }
@@ -27,12 +26,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  row-gap: 20px;
-  column-gap: 24px;
+  @include r.responsive(row-gap, 20);
+  @include r.responsive(column-gap, 24);
   align-items: center;
   justify-items: center;
   width: 100%;
-  max-width: 208px;
+  @include r.responsive(max-width, 208);
   margin-bottom: 24px;
 
   .item {
@@ -45,16 +44,16 @@
 
   .number {
     font-family: v.$countdown-font;
-    font-size: 27px;
+    @include r.responsive(font-size, 27);
+
     color: v.$highlight-color;
     margin-bottom: -10px;
   }
 
   .unit {
     color: v.$soft-black;
-    // font-size: v.$content-font-size-default;
-    // font-size: v.$content-font-size;
-    font-size: 14px;
+
+    @include r.responsive(font-size, 14);
   }
 }
 
@@ -74,31 +73,27 @@
   .bottomLeft1 {
     position: absolute;
     bottom: 0;
-    // left: 36px;
-    left: 9vw;
+    @include r.responsive(left, 36);
     height: 56px;
   }
   .bottomLeft2 {
     position: absolute;
     bottom: 10px;
-    // left: -8px;
-    left: -2vw;
+    @include r.responsive(left, -8);
     height: 73px;
   }
 
   .bottomRight1 {
     position: absolute;
     bottom: 0;
-    // right: 36px;
-    right: 9vw;
+    @include r.responsive(right, 36);
     height: 56px;
     transform: scaleX(-1);
   }
   .bottomRight2 {
     position: absolute;
     bottom: 10px;
-    // right: -8px;
-    right: -2vw;
+    @include r.responsive(right, -8);
     height: 73px;
     transform: scaleX(-1);
   }
@@ -152,7 +147,7 @@
 
   .topLeaves {
     position: absolute;
-    height: 28px;
+    @include r.responsive(height, 28);
     width: 100%;
     top: 0;
     background: url('../../../assets/images/topLeaves.png');
