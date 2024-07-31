@@ -52,8 +52,6 @@
 
   .unit {
     color: v.$soft-black;
-
-    @include r.responsive(font-size, 14);
   }
 }
 

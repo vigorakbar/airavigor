@@ -33,7 +33,7 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => (
     <div>
       {name === 'aira'
         ? 'Bapak Ashif Hadad & Ibu Yeni Heryani'
-        : 'Bapak Dwi Yarik Hafid Hidayat & Ibu Ratna Ningrum'}
+        : 'Bapak Dwiyarik Hafid Hidayat & Ibu Ratna Ningrum'}
     </div>
   </div>
 );

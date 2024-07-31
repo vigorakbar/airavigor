@@ -1,7 +1,6 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
 
-$frame-min-width: 460px;
-$frame-max-width: 660px;
 $common-margin-default: 5vw;
 $common-margin: #{clamp(18px, 5vw, 33px)};
 
@@ -10,25 +9,24 @@ $common-margin: #{clamp(18px, 5vw, 33px)};
 }
 
 .weddingDay {
-  padding-top: 150px;
+  @include r.responsive(padding-top, 140);
 }
 
 .btnContainer {
-  font-size: v.$content-font-size-default;
-  font-size: v.$content-font-size;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: $common-margin-default;
-  margin-top: $common-margin;
+  @include r.responsive(margin-top, 18);
+  .mapBtn {
+    @include r.responsive(font-size, 11);
+    padding: 6px 19px;
+  }
 }
 
 .venueContainer {
   position: relative;
-  max-width: $frame-max-width;
   margin: 0 auto;
-  height: 140vw;
-  height: clamp(1.4 * $frame-min-width, 140vw, 924px);
+  @include r.responsive(height, 500);
 }
 
 .venueframeWrapper {
@@ -41,62 +39,65 @@ $common-margin: #{clamp(18px, 5vw, 33px)};
 
   .venueframe {
     position: relative;
-    width: 100%;
-    min-width: $frame-min-width;
-    left: min((100vw - $frame-min-width) / 2, 0vw);
+    margin: 0 auto;
+    @include r.responsive(width, 260);
   }
 }
-
+.dateContainer {
+  font-family: v.$cardo-font;
+  @include r.responsive(font-size, 16);
+  @include r.responsive(margin-bottom, 10);
+  color: v.$soft-black;
+}
 .venueDetailWrapper {
   position: relative;
   z-index: 2;
-  font-size: 4vw;
-  font-size: clamp(0.04 * $frame-min-width, 4vw, 26.4px);
-  top: 20vw;
-  top: clamp(0.2 * $frame-min-width, 20vw, 132px);
-  height: 106vw;
-  height: clamp(1.06 * $frame-min-width, 106vw, 670px);
-  width: 60%;
-  width: clamp(0.6 * $frame-min-width, 60%, 396px);
-  margin: 0 auto;
+  @include r.responsive(width, 183);
+  @include r.responsive(top, 66);
 
-  .dateContainer {
-    font-size: 5.1vw;
-    font-size: clamp(0.05 * $frame-min-width, 5.1vw, 32px);
-    padding-top: 8px;
-  }
+  margin: 0 auto;
 
   .separatorWrapper {
     height: unset;
-    margin-bottom: 10px;
+    @include r.responsive(margin-top, 9);
+    @include r.responsive(margin-bottom, 4);
+
     .separator {
       border: none;
-      width: 75%;
+      @include r.responsive(width, 88);
+
       height: 1px;
-      color: #333;
-      background-color: #333;
+      color: #7b7b7b;
+      background-color: #7b7b7b;
       margin: 10px 0;
     }
   }
 
   .timeSection {
-    margin-bottom: $common-margin-default;
-    margin-bottom: $common-margin;
+    font-family: v.$cardo-font;
   }
 
   .sectionHeader {
-    font-size: 5.3vw;
-    font-size: clamp(0.053 * $frame-min-width, 5.3vw, 35px);
+    color: v.$highlight-color;
   }
 
-  .hotelVenue {
-    font-family: v.$text-serif-font;
-    font-size: 4.6vw;
-    font-size: clamp(0.046 * $frame-min-width, 4.6vw, 31px);
-  }
+  .place {
+    font-family: v.$cardo-font;
+    @include r.responsive(margin-top, 12);
+    .roomVenue {
+      font-style: italic;
+      color: v.$highlight-color;
+      @include r.responsive(line-height, 16);
+    }
 
-  .address {
-    font-size: 3.4vw;
-    font-size: clamp(16px, 3.4vw, 24px);
+    .hotelVenue {
+      font-weight: 700;
+      color: v.$highlight-color;
+    }
+
+    .address {
+      @include r.responsive(font-size, 11);
+      @include r.responsive(line-height, 15);
+    }
   }
 }

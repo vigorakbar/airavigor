@@ -7,7 +7,7 @@
 }
 .title {
   padding-top: 110px;
-  margin-bottom: 24px;
+  @include r.responsive(margin-bottom, 24);
 }
 
 .storyContainer {
@@ -17,7 +17,7 @@
 }
 
 .storyWrapper {
-  padding-top: 5px;
+  padding-top: 6px;
   padding-bottom: 10px;
   @include r.responsive(padding-left, 17);
   @include r.responsive(padding-right, 17);
@@ -38,6 +38,7 @@
   font-weight: 700;
   color: v.$highlight-color;
   margin-bottom: 2px;
+  @include r.responsive(font-size, 15);
 }
 
 .story {
