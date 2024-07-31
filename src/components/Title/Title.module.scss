@@ -4,6 +4,6 @@
 .title {
   font-family: v.$title-font;
   margin-bottom: 14px;
-  color: #a66087;
+  color: v.$highlight-color;
   @include r.responsive(font-size, 24);
 }

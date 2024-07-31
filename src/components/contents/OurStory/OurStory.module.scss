@@ -1,11 +1,13 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
 
 .container {
   width: 100%;
+  margin-bottom: 96px;
 }
 .title {
-  font-size: 28px;
-  margin-bottom: 34px;
+  padding-top: 110px;
+  margin-bottom: 24px;
 }
 
 .storyContainer {
@@ -15,20 +17,29 @@
 }
 
 .storyWrapper {
-  padding: 24px 16px;
-  border: 1px solid v.$soft-black;
-  border-radius: 26px;
-  width: 90%;
-  max-width: 480px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  @include r.responsive(padding-left, 17);
+  @include r.responsive(padding-right, 17);
+  border-radius: 21px;
+  background-color: rgba(white, 0.5);
+  @include r.responsive(width, 272);
   margin-bottom: 40px;
 }
 
+.year {
+  font-family: v.$cardo-font;
+  font-style: italic;
+  margin-bottom: 2px;
+}
+
 .storyTitle {
-  font-size: 21px;
-  font-weight: bold;
-  margin-bottom: 12px;
+  font-family: v.$cardo-font;
+  font-weight: 700;
+  color: v.$highlight-color;
+  margin-bottom: 2px;
 }
 
 .story {
-  font-style: italic;
+  @include r.responsive(font-size, 12);
 }

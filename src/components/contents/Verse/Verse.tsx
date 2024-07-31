@@ -25,6 +25,7 @@ export const Verse2: React.FC = () => {
         Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda
         bagi kaum yang berfikir.'
         <br />
+        <br />
         (Q.S. Ar-Rum: 21)
       </p>
     </div>

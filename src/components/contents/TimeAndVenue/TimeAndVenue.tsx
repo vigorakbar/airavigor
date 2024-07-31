@@ -10,7 +10,7 @@ import s from './TimeAndVenue.module.scss';
 export const TimeAndVenue = () => {
   return (
     <SectionContainer className={s.container}>
-      <Title>Wedding Day</Title>
+      <Title className={s.weddingDay}>Wedding Day</Title>
       <div className={s.venueContainer}>
         <div className={s.venueframeWrapper}>
           <img src={venueframe} className={s.venueframe} />
