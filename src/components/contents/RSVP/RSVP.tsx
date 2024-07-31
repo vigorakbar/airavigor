@@ -35,7 +35,9 @@ type RsvpForm = {
 };
 
 export const RSVP = () => {
-  const { register, handleSubmit, reset, control } = useForm<RsvpForm>();
+  const { register, handleSubmit, reset, control } = useForm<RsvpForm>({
+    defaultValues: { name: getInvitationName() },
+  });
   const [attendance, total] = useWatch({
     control,
     name: ['attendance', 'total'],
