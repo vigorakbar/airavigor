@@ -81,25 +81,29 @@ export const Gifts: React.FC = () => {
 
   return (
     <SectionContainer className={s.container}>
-      <div className={s.wrapper}>
-        <Title className={s.title}>Wedding Gifts</Title>
-        <div className={s.desc}>
-          For beloved ones who may want to show your love by sending gift, we
-          provide a Digital Envelope to make it easier for you, thank you
-        </div>
-        {accounts.map(({ title, account, name }, i) => (
-          <div className={s.giftsContainer} key={i}>
-            <div className={s.accountContainer}>
-              <div className={s.accountTitle}>{title}</div>
-              <div className={s.accountInfo}>Account Number: {account}</div>
-              <div className={s.accountInfo}>Account Name: {name}</div>
-            </div>
-            <Button className={s.giftButton} onClick={() => onCopy(account)}>
-              Copy Account Number
-            </Button>
+      <Title className={s.title}>Wedding Gifts</Title>
+      <div className={s.desc}>
+        For beloved ones who may want to show your love by sending gift, we
+        provide a Digital Envelope to make it easier for you, thank you
+      </div>
+      {accounts.map(({ title, account, name }, i) => (
+        <div className={s.giftsContainer} key={i}>
+          <div className={s.accountContainer}>
+            <div className={s.accountTitle}>{title}</div>
+            <div>Account Number: {account}</div>
+            <div>Account Name: {name}</div>
           </div>
-        ))}
-        <div className={s.desc}>
+          <Button
+            size="sm"
+            className={s.giftButton}
+            onClick={() => onCopy(account)}
+          >
+            Copy Account Number
+          </Button>
+        </div>
+      ))}
+      <div className={s.wrapper}>
+        <div className={s.descForm}>
           We are truly grateful for your love. Please make your confirmation in
           the form below to make it easier for us to do tracking
         </div>
@@ -134,7 +138,8 @@ export const Gifts: React.FC = () => {
           />
           <div className={s.buttonContainer}>
             <Button
-              className={s.giftButton}
+              size="sm"
+              className={s.giftButtonSubmit}
               type="submit"
               disabled={submitting}
             >

@@ -18,7 +18,6 @@ $common-margin: #{clamp(18px, 5vw, 33px)};
   align-items: center;
   @include r.responsive(margin-top, 18);
   .mapBtn {
-    @include r.responsive(font-size, 11);
     padding: 6px 19px;
   }
 }

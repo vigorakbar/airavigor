@@ -41,6 +41,7 @@ export const TimeAndVenue = () => {
           <div className={s.btnContainer}>
             <Button
               className={s.mapBtn}
+              size="sm"
               onClick={() => {
                 window.open(ASTON_GMAPS_LINK, '_blank');
               }}

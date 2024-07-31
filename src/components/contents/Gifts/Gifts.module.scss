@@ -1,4 +1,5 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
 
 .container {
   width: 100%;
@@ -10,21 +11,31 @@
     padding: 8px 24px;
   }
 
+  .giftButtonSubmit {
+    background-color: v.$field-color;
+    color: v.$soft-black;
+    padding: 6px 26px;
+  }
+
   .giftInput {
+    padding: 6px 6px;
+    border: 1px solid white;
+    border-radius: 8px;
     &:focus,
     &:active {
-      border-color: v.$highlight-color;
-      outline: v.$highlight-color;
+      border-color: v.$field-color;
+      outline: v.$field-color;
     }
   }
 }
 
 .wrapper {
-  background-color: #cbd9e0;
-  border-radius: 20px;
+  background-color: rgba(203, 217, 224, 0.5);
+  border-radius: 8px;
   margin: 0 auto;
   padding: 16px;
-  max-width: 660px;
+  @include r.responsive(width, 319);
+  margin-bottom: 64px;
 }
 .title {
   margin-top: 16px;
@@ -32,37 +43,47 @@
 }
 
 .desc {
-  font-family: v.$text-serif-font;
+  margin-bottom: 32px;
+  @include r.responsive(padding-left, 35);
+  @include r.responsive(padding-right, 35);
+}
+
+.descForm {
   margin-bottom: 20px;
+  @include r.responsive(padding-left, 10);
+  @include r.responsive(padding-right, 10);
 }
 
 .giftsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 27px;
 }
 
 .accountContainer {
-  border-radius: 28px;
-  padding: 12px 32px;
-  background-color: #fcf8f1;
-  margin-bottom: 4px;
-  font-family: v.$text-serif-font;
+  border-radius: 18px;
+  padding: 12px 30px;
+  background-color: rgba(white, 0.5);
+  margin-bottom: 7px;
 }
 
 .accountTitle {
-  font-family: v.$text-serif-font;
-  font-size: v.$serif-title-font-size-default;
-  font-size: v.$serif-title-font-size;
-  font-weight: bold;
-  color: v.$highlight-title-color;
+  font-family: v.$cardo-font;
+  font-weight: 700;
+  color: v.$highlight-color;
+  @include r.responsive(font-size, 16);
 }
 
 .giftForm {
   display: flex;
   flex-direction: column;
   padding: 0 8px;
+  @include r.responsive(font-size, 12);
+
+  input::placeholder {
+    @include r.responsive(font-size, 12);
+  }
 }
 
 .inputContainer {

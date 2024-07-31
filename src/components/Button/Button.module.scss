@@ -2,7 +2,6 @@
 @use '../../styles/responsive' as r;
 .button {
   background: v.$field-color;
-  @include r.responsive(font-size, 14);
   font-family: v.$text-font;
   border-radius: 20px;
   padding: 6px 16px;
@@ -10,6 +9,14 @@
   transition: transform 0.1s ease;
   &:hover:active {
     transform: scale(1.05);
+  }
+
+  &.mdButton {
+    @include r.responsive(font-size, 14);
+  }
+
+  &.smButton {
+    @include r.responsive(font-size, 11);
   }
 
   -webkit-tap-highlight-color: transparent;
