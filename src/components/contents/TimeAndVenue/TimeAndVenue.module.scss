@@ -51,7 +51,7 @@ $common-margin: #{clamp(18px, 5vw, 33px)};
 .venueDetailWrapper {
   position: relative;
   z-index: 2;
-  @include r.responsive(width, 183);
+  @include r.responsive(width, 160);
   @include r.responsive(top, 66);
 
   margin: 0 auto;
