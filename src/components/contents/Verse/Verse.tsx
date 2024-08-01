@@ -23,7 +23,7 @@ export const Verse2: React.FC = () => {
         pasangan hidup dari jenismu sendiri, supaya kamu mendapat ketenangan
         hati dan Dia menjadikan kasih sayang dan rahmat di antara kamu.
         Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda
-        bagi kaum yang berfikir.'
+        bagi&nbsp;kaum&nbsp;yang&nbsp;berfikir.'
         <br />
         <br />
         (Q.S. Ar-Rum: 21)
