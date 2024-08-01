@@ -1,3 +1,5 @@
+@use '../../../styles/responsive' as r;
+
 .container {
   width: 100%;
 }
@@ -36,34 +38,34 @@
 
 .framePurpleBig {
   position: absolute;
-  height: 126px;
+  @include r.responsive(height, 126);
   z-index: 5;
 
   &.aira {
-    bottom: 14px;
-    right: -20px;
+    @include r.responsive(bottom, 14);
+    @include r.responsive(right, -20);
   }
 
   &.vigor {
     transform: scaleX(-1) rotate(-7deg);
-    top: 16px;
+    @include r.responsive(top, 16);
     right: 0px;
   }
 }
 
 .framePurpleSmall {
   position: absolute;
-  height: 90px;
+  @include r.responsive(height, 90);
   z-index: 5;
 
   &.aira {
-    top: 50px;
+    @include r.responsive(top, 50);
     left: 0px;
   }
 
   &.vigor {
     transform: scaleX(-1);
-    bottom: 41px;
-    left: 12px;
+    @include r.responsive(bottom, 41);
+    @include r.responsive(left, 12);
   }
 }
