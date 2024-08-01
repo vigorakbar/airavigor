@@ -33,3 +33,37 @@
 .name {
   height: 45px;
 }
+
+.framePurpleBig {
+  position: absolute;
+  height: 126px;
+  z-index: 5;
+
+  &.aira {
+    bottom: 14px;
+    right: -20px;
+  }
+
+  &.vigor {
+    transform: scaleX(-1) rotate(-7deg);
+    top: 16px;
+    right: 0px;
+  }
+}
+
+.framePurpleSmall {
+  position: absolute;
+  height: 90px;
+  z-index: 5;
+
+  &.aira {
+    top: 50px;
+    left: 0px;
+  }
+
+  &.vigor {
+    transform: scaleX(-1);
+    bottom: 41px;
+    left: 12px;
+  }
+}
