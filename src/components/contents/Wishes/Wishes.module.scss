@@ -1,20 +1,27 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
 
 .container {
   width: 100%;
-  padding: 0 8px;
+  padding: 124px 0;
+  background-color: rgba(225, 194, 211, 0.26);
+  margin-bottom: 124px;
+}
+
+.title {
+  @include r.responsive(font-size, 16);
+  @include r.responsive(margin-bottom, 20);
 }
 
 .formAndWishesWrapper {
   background-color: rgba(255, 246, 251, 0.56);
   border-radius: 20px;
   margin: 0 auto;
-  max-width: 660px;
   padding: 42px 16px 16px;
+  @include r.responsive(width, 314);
 }
 
 .wishesContainer {
-  margin-top: 30px;
   min-height: 150px;
   max-height: 50vh;
   overflow-y: auto;
@@ -22,7 +29,7 @@
 
   .wishesItem {
     text-align: left;
-    margin-bottom: 22px;
+    @include r.responsive(margin-bottom, 22);
   }
 
   .wishName {
@@ -30,12 +37,13 @@
     font-weight: bold;
   }
   .wishDate {
-    font-size: 15px;
+    @include r.responsive(font-size, 12);
     color: #5b5757;
   }
 }
 
 .wishesForm {
+  @include r.responsive(margin-bottom, 30);
   input,
   textarea {
     border-radius: 8px;
@@ -49,7 +57,7 @@
   }
 
   .inputContainer {
-    margin-bottom: 16px;
+    @include r.responsive(margin-bottom, 16);
   }
 }
 

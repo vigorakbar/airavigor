@@ -89,8 +89,8 @@ export const RSVP = () => {
           <p className={s.desc}>
             Kami menantikan kehadiran Bapak / Ibu. Mohon kesediaan Bapak / Ibu
             untuk mengonfirmasi kehadiran guna membantu kami dalam melakukan
-            persiapan acara dan memastikan tempat dengan mengisi form di bawah
-            ini
+            persiapan acara dan memastikan tempat dengan mengisi form
+            di&nbsp;bawah&nbsp;ini
           </p>
           <form
             className={s.form}

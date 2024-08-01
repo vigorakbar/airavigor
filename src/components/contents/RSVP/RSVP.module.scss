@@ -1,6 +1,6 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
 
-$body-font-size: clamp(14px, 4.3vw, 25px);
 $frame-min-width: 420px;
 
 .container {
@@ -16,37 +16,41 @@ $frame-min-width: 420px;
   flex: 1;
   width: 100%;
   overflow: hidden;
+  margin-bottom: 100px;
 }
 
 .frameContent {
   position: absolute;
+  width: 100%;
   z-index: 2;
-  margin-top: 20vw;
+  @include r.responsive(margin-top, 55);
 
   .title {
     position: relative;
-    margin-bottom: 4.5vw;
+    @include r.responsive(margin-bottom, 16);
+    @include r.responsive(font-size, 24);
   }
 
   .desc {
-    font-size: 3.7vw;
-    font-size: $body-font-size;
-    padding: 0 10vw;
-    margin-bottom: 3.5vw;
+    @include r.responsive(width, 266);
+    margin: 0 auto;
+    @include r.responsive(margin-bottom, 10);
+    @include r.responsive(line-height, 19);
   }
 
   .form {
-    padding: 0 11vw;
+    @include r.responsive(width, 237);
+    margin: 0 auto;
     input,
     select {
-      font-size: 3.6vw;
-      font-size: $body-font-size;
-      padding-top: 6px;
-      padding-bottom: 6px;
-      margin-bottom: 3vw;
+      @include r.responsive(font-size, 12);
+      @include r.responsive(padding-top, 4);
+      @include r.responsive(padding-bottom, 4);
+
+      @include r.responsive(margin-bottom, 12);
       border-radius: 8px;
       background-color: #fcf8f1;
-      border-color: #fcf8f1;
+      border: 2px solid #fcf8f1;
       &:focus,
       &:active {
         border-color: v.$highlight-color;
@@ -54,8 +58,7 @@ $frame-min-width: 420px;
       }
     }
     button {
-      font-size: 3.6vw;
-      font-size: $body-font-size;
+      @include r.responsive(font-size, 12);
     }
   }
 
@@ -74,13 +77,8 @@ $frame-min-width: 420px;
 }
 
 .frame {
-  position: relative;
-  width: 100%;
-  top: 0;
-  left: 0;
-  left: min(calc((100vw - $frame-min-width) / 2), 0vw);
-  min-height: 543px;
-  min-width: $frame-min-width;
+  @include r.responsive(width, 320);
+  opacity: 0.6;
 }
 
 .buttonContainer {
@@ -92,68 +90,5 @@ $frame-min-width: 420px;
 .rsvpButton {
   background-color: v.$highlight-color;
   color: white;
-  font-size: 18px;
-  padding: 8px 24px;
-}
-
-@media screen and (max-width: 340px) {
-  .frameContent {
-    .form {
-      padding: 0 6.5vw;
-    }
-  }
-}
-
-@media screen and (max-width: 374px) {
-  .frameContent {
-    .title {
-      font-size: 7vw;
-    }
-    .desc {
-      padding: 0 8vw;
-    }
-
-    .form {
-      input,
-      select {
-        font-size: 16px;
-        font-size: $body-font-size;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 375px) {
-  .frame {
-    min-width: clamp(0px, 112vw, 660px);
-    left: clamp(-6vw, calc((100vw - 660px) / 2), 0vw);
-  }
-}
-
-@media screen and (min-width: 660px) {
-  .frameContent {
-    margin-top: 132px;
-    .title {
-      font-size: 40px;
-      margin-bottom: 30px;
-    }
-    .desc {
-      font-size: 25px;
-      padding: 0 66px;
-      margin-bottom: 18px;
-    }
-
-    .form {
-      padding: 0 72px;
-      input,
-      select {
-        font-size: 24px;
-        margin-bottom: 12px;
-      }
-
-      button {
-        font-size: 24px;
-      }
-    }
-  }
+  padding: 6px 18px;
 }

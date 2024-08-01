@@ -72,7 +72,7 @@ export const Wishes = () => {
   return (
     <SectionContainer className={s.container}>
       <div className={s.formAndWishesWrapper}>
-        <Title>Wedding Wishes</Title>
+        <Title className={s.title}>Wedding Wishes</Title>
         <form className={s.wishesForm} onSubmit={handleSubmit(onSubmitWishes)}>
           <InputField
             {...register('name', { required: 'Mohon isi nama anda' })}
@@ -96,28 +96,30 @@ export const Wishes = () => {
             </Button>
           </div>
         </form>
-        <div className={s.wishesContainer}>
-          {wishes.map(({ name, wishes, date }, i) => (
-            <div className={s.wishesItem} key={i}>
-              <div className={s.wishName}>{name}</div>
-              <div>{wishes}</div>
-              <div className={s.wishDate}>
-                {new Intl.DateTimeFormat('en-GB', {
-                  dateStyle: 'long',
-                  timeStyle: 'short',
-                }).format(date)}
+        {!!wishes?.length && (
+          <div className={s.wishesContainer}>
+            {wishes.map(({ name, wishes, date }, i) => (
+              <div className={s.wishesItem} key={i}>
+                <div className={s.wishName}>{name}</div>
+                <div>{wishes}</div>
+                <div className={s.wishDate}>
+                  {new Intl.DateTimeFormat('en-GB', {
+                    dateStyle: 'long',
+                    timeStyle: 'short',
+                  }).format(date)}
+                </div>
               </div>
-            </div>
-          ))}
-          {hasMore && (
-            <Button
-              className={s.wishesButton}
-              onClick={() => fetchAppendWishes({ page: wishPage })}
-            >
-              Show more
-            </Button>
-          )}
-        </div>
+            ))}
+            {hasMore && (
+              <Button
+                className={s.wishesButton}
+                onClick={() => fetchAppendWishes({ page: wishPage })}
+              >
+                Show more
+              </Button>
+            )}
+          </div>
+        )}
       </div>
     </SectionContainer>
   );

@@ -18,7 +18,7 @@
   }
 
   .giftInput {
-    padding: 6px 6px;
+    @include r.responsive(padding, 6);
     border: 1px solid white;
     border-radius: 8px;
     &:focus,
@@ -35,7 +35,7 @@
   margin: 0 auto;
   padding: 16px;
   @include r.responsive(width, 319);
-  margin-bottom: 64px;
+  margin-bottom: 100px;
 }
 .title {
   margin-top: 16px;
@@ -81,8 +81,12 @@
   padding: 0 8px;
   @include r.responsive(font-size, 12);
 
-  input::placeholder {
-    @include r.responsive(font-size, 12);
+  input,
+  textarea,
+  select {
+    &::placeholder {
+      @include r.responsive(font-size, 12);
+    }
   }
 }
 
