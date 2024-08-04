@@ -1,9 +1,9 @@
 import Aira from '../../../assets/images/Aira.jpg';
+import Vigor from '../../../assets/images/Vigor.jpg';
 import airalejour from '../../../assets/images/aira-halimun.png';
 import framePurpleBig from '../../../assets/images/framePurpleBig.png';
 import framePurpleSmall from '../../../assets/images/framePurpleSmall.png';
 import photoframe from '../../../assets/images/photoframe.png';
-import sample from '../../../assets/images/sample.png';
 import vigorlejour from '../../../assets/images/vigor-halimun.png';
 import { DEFAULT_ANCHOR } from '../../../constants';
 import { AnimationWrapper } from '../../AnimationWrapper/AnimationWrapper';
@@ -56,7 +56,6 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
           data-aos="fade-down"
           {...DEFAULT_ANCHOR}
         />
-        {/* TODO: use actual photo (dimension approx. 316 x 471 ) */}
         <div
           className={s.photoWrapper}
           data-aos="fade"
@@ -64,13 +63,12 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
           {...DEFAULT_ANCHOR}
         >
           <img
-            src={isAira ? Aira : sample}
+            src={isAira ? Aira : Vigor}
             className={s.photo}
             style={isAira ? { width: '101%' } : undefined}
           />
         </div>
       </FrameBase>
-      {/* <NameText>{isAira ? 'Aira' : 'Vigor'}</NameText> */}
       {isAira ? (
         <img src={airalejour} className={s.name} />
       ) : (
