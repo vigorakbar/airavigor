@@ -1,4 +1,5 @@
 import s from './App.module.scss';
+import airaVigor from './assets/images/AiraVigor.jpg';
 import airaVigorHalimun from './assets/images/airavigor-halimun.png';
 import avLejour from './assets/images/av-lejour.png';
 import envelbackenv from './assets/images/envel-backenv.png';
@@ -35,6 +36,7 @@ const imagesNeedLoad = [
   airaVigorHalimun,
   avLejour,
   frontframe,
+  airaVigor,
 ];
 
 const App: React.FC = () => {
