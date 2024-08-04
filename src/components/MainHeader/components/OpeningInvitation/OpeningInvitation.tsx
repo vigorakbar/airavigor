@@ -1,6 +1,6 @@
+import AiraVigor from '../../../../assets/images/AiraVigor.jpg';
 import airavigorlejour from '../../../../assets/images/airavigor-halimun.png';
 import frontframe from '../../../../assets/images/frontframe.png';
-import sample from '../../../../assets/images/sample.png';
 import { DEFAULT_ANCHOR } from '../../../../constants';
 import { FrameBase } from '../../../Frame/FrameBase';
 import { Initial } from '../../../Initial/Initial';
@@ -55,9 +55,8 @@ export const OpeningInvitation: React.FC<{
         >
           <FrameBase className={s.frameWrapper}>
             <img src={frontframe} className={s.frontframe} />
-            {/* TODO: use actual photo (dimension approx. 316 x 471 ) */}
             <div className={s.photoWrapper}>
-              <img src={sample} className={s.photo} />
+              <img src={AiraVigor} className={s.photo} />
             </div>
           </FrameBase>
         </div>
