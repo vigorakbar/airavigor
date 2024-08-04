@@ -1,4 +1,3 @@
-import { DEFAULT_ANCHOR } from '../../../constants';
 import s from './Verse.module.scss';
 import React from 'react';
 
@@ -10,8 +9,8 @@ export const Verse1: React.FC<{
       className={s.container}
       style={{ paddingTop: contentTopGap }}
       data-aos="fade-down"
-      data-aos-delay="500"
-      {...DEFAULT_ANCHOR}
+      data-aos-delay="800"
+      data-aos-anchor-placement="bottom-bottom"
     >
       <p className={s.salam}>Assalamualaikum warahmatullahi wabarakatuh</p>
       <p>
