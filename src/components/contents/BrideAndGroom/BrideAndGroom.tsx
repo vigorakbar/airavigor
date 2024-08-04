@@ -1,3 +1,4 @@
+import Aira from '../../../assets/images/Aira.jpg';
 import airalejour from '../../../assets/images/aira-halimun.png';
 import framePurpleBig from '../../../assets/images/framePurpleBig.png';
 import framePurpleSmall from '../../../assets/images/framePurpleSmall.png';
@@ -62,7 +63,7 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
           data-aos-delay="800"
           {...DEFAULT_ANCHOR}
         >
-          <img src={sample} className={s.photo} />
+          <img src={isAira ? Aira : sample} className={s.photo} />
         </div>
       </FrameBase>
       {/* <NameText>{isAira ? 'Aira' : 'Vigor'}</NameText> */}
