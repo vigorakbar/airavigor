@@ -1,3 +1,4 @@
+import { DEFAULT_ANCHOR } from '../../../constants';
 import s from './Verse.module.scss';
 import React from 'react';
 
@@ -5,7 +6,13 @@ export const Verse1: React.FC<{
   contentTopGap: number;
 }> = ({ contentTopGap }) => {
   return (
-    <div className={s.container} style={{ paddingTop: contentTopGap }}>
+    <div
+      className={s.container}
+      style={{ paddingTop: contentTopGap }}
+      data-aos="fade-down"
+      data-aos-delay="500"
+      {...DEFAULT_ANCHOR}
+    >
       <p className={s.salam}>Assalamualaikum warahmatullahi wabarakatuh</p>
       <p>
         Dengan nama Allah Yang Maha Pengasih, Yang Maha Penyayang, Dengan rahmat

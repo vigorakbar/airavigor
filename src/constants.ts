@@ -13,3 +13,7 @@ const dates = '20240914T120000/20240914T150000';
 const location = 'Aston Hotel Cirebon. Grand Sapphire Ballroom';
 
 export const ADD_CALENDAR_LINK = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&details=${encodeURIComponent(details)}&dates=${encodeURIComponent(dates)}&location=${encodeURIComponent(location)}&ctz=Asia/Jakarta`;
+
+export const DEFAULT_ANCHOR = {
+  ['data-aos-anchor-placement']: 'center-bottom',
+};

@@ -17,6 +17,7 @@
 .contentContainer {
   max-width: v.$container-max-width;
   margin: 0 auto;
+  overflow: hidden;
 
   &.containerImg {
     background-image: url('./assets/images/paper-background.png');

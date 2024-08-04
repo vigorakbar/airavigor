@@ -36,6 +36,10 @@
   height: 45px;
 }
 
+.z5 {
+  z-index: 5;
+}
+
 .framePurpleBig {
   position: absolute;
   @include r.responsive(height, 126);

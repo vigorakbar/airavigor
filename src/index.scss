@@ -66,6 +66,7 @@ body {
   font-family: v.$text-font;
   background-color: white;
   @include r.responsive(font-size, 14);
+  overflow: hidden;
 }
 
 input,

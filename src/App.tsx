@@ -46,7 +46,11 @@ const App: React.FC = () => {
   const [contentTopGap, setContentTopGap] = useState(0);
 
   useEffect(() => {
-    AOS.init({ once: true });
+    AOS.init({
+      once: true,
+      duration: 800,
+      delay: 400,
+    });
   }, []);
 
   useEffect(() => {

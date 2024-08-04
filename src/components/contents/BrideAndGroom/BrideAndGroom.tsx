@@ -4,6 +4,8 @@ import framePurpleSmall from '../../../assets/images/framePurpleSmall.png';
 import photoframe from '../../../assets/images/photoframe.png';
 import sample from '../../../assets/images/sample.png';
 import vigorlejour from '../../../assets/images/vigor-halimun.png';
+import { DEFAULT_ANCHOR } from '../../../constants';
+import { AnimationWrapper } from '../../AnimationWrapper/AnimationWrapper';
 import { FrameBase } from '../../Frame/FrameBase';
 import { Title } from '../../Title/Title';
 // import { NameText } from '../../NameText/NameText';
@@ -19,20 +21,47 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
   const isAira = name === 'aira';
   return (
     <div className={s.container}>
-      {isAira ? <Title>The Bride and Groom</Title> : ' '}
+      {isAira ? <Title data-aos="fade-up">The Bride and Groom</Title> : ' '}
       <FrameBase className={s.frameBase}>
-        <img
-          src={framePurpleBig}
-          className={classNames(s.framePurpleBig, isAira ? s.aira : s.vigor)}
-        />
-        <img
-          src={framePurpleSmall}
-          className={classNames(s.framePurpleSmall, isAira ? s.aira : s.vigor)}
-        />
+        <AnimationWrapper
+          data-aos={isAira ? 'fade-up-left' : 'fade-down-left'}
+          data-aos-delay="700"
+          {...DEFAULT_ANCHOR}
+          className={s.z5}
+        >
+          <img
+            src={framePurpleBig}
+            className={classNames(s.framePurpleBig, isAira ? s.aira : s.vigor)}
+          />
+        </AnimationWrapper>
+        <AnimationWrapper
+          data-aos={isAira ? 'fade-down-right' : 'fade-up-right'}
+          data-aos-delay="700"
+          {...DEFAULT_ANCHOR}
+          className={s.z5}
+        >
+          <img
+            src={framePurpleSmall}
+            className={classNames(
+              s.framePurpleSmall,
+              isAira ? s.aira : s.vigor,
+            )}
+          />
+        </AnimationWrapper>
 
-        <img src={photoframe} className={s.photoframe} />
+        <img
+          src={photoframe}
+          className={s.photoframe}
+          data-aos="fade-down"
+          {...DEFAULT_ANCHOR}
+        />
         {/* TODO: use actual photo (dimension approx. 316 x 471 ) */}
-        <div className={s.photoWrapper}>
+        <div
+          className={s.photoWrapper}
+          data-aos="fade"
+          data-aos-delay="800"
+          {...DEFAULT_ANCHOR}
+        >
           <img src={sample} className={s.photo} />
         </div>
       </FrameBase>
