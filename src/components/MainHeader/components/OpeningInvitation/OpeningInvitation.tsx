@@ -1,7 +1,7 @@
 import AiraVigor from '../../../../assets/images/AiraVigor.jpg';
 import airavigorlejour from '../../../../assets/images/airavigor-halimun.png';
 import frontframe from '../../../../assets/images/frontframe.png';
-import { DEFAULT_ANCHOR } from '../../../../constants';
+import { DEFAULT_AOS } from '../../../../constants';
 import { FrameBase } from '../../../Frame/FrameBase';
 import { Initial } from '../../../Initial/Initial';
 import s from './OpeningInvitation.module.scss';
@@ -39,20 +39,16 @@ export const OpeningInvitation: React.FC<{
     >
       <div className={s.bg} data-aos="fade" />
       <div ref={contentRef}>
-        <div className={s.weInvite} data-aos="fade-down" {...DEFAULT_ANCHOR}>
+        <div className={s.weInvite} data-aos="fade-down" {...DEFAULT_AOS}>
           We invite you to the wedding of
         </div>
         <img
           src={airavigorlejour}
           className={s.nameImg}
           data-aos="fade-down"
-          {...DEFAULT_ANCHOR}
+          {...DEFAULT_AOS}
         />
-        <div
-          className={s.frameContainer}
-          data-aos="fade-up"
-          {...DEFAULT_ANCHOR}
-        >
+        <div className={s.frameContainer} data-aos="fade-up" {...DEFAULT_AOS}>
           <FrameBase className={s.frameWrapper}>
             <img src={frontframe} className={s.frontframe} />
             <div className={s.photoWrapper}>
@@ -61,13 +57,13 @@ export const OpeningInvitation: React.FC<{
           </FrameBase>
         </div>
 
-        <div className={s.words} data-aos="fade-up" {...DEFAULT_ANCHOR}>
+        <div className={s.words} data-aos="fade-up" {...DEFAULT_AOS}>
           With immense joy in our hearts, we invite you to witness and celebrate
           the next chapter of our love story as we embark on this journey
           together, towards forever
         </div>
-        <Initial className={s.initial} data-aos="fade-up" {...DEFAULT_ANCHOR} />
-        <div className={s.hashtag} data-aos="fade-up" {...DEFAULT_ANCHOR}>
+        <Initial className={s.initial} data-aos="fade-up" {...DEFAULT_AOS} />
+        <div className={s.hashtag} data-aos="fade-up" {...DEFAULT_AOS}>
           #AIhaveVIGureditout #IhaveFigureditout
         </div>
       </div>

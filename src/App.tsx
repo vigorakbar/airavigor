@@ -47,9 +47,9 @@ const App: React.FC = () => {
 
   useEffect(() => {
     AOS.init({
-      once: true,
-      duration: 800,
-      delay: 400,
+      // once: true,
+      // TODO: remove
+      once: false,
     });
   }, []);
 

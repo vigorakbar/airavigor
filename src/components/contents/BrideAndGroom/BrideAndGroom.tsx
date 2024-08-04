@@ -5,7 +5,7 @@ import framePurpleBig from '../../../assets/images/framePurpleBig.png';
 import framePurpleSmall from '../../../assets/images/framePurpleSmall.png';
 import photoframe from '../../../assets/images/photoframe.png';
 import vigorlejour from '../../../assets/images/vigor-halimun.png';
-import { DEFAULT_ANCHOR } from '../../../constants';
+import { DEFAULT_AOS } from '../../../constants';
 import { AnimationWrapper } from '../../AnimationWrapper/AnimationWrapper';
 import { FrameBase } from '../../Frame/FrameBase';
 import { Title } from '../../Title/Title';
@@ -25,9 +25,9 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
       {isAira ? <Title data-aos="fade-up">The Bride and Groom</Title> : ' '}
       <FrameBase className={s.frameBase}>
         <AnimationWrapper
+          {...DEFAULT_AOS}
           data-aos={isAira ? 'fade-up-left' : 'fade-down-left'}
           data-aos-delay="700"
-          {...DEFAULT_ANCHOR}
           className={s.z5}
         >
           <img
@@ -36,9 +36,9 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
           />
         </AnimationWrapper>
         <AnimationWrapper
+          {...DEFAULT_AOS}
           data-aos={isAira ? 'fade-down-right' : 'fade-up-right'}
           data-aos-delay="700"
-          {...DEFAULT_ANCHOR}
           className={s.z5}
         >
           <img
@@ -51,16 +51,16 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
         </AnimationWrapper>
 
         <img
+          {...DEFAULT_AOS}
           src={photoframe}
           className={s.photoframe}
           data-aos="fade-down"
-          {...DEFAULT_ANCHOR}
         />
         <div
+          {...DEFAULT_AOS}
           className={s.photoWrapper}
           data-aos="fade"
-          data-aos-delay="800"
-          {...DEFAULT_ANCHOR}
+          data-aos-delay="700"
         >
           <img
             src={isAira ? Aira : Vigor}
@@ -69,17 +69,21 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
           />
         </div>
       </FrameBase>
-      {isAira ? (
-        <img src={airalejour} className={s.name} />
-      ) : (
-        <img src={vigorlejour} className={s.name} />
-      )}
-      <div>{isAira ? 'Airadiba Hadad' : 'Vigor Akbar'}</div>
-      <div>{isAira ? 'Putri' : 'Putra'} kedua dari</div>
-      <div>
-        {isAira
-          ? 'Bapak Ashif Hadad & Ibu Yeni Heryani'
-          : 'Bapak Dwiyarik Hafid Hidayat & Ibu Ratna Ningrum'}
+      <div {...DEFAULT_AOS} data-aos={isAira ? 'fade-left' : 'fade-right'}>
+        {isAira ? (
+          <img src={airalejour} className={s.name} />
+        ) : (
+          <img src={vigorlejour} className={s.name} />
+        )}
+      </div>
+      <div {...DEFAULT_AOS} data-aos={isAira ? 'fade-left' : 'fade-right'}>
+        <div>{isAira ? 'Airadiba Hadad' : 'Vigor Akbar'}</div>
+        <div>{isAira ? 'Putri' : 'Putra'} kedua dari</div>
+        <div>
+          {isAira
+            ? 'Bapak Ashif Hadad & Ibu Yeni Heryani'
+            : 'Bapak Dwiyarik Hafid Hidayat & Ibu Ratna Ningrum'}
+        </div>
       </div>
     </div>
   );

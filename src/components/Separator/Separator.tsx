@@ -8,5 +8,9 @@ type Props = {
 };
 
 export const Separator: React.FC<Props> = ({ children, className }) => {
-  return <div className={cx(s.container, className)}>{children}</div>;
+  return (
+    <div className={cx(s.container, className)} data-aos="fade">
+      {children}
+    </div>
+  );
 };

@@ -1,3 +1,4 @@
+import { DEFAULT_AOS } from '../../../constants';
 import { getWishesPage, postWish } from '../../../utils/api';
 import { Wish } from '../../../utils/types';
 import { Button } from '../../Button/Button';
@@ -71,7 +72,11 @@ export const Wishes = () => {
 
   return (
     <SectionContainer className={s.container}>
-      <div className={s.formAndWishesWrapper}>
+      <div
+        className={s.formAndWishesWrapper}
+        data-aos="zoom-in-up"
+        {...DEFAULT_AOS}
+      >
         <Title className={s.title}>Wedding Wishes</Title>
         <form className={s.wishesForm} onSubmit={handleSubmit(onSubmitWishes)}>
           <InputField

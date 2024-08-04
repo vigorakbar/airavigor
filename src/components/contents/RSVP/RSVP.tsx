@@ -1,5 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
 import RsvpFrame from '../../../assets/images/rsvp-frame.svg?react';
+import { DEFAULT_AOS } from '../../../constants';
 import { postRsvp } from '../../../utils/api';
 import { getInvitationName } from '../../../utils/common';
 import { Button } from '../../Button/Button';
@@ -84,7 +85,12 @@ export const RSVP = () => {
   return (
     <SectionContainer className={s.container}>
       <div className={s.frameContainer}>
-        <div className={s.frameContent}>
+        <div
+          className={s.frameContent}
+          {...DEFAULT_AOS}
+          data-aos="zoom-in-up"
+          data-aos-delay="500"
+        >
           <Title className={s.title}>Reservation</Title>
           <p className={s.desc}>
             Kami menantikan kehadiran Bapak / Ibu. Mohon kesediaan Bapak / Ibu
@@ -131,7 +137,9 @@ export const RSVP = () => {
             </div>
           </form>
         </div>
-        <RsvpFrame className={s.frame} />
+        <div data-aos="zoom-in-up" {...DEFAULT_AOS}>
+          <RsvpFrame className={s.frame} />
+        </div>
       </div>
     </SectionContainer>
   );

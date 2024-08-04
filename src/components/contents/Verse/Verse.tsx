@@ -1,3 +1,4 @@
+import { DEFAULT_AOS } from '../../../constants';
 import s from './Verse.module.scss';
 import React from 'react';
 
@@ -23,7 +24,7 @@ export const Verse1: React.FC<{
 
 export const Verse2: React.FC = () => {
   return (
-    <div className={s.container2}>
+    <div className={s.container2} data-aos="fade-up" {...DEFAULT_AOS}>
       <p>
         'Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
         pasangan hidup dari jenismu sendiri, supaya kamu mendapat ketenangan

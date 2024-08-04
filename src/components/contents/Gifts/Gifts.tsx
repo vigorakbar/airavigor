@@ -1,3 +1,4 @@
+import { DEFAULT_AOS } from '../../../constants';
 import { postGift } from '../../../utils/api';
 import { getInvitationName } from '../../../utils/common';
 import { copyTextToClipboard } from '../../../utils/copyClipboard';
@@ -81,13 +82,20 @@ export const Gifts: React.FC = () => {
 
   return (
     <SectionContainer className={s.container}>
-      <Title className={s.title}>Wedding Gifts</Title>
-      <div className={s.desc}>
+      <Title className={s.title} data-aos="fade-right" {...DEFAULT_AOS}>
+        Wedding Gifts
+      </Title>
+      <div className={s.desc} data-aos="fade-right" {...DEFAULT_AOS}>
         For beloved ones who may want to show your love by sending gift, we
         provide a Digital Envelope to make it easier for you, thank you
       </div>
       {accounts.map(({ title, account, name }, i) => (
-        <div className={s.giftsContainer} key={i}>
+        <div
+          className={s.giftsContainer}
+          key={i}
+          data-aos="fade-down"
+          {...DEFAULT_AOS}
+        >
           <div className={s.accountContainer}>
             <div className={s.accountTitle}>{title}</div>
             <div>Account Number: {account}</div>
@@ -102,7 +110,7 @@ export const Gifts: React.FC = () => {
           </Button>
         </div>
       ))}
-      <div className={s.wrapper}>
+      <div className={s.wrapper} data-aos="zoom-in-up" {...DEFAULT_AOS}>
         <div className={s.descForm}>
           We are truly grateful for your love. Please make your confirmation in
           the form below to make it easier for us to do tracking

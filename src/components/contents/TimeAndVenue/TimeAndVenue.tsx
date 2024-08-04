@@ -1,5 +1,5 @@
 import venueframe from '../../../assets/images/venueframe.png';
-import { ASTON_GMAPS_LINK } from '../../../constants';
+import { ASTON_GMAPS_LINK, DEFAULT_AOS } from '../../../constants';
 import { Button } from '../../Button/Button';
 import { NameText } from '../../NameText/NameText';
 import { SectionContainer } from '../../SectionContainer/SectionContainer';
@@ -10,13 +10,26 @@ import s from './TimeAndVenue.module.scss';
 export const TimeAndVenue = () => {
   return (
     <SectionContainer className={s.container}>
-      <Title className={s.weddingDay}>The Wedding Day</Title>
-      <div className={s.dateContainer}>Sabtu, 14 September 2024</div>
+      <Title className={s.weddingDay} data-aos="fade-down" {...DEFAULT_AOS}>
+        The Wedding Day
+      </Title>
+      <div className={s.dateContainer} data-aos="fade-down" {...DEFAULT_AOS}>
+        Sabtu, 14 September 2024
+      </div>
       <div className={s.venueContainer}>
-        <div className={s.venueframeWrapper}>
+        <div
+          className={s.venueframeWrapper}
+          data-aos="zoom-in"
+          {...DEFAULT_AOS}
+        >
           <img src={venueframe} className={s.venueframe} />
         </div>
-        <div className={s.venueDetailWrapper}>
+        <div
+          className={s.venueDetailWrapper}
+          {...DEFAULT_AOS}
+          data-aos="zoom-in"
+          data-aos-delay="500"
+        >
           <div className={s.timeSection}>
             <NameText className={s.sectionHeader}>Akad</NameText>
             <div>08.00 - 11.00</div>
