@@ -70,7 +70,7 @@ export const EnvelopeSection: React.FC<Props> = ({
     }, 600);
     await timeOutPromise(() => {
       setEnvelopeOpened(true);
-    }, 1000);
+    }, 400);
   };
 
   return (
