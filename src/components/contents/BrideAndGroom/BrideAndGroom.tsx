@@ -22,7 +22,13 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
   const isAira = name === 'aira';
   return (
     <div className={s.container}>
-      {isAira ? <Title data-aos="fade-up">The Bride and Groom</Title> : ' '}
+      {isAira ? (
+        <Title {...DEFAULT_AOS} data-aos="fade-up">
+          The Bride and Groom
+        </Title>
+      ) : (
+        ' '
+      )}
       <FrameBase className={s.frameBase}>
         <AnimationWrapper
           {...DEFAULT_AOS}

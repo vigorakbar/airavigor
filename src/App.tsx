@@ -47,9 +47,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     AOS.init({
-      // once: true,
-      // TODO: remove
-      once: false,
+      once: true,
     });
   }, []);
 
