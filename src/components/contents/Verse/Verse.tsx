@@ -12,6 +12,7 @@ export const Verse1: React.FC<{
       data-aos="fade-down"
       data-aos-delay="800"
       data-aos-anchor-placement="bottom-bottom"
+      data-aos-duration="900"
     >
       <p className={s.salam}>Assalamualaikum warahmatullahi wabarakatuh</p>
       <p>
