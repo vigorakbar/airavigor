@@ -63,7 +63,11 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
           data-aos-delay="800"
           {...DEFAULT_ANCHOR}
         >
-          <img src={isAira ? Aira : sample} className={s.photo} />
+          <img
+            src={isAira ? Aira : sample}
+            className={s.photo}
+            style={isAira ? { width: '101%' } : undefined}
+          />
         </div>
       </FrameBase>
       {/* <NameText>{isAira ? 'Aira' : 'Vigor'}</NameText> */}
