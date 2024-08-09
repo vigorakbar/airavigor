@@ -79,6 +79,7 @@ select {
   border-radius: 12px;
   font-family: v.$text-font;
   resize: none;
+  @include r.responsive(font-size, 14);
 
   &:focus,
   &:active {

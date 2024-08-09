@@ -82,7 +82,11 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
           <img src={vigorlejour} className={s.name} />
         )}
       </div>
-      <div {...DEFAULT_AOS} data-aos={isAira ? 'fade-left' : 'fade-right'}>
+      <div
+        className={s.fullName}
+        {...DEFAULT_AOS}
+        data-aos={isAira ? 'fade-left' : 'fade-right'}
+      >
         <div>{isAira ? 'Airadiba Hadad' : 'Vigor Akbar'}</div>
         <div>{isAira ? 'Putri' : 'Putra'} kedua dari</div>
         <div>

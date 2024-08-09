@@ -30,10 +30,11 @@
 }
 
 .wrapper {
+  position: relative;
   background-color: rgba(203, 217, 224, 0.5);
   border-radius: 8px;
   margin: 0 auto;
-  padding: 16px;
+  @include r.responsive(padding, 16);
   @include r.responsive(width, 319);
   margin-bottom: 100px;
 }
@@ -49,7 +50,7 @@
 }
 
 .descForm {
-  margin-bottom: 20px;
+  @include r.responsive(margin-bottom, 4);
   @include r.responsive(padding-left, 10);
   @include r.responsive(padding-right, 10);
 }
@@ -63,7 +64,7 @@
 
 .accountContainer {
   border-radius: 18px;
-  padding: 12px 30px;
+  padding: 4px 30px;
   background-color: rgba(white, 0.5);
   margin-bottom: 7px;
 }
@@ -95,7 +96,55 @@
 }
 
 .buttonContainer {
-  margin-top: 8px;
   justify-content: center;
   display: flex;
+}
+
+.ornContainer {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+
+  .arrange1 {
+    position: relative;
+    z-index: 1;
+    @include r.responsive(height, 44);
+  }
+  .arrange2 {
+    position: relative;
+    z-index: 2;
+    @include r.responsive(height, 68);
+  }
+  .ornTop {
+    display: flex;
+    position: absolute;
+    @include r.responsive(top, -17);
+    @include r.responsive(right, -17);
+
+    .arrange1 {
+      transform: scaleX(-1);
+      transform-origin: top;
+      @include r.responsive(top, -12);
+      @include r.responsive(left, 17);
+    }
+  }
+  .ornBottom {
+    position: absolute;
+    @include r.responsive(bottom, -19);
+    @include r.responsive(left, -19);
+
+    .arrange1 {
+      @include r.responsive(left, -16);
+      @include r.responsive(bottom, -2);
+      transform: rotate(10deg);
+    }
+
+    .arrange2 {
+      transform: rotate(180deg);
+    }
+  }
 }

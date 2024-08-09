@@ -1,3 +1,5 @@
+import arrange1 from '../../../assets/images/countdown-arrangement1.png';
+import arrange2 from '../../../assets/images/countdown-arrangement2.png';
 import { DEFAULT_AOS } from '../../../constants';
 import { postGift } from '../../../utils/api';
 import { getInvitationName } from '../../../utils/common';
@@ -156,6 +158,16 @@ export const Gifts: React.FC = () => {
             </Button>
           </div>
         </form>
+        <div className={s.ornContainer}>
+          <div className={s.ornTop}>
+            <img src={arrange1} className={s.arrange1} />
+            <img src={arrange2} className={s.arrange2} />
+          </div>
+          <div className={s.ornBottom}>
+            <img src={arrange2} className={s.arrange2} />
+            <img src={arrange1} className={s.arrange1} />
+          </div>
+        </div>
       </div>
     </SectionContainer>
   );

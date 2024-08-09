@@ -1,4 +1,5 @@
 @use '../../../styles/responsive' as r;
+@use '../../../styles/variables' as v;
 
 .container {
   width: 100%;
@@ -34,6 +35,10 @@
 
 .name {
   height: 45px;
+}
+
+.fullName {
+  font-family: v.$cardo-font;
 }
 
 .z5 {
