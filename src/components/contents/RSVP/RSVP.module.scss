@@ -89,6 +89,7 @@ $frame-min-width: 420px;
 
 .flowerWrapper {
   z-index: 2;
+  pointer-events: none;
 }
 
 .framePurpleSmall {
