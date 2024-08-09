@@ -1,11 +1,24 @@
 @use '../../../styles/responsive' as r;
+@use '../../../styles/variables' as v;
 
 .container {
   width: 100%;
-}
-
-.title {
   @include r.responsive(padding-top, 200);
   @include r.responsive(padding-bottom, 200);
-  margin-bottom: 0;
+
+  font-family: v.$cardo-font;
+  font-style: italic;
+  @include r.responsive(font-size, 16);
+}
+
+.name {
+  font-family: v.$countdown-font;
+  @include r.responsive(font-size, 28);
+  @include r.responsive(padding-top, 24);
+  @include r.responsive(padding-bottom, 24);
+  color: v.$highlight-color;
+
+  span {
+    font-family: v.$title-font;
+  }
 }
