@@ -2,12 +2,12 @@ import s from './App.module.scss';
 import airaVigor from './assets/images/AiraVigor.jpg';
 import airaVigorHalimun from './assets/images/airavigor-halimun.png';
 import avLejour from './assets/images/av-lejour.png';
+import backgroundAmplop from './assets/images/background-amplop.png';
 import envelbackenv from './assets/images/envel-backenv.png';
 import envelbacklid from './assets/images/envel-backlid.png';
 import envelfront from './assets/images/envel-front.png';
 import envellid from './assets/images/envel-lid.png';
 import frontframe from './assets/images/frontframe.png';
-import paperBackground from './assets/images/paper-background.png';
 import { EnvelopeSection } from './components/Envelope/EnvelopeSection';
 import { MainHeader } from './components/MainHeader/MainHeader';
 import { Separator } from './components/Separator/Separator';
@@ -15,6 +15,7 @@ import { BrideAndGroom } from './components/contents/BrideAndGroom/BrideAndGroom
 import { CountDown } from './components/contents/Countdown/Countdown';
 import { Gifts } from './components/contents/Gifts/Gifts';
 import { OurStory } from './components/contents/OurStory/OurStory';
+import { PortraitOfUs } from './components/contents/PortraitOfUs/PortraitOfUs';
 import { RSVP } from './components/contents/RSVP/RSVP';
 import { Thanks } from './components/contents/Thanks/Thanks';
 import { TimeAndVenue } from './components/contents/TimeAndVenue/TimeAndVenue';
@@ -67,7 +68,7 @@ const App: React.FC = () => {
       setLoadingImg(false);
     };
 
-    loadRemoteImage(paperBackground);
+    loadRemoteImage(backgroundAmplop);
     loadImages();
   }, []);
 
@@ -115,6 +116,7 @@ const App: React.FC = () => {
               <Verse2 />
               <OurStory />
               <CountDown />
+              <PortraitOfUs />
               <TimeAndVenue />
               <Gifts />
               <RSVP />

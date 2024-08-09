@@ -1,0 +1,31 @@
+@use '../../../styles/responsive' as r;
+
+.title {
+  @include r.responsive(padding-top, 140);
+}
+
+.photoGrid {
+  display: grid;
+  @include r.responsive(row-gap, 20);
+  @include r.responsive(column-gap, 24);
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  @include r.responsive(padding, 20);
+
+  &.grid1 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  &.grid2 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+  }
+}
+
+.frame {
+  // background-color: aliceblue;
+  // width: 100%;
+  // height: 400px;
+}

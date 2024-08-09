@@ -5,7 +5,6 @@ import { copyTextToClipboard } from '../../../utils/copyClipboard';
 import { Button } from '../../Button/Button';
 import { InputField } from '../../InputField/InputField';
 import { SectionContainer } from '../../SectionContainer/SectionContainer';
-import { TextAreaField } from '../../TextAreaField/TextAreaField';
 import { Title } from '../../Title/Title';
 import s from './Gifts.module.scss';
 import debounce from 'lodash.debounce';
@@ -38,7 +37,7 @@ export const Gifts: React.FC = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<GiftInput>();
+  } = useForm<GiftInput>({ defaultValues: { name: getInvitationName() } });
 
   const { toasts } = useToasterStore();
   useEffect(() => {
@@ -117,7 +116,9 @@ export const Gifts: React.FC = () => {
         </div>
         <form className={s.giftForm} onSubmit={handleSubmit(onSubmitGift)}>
           <InputField
-            {...register('name', { required: 'Mohon isi nama anda' })}
+            {...register('name', {
+              required: 'Mohon isi nama anda',
+            })}
             placeholder="Nama Anda"
             className={s.giftInput}
             containerClassName={s.inputContainer}
@@ -136,14 +137,14 @@ export const Gifts: React.FC = () => {
             inputLabel="Nama Rekening Pengirim:"
             errorMsg={errors.accountName?.message}
           />
-          <TextAreaField
+          {/* <TextAreaField
             {...register('notes')}
             className={s.giftInput}
             placeholder="Tinggalkan pesan / catatan"
             containerClassName={s.inputContainer}
             inputId="gift-notes"
             inputLabel="Pesan / Beri Catatan:"
-          />
+          /> */}
           <div className={s.buttonContainer}>
             <Button
               size="sm"

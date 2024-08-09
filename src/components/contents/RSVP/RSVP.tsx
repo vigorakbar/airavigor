@@ -103,7 +103,10 @@ export const RSVP = () => {
             onSubmit={handleSubmit(onSubmitRsvp, onInvalidRsvp)}
           >
             <InputField
-              {...register('name', { required: true })}
+              {...register('name', {
+                required: true,
+                disabled: !!getInvitationName(),
+              })}
               placeholder="Nama"
             />
             <SelectField

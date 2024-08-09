@@ -20,7 +20,12 @@
   overflow: hidden;
 
   &.containerImg {
-    background-image: url('./assets/images/paper-background.png');
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      ),
+      url('./assets/images/background-amplop.png');
     background-position: top left;
     background-size: 100% auto;
     background-repeat: repeat;

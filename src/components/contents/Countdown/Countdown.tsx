@@ -106,7 +106,7 @@ export const CountDown: React.FC = () => {
           <img src={arrange1} className={s.bottomRight1} />
           <img src={arrange2} className={s.bottomRight2} />
         </AnimationWrapper>
-        <div className={s.topLeaves} data-aos="fade-right" {...DEFAULT_AOS} />
+        {/* <div className={s.topLeaves} data-aos="fade-right" {...DEFAULT_AOS} /> */}
       </div>
     </SectionContainer>
   );

@@ -57,6 +57,11 @@ $frame-min-width: 420px;
         outline: v.$highlight-color;
       }
     }
+
+    input:disabled {
+      background-color: #f1ece2;
+      border: 2px solid #f1ece2;
+    }
     button {
       @include r.responsive(font-size, 12);
     }

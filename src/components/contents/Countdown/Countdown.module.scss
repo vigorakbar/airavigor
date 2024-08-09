@@ -1,5 +1,6 @@
 @use '../../../styles/variables' as v;
 @use '../../../styles/responsive' as r;
+@use 'sass:math';
 
 .sectionContainer {
   padding-bottom: 17px;
@@ -67,7 +68,19 @@
   height: 100%;
   z-index: 0;
   top: 0;
-
+  max-width: 450px;
+  left: calc((640px - 450px) / 2);
+  @media screen and (max-width: 640px) {
+    left: max(calc((100vw - 340px) / 2), 0vw);
+    max-width: 340px;
+  }
+  // .left {
+  //   left: 62px;
+  // }
+  // .right {
+  //   right: 70px;
+  //   left: unset;
+  // }
   .bottomLeft1 {
     position: absolute;
     bottom: 0;
@@ -143,12 +156,12 @@
     transform: rotate(84deg) scaleY(-1);
   }
 
-  .topLeaves {
-    position: absolute;
-    @include r.responsive(height, 28);
-    width: 100%;
-    top: 0;
-    background: url('../../../assets/images/topLeaves.png');
-    background-size: contain;
-  }
+  // .topLeaves {
+  //   position: absolute;
+  //   @include r.responsive(height, 28);
+  //   width: 100%;
+  //   top: 0;
+  //   background: url('../../../assets/images/topLeaves.png');
+  //   background-size: contain;
+  // }
 }

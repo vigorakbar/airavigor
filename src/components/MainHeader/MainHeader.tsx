@@ -20,7 +20,6 @@ export const MainHeader = ({
   const { progress, scrollAreaRef } = useScrollAreaProgress();
   const debouncedFinished = debounce(setMainHeaderFinished, 200);
   const [showHint, setShowHint] = useState(false);
-  const [changeBg, setChangeBg] = useState(false);
 
   useEffect(() => {
     if (progress >= 0.85) {
@@ -38,9 +37,6 @@ export const MainHeader = ({
     setTimeout(() => {
       setShowHint(true);
     }, 0);
-    setTimeout(() => {
-      setChangeBg(true);
-    }, 10);
   }, []);
 
   return (
@@ -48,7 +44,7 @@ export const MainHeader = ({
       <div
         className={classNames(
           s.mainHeaderContainer,
-          changeBg && s.changeBackground,
+          // changeBg && s.changeBackground,
         )}
       >
         <div className={s.innerContainer}>
