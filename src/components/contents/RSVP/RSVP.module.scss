@@ -93,17 +93,29 @@ $frame-min-width: 420px;
 
 .framePurpleSmall {
   position: absolute;
-  @include r.responsive(left, 60);
+  left: 60px;
+  left: clamp(0px, 100vw * 60 / 400, 96px);
   @include r.responsive(top, 14);
   @include r.responsive(height, 88);
+
+  @media screen and (max-width: 375px) {
+    left: 42px;
+    left: clamp(0px, 100vw * 42 / 400, 96px);
+  }
 }
 
 .framePurpleBig {
   position: absolute;
   transform: rotate(10deg) !important;
   right: 47px;
+  right: clamp(0px, 100vw * 47 / 400, 75.2px);
   bottom: 19px;
   @include r.responsive(height, 102);
+
+  @media screen and (max-width: 375px) {
+    right: 26px;
+    right: clamp(0px, 100vw * 26 / 400, 96px);
+  }
 }
 
 .buttonContainer {
