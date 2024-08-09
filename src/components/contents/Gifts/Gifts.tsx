@@ -78,10 +78,10 @@ export const Gifts: React.FC = () => {
         success: 'Konfirmasi berhasil dikirim',
         error: 'Gagal mengirim konfirmasi',
       });
+      reset();
     } catch (e) {
       console.log(e);
     }
-    reset();
     setSubmitting(false);
   };
 

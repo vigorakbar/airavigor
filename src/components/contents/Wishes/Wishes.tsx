@@ -60,10 +60,10 @@ export const Wishes = () => {
         error: 'Gagal mengirim pesan',
       });
       setWishes(prevWishes => [reqBody, ...prevWishes]);
+      reset();
     } catch (e) {
       console.log(e);
     }
-    reset();
     setSubmitting(false);
   };
 

@@ -59,10 +59,10 @@ export const RSVP = () => {
         success: 'Konfirmasi berhasil dikirim',
         error: 'Gagal mengirim konfirmasi',
       });
+      reset();
     } catch (e) {
       console.log(e);
     }
-    reset();
     setSubmitting(false);
   };
 
