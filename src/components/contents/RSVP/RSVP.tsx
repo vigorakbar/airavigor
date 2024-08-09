@@ -53,11 +53,15 @@ export const RSVP = () => {
       willAttend: !!Number(data.attendance),
       invitationName: getInvitationName(),
     });
-    await toast.promise(p, {
-      loading: 'Mengirim...',
-      success: 'Konfirmasi berhasil dikirim',
-      error: 'Gagal mengirim konfirmasi',
-    });
+    try {
+      await toast.promise(p, {
+        loading: 'Mengirim...',
+        success: 'Konfirmasi berhasil dikirim',
+        error: 'Gagal mengirim konfirmasi',
+      });
+    } catch (e) {
+      console.log(e);
+    }
     reset();
     setSubmitting(false);
   };
@@ -105,9 +109,9 @@ export const RSVP = () => {
             <InputField
               {...register('name', {
                 required: true,
-                disabled: !!getInvitationName(),
               })}
               placeholder="Nama"
+              readOnly={!!getInvitationName()}
             />
             <SelectField
               {...register('total', { required: true })}

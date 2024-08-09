@@ -16,7 +16,7 @@ export const TextAreaField = forwardRef<HTMLTextAreaElement, Props>(
     return (
       <div className={classNames(s.container, containerClassName)}>
         {inputLabel && <FormLabel htmlFor={inputId}>{inputLabel}</FormLabel>}
-        <textarea {...props} ref={ref} rows={4} id={inputId} />
+        <textarea {...props} ref={ref} rows={2} id={inputId} />
         {errorMsg && <ErrorField>{errorMsg}</ErrorField>}
       </div>
     );

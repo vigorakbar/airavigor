@@ -72,11 +72,15 @@ export const Gifts: React.FC = () => {
       notes: data.notes,
       invitationName: getInvitationName(),
     });
-    await toast.promise(p, {
-      loading: 'Mengirim...',
-      success: 'Konfirmasi berhasil dikirim',
-      error: 'Gagal mengirim konfirmasi',
-    });
+    try {
+      await toast.promise(p, {
+        loading: 'Mengirim...',
+        success: 'Konfirmasi berhasil dikirim',
+        error: 'Gagal mengirim konfirmasi',
+      });
+    } catch (e) {
+      console.log(e);
+    }
     reset();
     setSubmitting(false);
   };

@@ -53,14 +53,18 @@ export const Wishes = () => {
       date: new Date().getTime(),
     };
     const p = postWish(reqBody);
-    await toast.promise(p, {
-      loading: 'Mengirim...',
-      success: 'Pesan berhasil dikirim',
-      error: 'Gagal mengirim pesan',
-    });
+    try {
+      await toast.promise(p, {
+        loading: 'Mengirim...',
+        success: 'Pesan berhasil dikirim',
+        error: 'Gagal mengirim pesan',
+      });
+      setWishes(prevWishes => [reqBody, ...prevWishes]);
+    } catch (e) {
+      console.log(e);
+    }
     reset();
     setSubmitting(false);
-    setWishes(prevWishes => [reqBody, ...prevWishes]);
   };
 
   const {
