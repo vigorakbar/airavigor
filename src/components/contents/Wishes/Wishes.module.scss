@@ -1,11 +1,6 @@
 @use '../../../styles/variables' as v;
 @use '../../../styles/responsive' as r;
 
-.container {
-  width: 100%;
-  margin-bottom: 124px;
-}
-
 .title {
   @include r.responsive(font-size, 16);
   @include r.responsive(margin-bottom, 20);

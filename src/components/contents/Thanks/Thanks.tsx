@@ -4,6 +4,6 @@ import s from './Thanks.module.scss';
 
 export const Thanks = () => (
   <SectionContainer className={s.container}>
-    <Title className={s.title}>Thanks</Title>
+    <Title className={s.title}>Thank You</Title>
   </SectionContainer>
 );

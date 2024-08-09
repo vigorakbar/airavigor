@@ -75,7 +75,7 @@ export const Wishes = () => {
   } = useForm<WishesInput>();
 
   return (
-    <SectionContainer className={s.container}>
+    <SectionContainer>
       <div
         className={s.formAndWishesWrapper}
         data-aos="zoom-in-up"

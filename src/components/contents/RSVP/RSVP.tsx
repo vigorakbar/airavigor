@@ -1,8 +1,11 @@
 /// <reference types="vite-plugin-svgr/client" />
+import framePurpleBig from '../../../assets/images/framePurpleBig.png';
+import framePurpleSmall from '../../../assets/images/framePurpleSmall.png';
 import RsvpFrame from '../../../assets/images/rsvp-frame.svg?react';
 import { DEFAULT_AOS } from '../../../constants';
 import { postRsvp } from '../../../utils/api';
 import { getInvitationName } from '../../../utils/common';
+import { AnimationWrapper } from '../../AnimationWrapper/AnimationWrapper';
 import { Button } from '../../Button/Button';
 import { InputField } from '../../InputField/InputField';
 import { SectionContainer } from '../../SectionContainer/SectionContainer';
@@ -144,6 +147,15 @@ export const RSVP = () => {
             </div>
           </form>
         </div>
+        <AnimationWrapper
+          className={s.flowerWrapper}
+          data-aos="zoom-in"
+          {...DEFAULT_AOS}
+          data-aos-delay="600"
+        >
+          <img src={framePurpleSmall} className={s.framePurpleSmall} />
+          <img src={framePurpleBig} className={s.framePurpleBig} />
+        </AnimationWrapper>
         <div data-aos="zoom-in-up" {...DEFAULT_AOS}>
           <RsvpFrame className={s.frame} />
         </div>

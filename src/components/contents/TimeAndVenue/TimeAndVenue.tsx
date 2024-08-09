@@ -1,3 +1,4 @@
+import venuebg from '../../../assets/images/venue-background.jpg';
 import venueframe from '../../../assets/images/venueframe.png';
 import { ASTON_GMAPS_LINK, DEFAULT_AOS } from '../../../constants';
 import { Button } from '../../Button/Button';
@@ -23,6 +24,7 @@ export const TimeAndVenue = () => {
           {...DEFAULT_AOS}
         >
           <img src={venueframe} className={s.venueframe} />
+          <img src={venuebg} className={s.venuebg} />
         </div>
         <div
           className={s.venueDetailWrapper}
@@ -32,7 +34,7 @@ export const TimeAndVenue = () => {
         >
           <div className={s.timeSection}>
             <NameText className={s.sectionHeader}>Akad</NameText>
-            <div>08.00 - 11.00</div>
+            <div>08.00 - 11.00 WIB</div>
             <div>&#40;Keluarga&#41;</div>
           </div>
           <Separator className={s.separatorWrapper}>
@@ -40,7 +42,7 @@ export const TimeAndVenue = () => {
           </Separator>
           <div className={s.timeSection}>
             <NameText className={s.sectionHeader}>Resepsi</NameText>
-            <div>13.00 - 16.00</div>
+            <div>13.00 - 16.00 WIB</div>
           </div>
           <div className={s.place}>
             <div className={s.roomVenue}>Sapphire Grand Ballroom</div>

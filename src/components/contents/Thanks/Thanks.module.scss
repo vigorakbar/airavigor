@@ -2,9 +2,10 @@
 
 .container {
   width: 100%;
-  height: 100vh;
 }
 
 .title {
-  @include r.responsive(padding-top, 16);
+  @include r.responsive(padding-top, 200);
+  @include r.responsive(padding-bottom, 200);
+  margin-bottom: 0;
 }

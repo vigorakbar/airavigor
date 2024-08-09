@@ -16,7 +16,7 @@ $frame-min-width: 420px;
   flex: 1;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 100px;
+  margin-bottom: 124px;
 }
 
 .frameContent {
@@ -85,6 +85,25 @@ $frame-min-width: 420px;
 .frame {
   @include r.responsive(width, 320);
   opacity: 0.6;
+}
+
+.flowerWrapper {
+  z-index: 2;
+}
+
+.framePurpleSmall {
+  position: absolute;
+  @include r.responsive(left, 60);
+  @include r.responsive(top, 14);
+  @include r.responsive(height, 88);
+}
+
+.framePurpleBig {
+  position: absolute;
+  transform: rotate(10deg) !important;
+  right: 47px;
+  bottom: 19px;
+  @include r.responsive(height, 102);
 }
 
 .buttonContainer {

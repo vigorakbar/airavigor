@@ -36,10 +36,10 @@
   margin: 0 auto;
   @include r.responsive(padding, 16);
   @include r.responsive(width, 319);
-  margin-bottom: 100px;
+  margin-bottom: 124px;
 }
 .title {
-  margin-top: 16px;
+  @include r.responsive(padding-top, 140);
   color: v.$highlight-title-color;
 }
 

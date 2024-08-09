@@ -50,7 +50,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     AOS.init({
-      once: true,
+      // once: true,
     });
   }, []);
 
@@ -116,11 +116,11 @@ const App: React.FC = () => {
               <Verse2 />
               <OurStory />
               <CountDown />
-              <PortraitOfUs />
               <TimeAndVenue />
               <Gifts />
               <RSVP />
               <Wishes />
+              <PortraitOfUs />
               <Thanks />
             </div>
           </div>

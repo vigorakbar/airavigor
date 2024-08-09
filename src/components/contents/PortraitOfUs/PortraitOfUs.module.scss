@@ -1,7 +1,7 @@
 @use '../../../styles/responsive' as r;
 
 .title {
-  @include r.responsive(padding-top, 140);
+  @include r.responsive(padding-top, 124);
 }
 
 .photoGrid {

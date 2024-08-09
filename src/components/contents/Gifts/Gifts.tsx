@@ -162,7 +162,7 @@ export const Gifts: React.FC = () => {
             </Button>
           </div>
         </form>
-        <div className={s.ornContainer}>
+        <div className={s.ornContainer} data-aos="fade" {...DEFAULT_AOS}>
           <div className={s.ornTop}>
             <img src={arrange1} className={s.arrange1} />
             <img src={arrange2} className={s.arrange2} />
