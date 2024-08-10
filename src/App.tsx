@@ -8,6 +8,7 @@ import envelbacklid from './assets/images/envel-backlid.png';
 import envelfront from './assets/images/envel-front.png';
 import envellid from './assets/images/envel-lid.png';
 import frontframe from './assets/images/frontframe.png';
+import letterTexture from './assets/images/letter-texture.png';
 import { EnvelopeSection } from './components/Envelope/EnvelopeSection';
 import { MainHeader } from './components/MainHeader/MainHeader';
 import { Separator } from './components/Separator/Separator';
@@ -38,6 +39,7 @@ const imagesNeedLoad = [
   avLejour,
   frontframe,
   airaVigor,
+  letterTexture,
 ];
 
 const App: React.FC = () => {
