@@ -12,12 +12,14 @@ type Props = {
   setEnvelopeOpened: (open: boolean) => void;
   className?: string;
   loadingImg?: boolean;
+  toggleMusic: () => void;
 };
 
 export const EnvelopeSection: React.FC<Props> = ({
   setEnvelopeOpened,
   className,
   loadingImg,
+  toggleMusic,
 }) => {
   const [lidOpen, setLidOpen] = useState(false);
 
@@ -35,6 +37,8 @@ export const EnvelopeSection: React.FC<Props> = ({
   const envelBackRef = useRef<HTMLImageElement>(null);
 
   const onClickEnvelope = async () => {
+    toggleMusic();
+
     setLidOpen(true);
     const card = cardRef.current;
     const envelope = envelopeRef.current;
