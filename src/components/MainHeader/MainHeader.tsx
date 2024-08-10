@@ -48,7 +48,10 @@ export const MainHeader = ({
         )}
       >
         <div className={s.innerContainer}>
-          <MainCard progress={progress} />
+          <MainCard
+            progress={progress}
+            mainHeaderFinished={mainHeaderFinished}
+          />
         </div>
         {progress < 0.5 && (
           <div

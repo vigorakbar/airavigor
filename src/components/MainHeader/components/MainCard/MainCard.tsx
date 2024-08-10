@@ -9,12 +9,17 @@ export type MainCardProps = {
   rotateZDeg?: number;
   scale?: number;
   initRotateX?: number;
+  mainHeaderFinished?: boolean;
 };
+
+const bigWidth = window.screen.width > 640;
+
 export const MainCard: React.FC<MainCardProps> = ({
   progress,
   scale,
   rotateZDeg,
   initRotateX = 18,
+  mainHeaderFinished,
 }) => {
   const cardScale = scale ?? progress + 1;
   const cardRotateZ = rotateZDeg ?? (1 - progress) * 3;
@@ -54,7 +59,13 @@ export const MainCard: React.FC<MainCardProps> = ({
           </div>
           <div className={cx(s.cardSurface, s.backTitle)}></div>
         </div>
-        <div className={cx(s.cardSurface, s.backCard)}></div>
+        <div
+          className={cx(
+            s.cardSurface,
+            s.backCard,
+            mainHeaderFinished && bigWidth && s.backCardFinished,
+          )}
+        ></div>
       </div>
     </div>
   );
