@@ -57,13 +57,31 @@ export const OpeningInvitation: React.FC<{
           </FrameBase>
         </div>
 
-        <div className={s.words} data-aos="fade-up" {...DEFAULT_AOS}>
+        <div
+          className={s.words}
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-duration="800"
+          data-aos-delay="200"
+        >
           With immense joy in our hearts, we invite you to witness and celebrate
           the next chapter of our love story as we embark on this journey
           together, towards forever
         </div>
-        <Initial className={s.initial} data-aos="fade-up" {...DEFAULT_AOS} />
-        <div className={s.hashtag} data-aos="fade-up" {...DEFAULT_AOS}>
+        <Initial
+          className={s.initial}
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-duration="800"
+          data-aos-delay="200"
+        />
+        <div
+          className={s.hashtag}
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-duration="800"
+          data-aos-delay="200"
+        >
           #AIhaveVIGureditout #IhaveFigureditout
         </div>
       </div>

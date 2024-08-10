@@ -75,7 +75,12 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
           />
         </div>
       </FrameBase>
-      <div {...DEFAULT_AOS} data-aos={isAira ? 'fade-left' : 'fade-right'}>
+      <div
+        data-aos-anchor-placement="bottom-bottom"
+        data-aos-duration="800"
+        data-aos-delay="500"
+        data-aos={isAira ? 'fade-left' : 'fade-right'}
+      >
         {isAira ? (
           <img src={airalejour} className={s.name} />
         ) : (
@@ -84,7 +89,9 @@ export const BrideAndGroom: React.FC<Props> = ({ name }) => {
       </div>
       <div
         className={s.fullName}
-        {...DEFAULT_AOS}
+        data-aos-anchor-placement="bottom-bottom"
+        data-aos-duration="800"
+        data-aos-delay="500"
         data-aos={isAira ? 'fade-left' : 'fade-right'}
       >
         <div>{isAira ? 'Airadiba Hadad' : 'Vigor Akbar'}</div>
