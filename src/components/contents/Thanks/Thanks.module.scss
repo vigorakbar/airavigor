@@ -3,8 +3,10 @@
 
 .container {
   width: 100%;
-  @include r.responsive(padding-top, 200);
-  @include r.responsive(padding-bottom, 200);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   font-family: v.$cardo-font;
   font-style: italic;

@@ -50,7 +50,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     AOS.init({
-      once: true,
+      // once: true,
     });
   }, []);
 
