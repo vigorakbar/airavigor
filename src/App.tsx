@@ -9,6 +9,7 @@ import envelfront from './assets/images/envel-front.png';
 import envellid from './assets/images/envel-lid.png';
 import frontframe from './assets/images/frontframe.png';
 import letterTexture from './assets/images/letter-texture.png';
+import { BgMusic } from './components/BgMusic/BgMusic';
 import { EnvelopeSection } from './components/Envelope/EnvelopeSection';
 import { MainHeader } from './components/MainHeader/MainHeader';
 import { Separator } from './components/Separator/Separator';
@@ -49,6 +50,19 @@ const App: React.FC = () => {
   const [loadingImg, setLoadingImg] = useState(true);
 
   const [contentTopGap, setContentTopGap] = useState(0);
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const toggleMusic = () => {
+    if (!audioRef?.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   useEffect(() => {
     AOS.init({
@@ -132,6 +146,7 @@ const App: React.FC = () => {
           <EnvelopeSection
             loadingImg={loadingImg}
             setEnvelopeOpened={setEnvelopeOpened}
+            toggleMusic={toggleMusic}
           />
           {loadingImg && (
             <div className={s.loadingContainer}>
@@ -141,6 +156,11 @@ const App: React.FC = () => {
         </>
       )}
       <Toaster containerStyle={{ fontSize: 16 }} />
+      <BgMusic
+        isPlaying={isPlaying}
+        toggleMusic={toggleMusic}
+        audioRef={audioRef}
+      />
     </div>
   );
 };
