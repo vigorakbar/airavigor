@@ -13,7 +13,7 @@ export const BgMusic = ({
   audioRef: React.RefObject<HTMLAudioElement>;
 }) => {
   return (
-    <div style={{ position: 'fixed', bottom: 0, right: 0 }}>
+    <div style={{ position: 'fixed', bottom: 0, right: 0, zIndex: 9999 }}>
       <audio ref={audioRef} loop>
         <source src={bgMusic} type="audio/mpeg" />
       </audio>
