@@ -43,14 +43,25 @@
   border-bottom-right-radius: 4px;
 
   .frontTitle {
-    background-color: #eabdbf;
+    background: linear-gradient(
+        0deg,
+        rgba(234, 189, 191, 0.7),
+        rgba(234, 189, 191, 0.7)
+      ),
+      url('../../../../assets/images/letter-texture.png');
     text-align: center;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
   }
 
   .backTitle {
-    background-color: #eabdbf;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 243, 216, 0.4),
+        rgba(255, 243, 216, 0.4)
+      ),
+      url('../../../../assets/images/letter-texture.png');
+    background-size: cover;
     transform: rotateY(180deg);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -86,7 +97,13 @@
 
 .backCard {
   position: relative;
-  background-color: v.$main-background-color;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 243, 216, 0.4),
+      rgba(255, 243, 216, 0.4)
+    ),
+    url('../../../../assets/images/letter-texture.png');
+  background-size: cover;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }

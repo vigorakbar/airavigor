@@ -2,8 +2,7 @@
 @use '../../../styles/responsive' as r;
 
 .title {
-  @include r.responsive(font-size, 16);
-  @include r.responsive(margin-bottom, 20);
+  @include r.responsive(margin-bottom, 28);
 }
 
 .formAndWishesWrapper {

@@ -40,7 +40,7 @@
 }
 .title {
   @include r.responsive(padding-top, 140);
-  color: v.$highlight-title-color;
+  color: v.$highlight-color;
 }
 
 .desc {
