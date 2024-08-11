@@ -7,6 +7,7 @@
   padding: 6px 16px;
   margin-top: 6px;
   transition: transform 0.1s ease;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
   &:hover:active {
     transform: scale(1.05);
   }
