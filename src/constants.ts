@@ -5,6 +5,8 @@ export const MINUTE_IN_MS = SECOND_IN_MS * 60;
 export const HOUR_IN_MS = MINUTE_IN_MS * 60;
 export const DAY_IN_MS = HOUR_IN_MS * 24;
 
+export const PROGRESS_FINISHED_THRESHOLD = 0.85;
+
 export const ASTON_GMAPS_LINK = 'https://maps.app.goo.gl/62up4dgdyENUnu8o7';
 const title = "Aira & Vigor's Wedding";
 const details =

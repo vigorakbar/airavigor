@@ -1,4 +1,5 @@
 import airavigorhalimun from '../../../../assets/images/airavigor-halimun.png';
+import { PROGRESS_FINISHED_THRESHOLD } from '../../../../constants';
 import { getInvitationName } from '../../../../utils/common';
 import s from './MainCard.module.scss';
 import cx from 'classnames';
@@ -31,10 +32,14 @@ export const MainCard: React.FC<MainCardProps> = ({
   return (
     <div
       className={s.cardContainer}
-      style={progress > 0.85 ? scaleFill : { transform: `scale(${cardScale})` }}
+      style={
+        progress > PROGRESS_FINISHED_THRESHOLD
+          ? scaleFill
+          : { transform: `scale(${cardScale})` }
+      }
     >
       <div
-        className={s.mainCard}
+        className={cx(s.mainCard, mainHeaderFinished && s.hideMainCard)}
         style={{
           transform: `rotateZ(${cardRotateZ}deg)`,
         }}

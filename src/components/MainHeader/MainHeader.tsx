@@ -1,4 +1,5 @@
 import doubledown from '../../assets/images/double-down.png';
+import { PROGRESS_FINISHED_THRESHOLD } from '../../constants';
 import { useScrollAreaProgress } from '../../hooks/useScrollProgress';
 import s from './MainHeader.module.scss';
 import { MainCard } from './components/MainCard/MainCard';
@@ -22,7 +23,7 @@ export const MainHeader = ({
   const [showHint, setShowHint] = useState(false);
 
   useEffect(() => {
-    if (progress >= 0.85) {
+    if (progress >= PROGRESS_FINISHED_THRESHOLD) {
       debouncedFinished(true);
     } else {
       debouncedFinished(false);
@@ -41,12 +42,7 @@ export const MainHeader = ({
 
   return (
     <div className={s.scrollArea} ref={scrollAreaRef}>
-      <div
-        className={classNames(
-          s.mainHeaderContainer,
-          // changeBg && s.changeBackground,
-        )}
-      >
+      <div className={classNames(s.mainHeaderContainer)}>
         <div className={s.innerContainer}>
           <MainCard
             progress={progress}
