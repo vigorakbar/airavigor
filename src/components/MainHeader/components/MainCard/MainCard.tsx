@@ -13,8 +13,6 @@ export type MainCardProps = {
   mainHeaderFinished?: boolean;
 };
 
-const bigWidth = window.screen.width > 640;
-
 export const MainCard: React.FC<MainCardProps> = ({
   progress,
   scale,
@@ -64,13 +62,7 @@ export const MainCard: React.FC<MainCardProps> = ({
           </div>
           <div className={cx(s.cardSurface, s.backTitle)}></div>
         </div>
-        <div
-          className={cx(
-            s.cardSurface,
-            s.backCard,
-            mainHeaderFinished && bigWidth && s.backCardFinished,
-          )}
-        ></div>
+        <div className={cx(s.cardSurface, s.backCard)}></div>
       </div>
     </div>
   );

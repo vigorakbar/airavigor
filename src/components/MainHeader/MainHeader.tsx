@@ -9,6 +9,8 @@ import classNames from 'classnames';
 import debounce from 'lodash.debounce';
 import { useEffect, useState } from 'react';
 
+const bigWidth = window.screen.width > 640;
+
 export const MainHeader = ({
   setMainHeaderFinished,
   mainHeaderFinished,
@@ -42,7 +44,12 @@ export const MainHeader = ({
 
   return (
     <div className={s.scrollArea} ref={scrollAreaRef}>
-      <div className={classNames(s.mainHeaderContainer)}>
+      <div
+        className={classNames(
+          s.mainHeaderContainer,
+          mainHeaderFinished && bigWidth && s.changeBackground,
+        )}
+      >
         <div className={s.innerContainer}>
           <MainCard
             progress={progress}

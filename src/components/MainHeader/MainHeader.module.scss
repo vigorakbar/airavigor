@@ -12,9 +12,9 @@
   overflow: hidden;
   transition: background-color 0.5s ease;
 
-  // &.changeBackground {
-  //   background-color: rgba(202, 219, 226, 1);
-  // }
+  &.changeBackground {
+    background: unset !important;
+  }
 
   .innerContainer {
     width: 100%;
