@@ -16,6 +16,7 @@ import { Separator } from './components/Separator/Separator';
 import { BrideAndGroom } from './components/contents/BrideAndGroom/BrideAndGroom';
 import { CountDown } from './components/contents/Countdown/Countdown';
 import { Gifts } from './components/contents/Gifts/Gifts';
+import { Livestream } from './components/contents/Livestream/Livestream';
 import { OurStory } from './components/contents/OurStory/OurStory';
 import { PortraitOfUs } from './components/contents/PortraitOfUs/PortraitOfUs';
 import { RSVP } from './components/contents/RSVP/RSVP';
@@ -54,8 +55,16 @@ const App: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const toggleMusic = () => {
+  const toggleMusic = (forcePause?: boolean) => {
     if (!audioRef?.current) return;
+    if (forcePause) {
+      if (isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
+      return;
+    }
+
     if (isPlaying) {
       audioRef.current.pause();
     } else {
@@ -136,6 +145,7 @@ const App: React.FC = () => {
               <Gifts />
               <RSVP />
               <Wishes />
+              <Livestream toggleMusic={toggleMusic} />
               <PortraitOfUs />
               <Thanks />
             </div>
