@@ -41,7 +41,7 @@ export const TimeAndVenue = () => {
           </Separator>
           <div className={s.timeSection}>
             <NameText className={s.sectionHeader}>Resepsi</NameText>
-            <div>13.00 - 16.00 WIB</div>
+            <div>12.30 - 15.30 WIB</div>
           </div>
           <div className={s.place}>
             <div className={s.roomVenue}>Sapphire Grand Ballroom</div>
