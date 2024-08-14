@@ -20,7 +20,7 @@ export const Livestream = ({
         data-aos-delay="400"
       >
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=PEM0Vs8jf1w"
+          url="https://www.youtube.com/watch?v=Zru-l2j-pWs"
           onPlay={() => {
             toggleBgMusic(true);
           }}
