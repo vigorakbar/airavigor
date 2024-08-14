@@ -94,7 +94,8 @@ $common-margin: #{clamp(18px, 5vw, 33px)};
 
   .place {
     font-family: v.$cardo-font;
-    @include r.responsive(margin-top, 15);
+    // with (keluarga): 15, without: 42
+    @include r.responsive(margin-top, 42);
     .roomVenue {
       font-style: italic;
       color: v.$highlight-color;

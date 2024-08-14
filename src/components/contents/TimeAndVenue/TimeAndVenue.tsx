@@ -35,7 +35,6 @@ export const TimeAndVenue = () => {
           <div className={s.timeSection}>
             <NameText className={s.sectionHeader}>Akad</NameText>
             <div>08.00 - 11.00 WIB</div>
-            <div>&#40;Keluarga&#41;</div>
           </div>
           <Separator className={s.separatorWrapper}>
             <hr className={s.separator} />
