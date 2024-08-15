@@ -17,7 +17,8 @@ export const Verse1: React.FC<{
       <p className={s.salam}>Assalamualaikum warahmatullahi wabarakatuh</p>
       <p>
         Dengan nama Allah Yang Maha Pengasih, Yang Maha Penyayang, Dengan rahmat
-        dan ridha-Nya, Kami mengundang Bapak / Ibu dalam pernikahan Kami
+        dan ridha-Nya, kami mengundang Bapak / Ibu dalam pernikahan putra-putri
+        kami
       </p>
     </div>
   );
