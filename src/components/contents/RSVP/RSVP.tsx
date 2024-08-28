@@ -60,7 +60,9 @@ export const RSVP = () => {
       await toast.promise(p, {
         loading: 'Mengirim...',
         success: 'Konfirmasi berhasil dikirim',
-        error: 'Gagal mengirim konfirmasi',
+        error: err => {
+          return err.message;
+        },
       });
       reset();
     } catch (e) {

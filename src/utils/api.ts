@@ -76,7 +76,12 @@ async function postRsvp(rsvp: Rsvp): Promise<Rsvp> {
     });
 
     if (!response.ok) {
-      throw new Error('Failed to submit rsvp');
+      const errBody = await response.json();
+      if (errBody.code === 'rsvp-exist') {
+        throw new Error(errBody.message);
+      } else {
+        throw new Error('Failed to submit rsvp');
+      }
     }
 
     return await response.json();
