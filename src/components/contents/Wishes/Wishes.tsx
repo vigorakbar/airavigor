@@ -20,6 +20,7 @@ export const Wishes = () => {
   const [wishes, setWishes] = useState<Wish[]>([]);
   const [wishPage, setWishPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
+  const [loadMoreLoading, setLoadMoreLoading] = useState(false);
 
   const [submitting, setSubmitting] = useState(false);
 
@@ -31,13 +32,16 @@ export const Wishes = () => {
     append?: boolean;
   }) => {
     try {
+      setLoadMoreLoading(true);
       const data = await getWishesPage({ page });
       setWishes(prevWishes =>
         append ? [...prevWishes, ...data.wishes] : data.wishes,
       );
       setHasMore(data.hasMore);
       setWishPage(page + 1);
+      setLoadMoreLoading(false);
     } catch (e) {
+      setLoadMoreLoading(false);
       console.error('Error: failed to load wishes data', e);
     }
   };
@@ -123,6 +127,7 @@ export const Wishes = () => {
               <Button
                 className={s.wishesButton}
                 onClick={() => fetchAppendWishes({ page: wishPage })}
+                disabled={loadMoreLoading}
               >
                 Show more
               </Button>
